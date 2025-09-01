@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>text</title>
+</head>
+<body>
+    <h1>text</h1>
+    <h1>제목으로 사용1</h1>
+    <h2>제목으로 사용2</h2>
+    <h3>제목으로 사용3</h3>
+    <h4>제목으로 사용4</h4>
+    <h5>제목으로 사용5</h5>
+    <h6>제목으로 사용6</h6>
+    <!-- heading 자동 개행 , h7 은 없음-->
+    <h7>제목으로 사용7</h7>
+    <!-- 구분선 -->
+
+<!--
+bit                                                         byte
+                                    BCD         ASCII
+1       2   3       4       5       6           7           8
+2       4   8       16      32      64          128         256
+-------------------------------------------------------------------------
+0:off   00  000     0~9             a~z : 26    +특수기호   양수0/음수1
+1:on    01  001                     A~Z : 26
+        10  010                     0~9 : 10
+        11  011                           62
+            100
+            101
+            110
+            111
+
+
+
+    색표현 :   R    G    B
+            1byte 1byte 1byte
+            256    256  256
+    16진수  00~ff
+
+    0 1 2 3 4 5 6 7 8 9  a  b c  d  e  f
+    0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15
+
+    red : # ff 00 00
+            r  g  b
+-->
+
+    <hr />
+    <!-- hr : 태그 (요소-엘리먼트) 
+         color : 속성(프로퍼티-) 
+    -->
+    <hr color="blue" />
+    <hr color="#0000ff" />
+    <hr color="RED" />
+    <hr color="#ff0000" />
+    <!-- 문단 나누기 -->
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure, eos mollitia. 
+        Possimus quis vero fuga aut harum, molestias veniam in unde magni animi, 
+        suscipit facilis eum similique dolore explicabo itaque.
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure, eos mollitia. 
+        Possimus quis vero fuga aut harum, molestias veniam in unde magni animi, 
+        suscipit facilis eum similique dolore explicabo itaque.</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure, eos mollitia. 
+        Possimus quis vero fuga aut harum, molestias veniam in unde magni animi, 
+        suscipit facilis eum similique dolore explicabo itaque.
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure, eos mollitia. 
+        Possimus quis vero fuga aut harum, molestias veniam in unde magni animi, 
+        suscipit facilis eum similique dolore explicabo itaque.</p>
+</body>
+</html>
