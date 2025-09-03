@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form2</title>
+</head>
+<body>
+    <h1>form2</h1>
+    <form action="joinReg.html">
+        <table >
+            <tr>
+                <td width="80px" bgcolor="#0ff">아이디</td>
+                <td><input type="text" name="pid"></td>
+            </tr>
+            <tr>
+                <td bgcolor="#0ff">이름</td>
+                <td><input type="text" name="pname"></td>
+            </tr>
+            <tr>
+                <td bgcolor="#0ff">암호</td>
+                <td><input type="password" name="pw"></td>
+            </tr>
+            <tr>
+                <td bgcolor="#0ff">성별</td>
+                <td>
+                    <label><input type="radio" name="gender" value="m">남자</label>
+                    <label><input type="radio" name="gender" value="f">여자</label>
+                </td>
+            </tr>
+            <tr>
+                <td bgcolor="#0ff">전화번호</td>
+                <td><input type="tel" name="phone"></td>
+            </tr>
+            <tr>
+                <td bgcolor="#0ff">이메일</td>
+                <td>
+                    <input type="text" name="email1" size="10">@
+                    <select name="email2">
+                        <option value="naver.com">네이버</option>
+                        <option value="daum.net">다음</option>
+                        <option value="google.com">구글</option>
+                        <option value="nate.com">네이트</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" value="등록">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
