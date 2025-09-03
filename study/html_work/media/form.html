@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+</head>
+<body>
+    <h1>form</h1>
+
+    <!-- form : 전송하고자 하는 데이터를 묶는다. 
+            action : 전송시키는 도착지 (submit 으로 전송되는 url )
+            method :  get              /  post
+                    (url 에 데이터 보임)   (url에 보이지 않음)
+        form 엘리먼트 안에 각 input 요소를 배치한다.
+        
+        input type="text" : 한줄 내용의 문자열 입력
+                    password
+                    radio : 1개만 선택
+                       name으로 그룹화
+                       value 필요
+                       checked - 기본체크
+                    checkbox : 다중선택
+              
+                name : 전송시 데이터 이름
+                value : 기본값
+                placeholder : 빈칸일 경우 보여주는 메세지
+                maxlength : 최대글자 입력 수
+
+        label for="ppp" : id="ppp" 인 input 엘리먼트로 커서 이동
+        label 안에 input 요소가 위치 하고 for로 지정하지 않았을 경우 클릭시 label 안의 input으로 커서이동
+
+        fieldset : 그룹으로 묶기
+        legend : 타이틀
+    -->
+    <form action="complete.html" method="get">
+
+
+        <fieldset>
+
+            <label for="ppp">
+                <legend>이름</legend>
+            </label> 
+            <input type="text" name="pname" id="ppp" value="차은우">
+        </fieldset>
+        
+        
+        <fieldset>
+            <label>
+                <legend>별명</legend>
+                <input type="text" name="nick" placeholder="별명을 입력하세요" maxlength="10">
+            </label>
+        </fieldset>
+
+        <fieldset>
+            <legend>암호</legend>
+            <input type="password" name="pw" >
+        </fieldset>
+
+        <fieldset>
+            <legend>성별</legend>
+            <label><input type="radio" name="gender" value="m">남자</label>
+            <label><input type="radio" name="gender" value="f" checked>여자</label>
+            <label><input type="radio" name="gender" value="it" >it인</label>
+        </fieldset>
+
+        <fieldset>
+            <legend>취미</legend>
+            <label><input type="checkbox" name="hobby" value="netflix" checked>넷플릭스</label>
+            <label><input type="checkbox" name="hobby" value="reading">독서</label>
+            <label><input type="checkbox" name="hobby" value="travel" checked>여행</label>
+        </fieldset>
+
+        <fieldset>
+            <legend>가입일</legend>
+            <input type="date" name="regdate" min="2024-03-01" max="2026-08-11" value="2025-09-01">
+        </fieldset>
+
+        <fieldset>
+            <legend>예약시간</legend>
+            <input type="time" name="ttt" min="09:00" max="19:30" value="14:30" >
+        </fieldset>
+
+        <fieldset>
+            <legend>출발</legend>
+            <input type="datetime-local" name="start" min="2025-10-02T09:00" max="2025-10-09T18:00" value="2025-10-07T14:20">
+        </fieldset>
+
+        <fieldset>
+            <legend>달</legend>
+            <input type="month" name="mm">
+        </fieldset>
+        <fieldset>
+            <legend>주</legend>
+            <input type="week" name="ww">
+        </fieldset>
+        <fieldset>
+            <legend>난이도</legend>
+            <input type="range" name="grade" min="3" max="20" step="3">
+        </fieldset>
+        <fieldset>
+            <legend>색상</legend>
+            <input type="color" name="cc" >
+        </fieldset>
+        <fieldset>
+            <legend>학년</legend>
+            <input type="number" name="hak" min="2" max="10" step="2" value="4">
+        </fieldset>
+
+        <fieldset>
+            <legend>전화</legend>
+            <input type="tel" name="phone"><!-- 유효성 검사 안함-->
+        </fieldset>
+
+        <fieldset>
+            <legend>메일</legend>
+            <input type="email" name="mail"><!-- 유효성 검사 약함-->
+            <input type="button" value="중복확인">
+        </fieldset>
+
+        <fieldset>
+            <legend>사이트</legend>
+            <input type="url" name="site"><!-- 유효성 검사 약함-->
+        </fieldset>
+
+        <fieldset>
+            <legend>파일</legend>
+            <input type="file" name="upfile">
+        </fieldset>
+
+        <fieldset>
+            <legend>가입이미지 버튼</legend>
+            <input type="image" name="myImg" src="../fff/family16.JPG" width="50px">
+        </fieldset>
+
+        <fieldset>
+            <legend>검색</legend>
+            <input type="search" name="sch"><!-- text와 유사하나 x버튼으로 내용지우기 -->
+        </fieldset>
+
+
+        <input type="hidden" value="15" name="nowPage" ><!-- 화면에 보이지 않으나 전송-->
+
+
+        <fieldset>
+            <legend>부서</legend>
+            <select name="buseo">
+                <option value="insa">인사부</option>
+                <option value="young" selected>영업부</option>
+                <option value="two">두사부</option>
+                <option value="du">두부</option>
+            </select>
+        </fieldset>
+
+        <fieldset>
+            <legend>남기실말</legend>
+            <textarea name="content"></textarea>
+        </fieldset>
+        
+        <input type="submit" value="가입"> <!-- submit : form의 내용을 전송-->
+        <input type="reset" value="초기화">
+    </form>
+
+        <!-- form 태그 외부에 있으므로 같이 전송되지 않음-->
+        친구<input type="text" name="friend">
+</body>
+</html>
