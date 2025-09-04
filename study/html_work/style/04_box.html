@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>04_box</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+    .wrapper{
+        width:1000px;
+        height: 200px;
+        background-color: #ff0;
+        margin: 30px;
+    }
+
+    .box{
+        width:100px;
+        height: 100px;
+        background-color: #0f0;
+        float: left;
+    }
+
+    .mm1{
+        margin: 20px; /*상하좌우*/
+    }
+    .mm2{
+        margin: 20px 80px; 
+              /*상하  좌우*/
+    }
+    .mm3{
+        margin: 20px 80px 30px 50px; 
+              /*상    우    하   좌*/
+    }
+    .mm4{
+        margin-top:20px;
+        margin-right:80px;
+        margin-bottom:30px;
+        margin-left:50px;
+    }
+
+    .pp1{
+        padding: 20px; /*상하좌우*/
+    }
+    .pp2{
+        padding: 20px 80px; 
+              /*상하  좌우*/
+    }
+    .pp3{
+        padding: 20px 80px 30px 50px; 
+              /*상    우    하   좌*/
+    }
+    .pp4{
+        padding-top:20px;
+        padding-right:80px;
+        padding-bottom:30px;
+        padding-left:50px;
+    }
+    .pd{
+        border: 1px solid #ccc;
+        margin: 10px;
+    }
+
+
+
+    </style>
+</head>
+<body>
+    <h1>04_box</h1>
+    <h3>margin</h3>
+    <div class="wrapper">
+        <div class="box mm1">마진1</div>
+        <div class="box mm2">마진2</div>
+        <div class="box mm3">마진3</div>
+        <div class="box mm4">마진4</div>
+    </div>
+
+    <h3>padding</h3>
+    <div class="wrapper">
+        <div class="box pd pp1">패딩1</div>
+        <div class="box pd pp2">패딩2</div>
+        <div class="box pd pp3">패딩3</div>
+        <div class="box pd pp4">패딩4</div>
+    </div>
+</body>
+</html>
