@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03_div.html</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        #logo{
+            /* (1416 - 550) / 2
+            margin-left: 433px; */
+            margin: auto;
+            width:550px;
+            height: 300px;
+            margin-bottom: 30px;
+            background-color: #fa0;
+        }
+        #nav{
+            /* 1416px - (10+3) * 2 = */
+            border: 3px solid #00f;
+            height: 50px;
+            width: 1390px;
+            margin: 10px;
+        }
+        .box{
+            width: 300px;
+            height: 200px;
+            border: 2px solid #f50;
+            margin: 20px 10px; /*상하 좌우*/
+            padding: 10px 15px; /*상하 좌우*/
+            float: left;
+
+            /* 300 + (10 + 2 + 15) * 2 : 354
+               200 +(20 + 2 + 10) * 2 :  264
+            */
+        }
+        #section{
+            width: 1416px;
+            height: 528px;
+            /* background-color: #ff0; */
+        }
+        #wrapper{
+             width: 1416px;
+            /*
+            330 + (50+13*2 = 76) + 528
+            */
+
+            height: 934px;
+            background-color: #ff0;
+            margin: auto;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>03_div</h1>
+    <div id="wrapper">
+        <div id="logo"></div>
+        <div id="nav"></div>
+        <div id="section">
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+        </div>
+    </div>
+</body>
+</html>
