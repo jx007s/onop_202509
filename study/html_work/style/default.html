@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>default</title>
+    <style>
+    /* 모든 선택자*/        
+    *{
+        margin: 0;  /*바깥쪽 여백*/
+        padding:0;  /*안쪽 여백*/    
+    }
+    
+    /*태그 선택자*/
+    div{
+        width: 200px;
+        height: 50px;
+        border: 1px solid #aaa;
+        /* clear: both; */
+    }
+
+    /* 클래스 선택자 : 다중 선택 */
+    .aaa{
+        background-color: #ff0;
+    }
+    /* id 선택자 : 1개 선택 */
+    #bbb{
+        color:#f00;
+    }
+
+    li{
+        /*디자인속성명 :  값 ; */
+        width: 200px;
+        height: 30px;
+        border: 1px solid #00f;
+        /* margin-left: 100px; */
+        list-style: none;
+        float: left;  /* block 요소를 줄바꿈하지않고 바로 옆에 붙임 */
+    }
+    ul{
+        clear: both;    /* float 제거 */
+    }
+    .small{
+        width: 200px;
+        height: 100px;
+        border: 2px solid #f00;
+        background: #faa;
+        float: left;
+        margin: 10px;
+        padding: 10px;
+        /*실제크기  
+            width + padding *2 + border *2 + margin * 2
+            width + (padding  + border  + margin) * 2 : 244
+            height + (padding  + border  + margin) * 2 : 144
+        */
+    }
+    .big{
+        width: 732px;
+        height: 288px;
+        background: #ff0;
+    }
+    </style>    
+</head>
+<body>
+    <h1>default</h1>
+    <div id="bbb" class="aaa">박스1</div>
+    <div id="bbb">박스2</div>
+    <div class="aaa">박스3</div>
+    <div>박스4</div>
+
+    <ul>
+        <li>아메리카노</li>
+        <li>아프라카노</li>
+        <li>아시아노</li>
+        <li>왜그랬노</li>
+    </ul>
+    <div>박스5</div>
+    <div>박스6</div>
+    <hr/>
+    <div class="big">
+        <div class="small">내용1</div>
+        <div class="small">내용2</div>
+        <div class="small"><img src="../fff/family15.JPG" width="200px" height="100px"></div>
+        <div class="small"></div>
+        <div class="small"></div>
+        <div class="small"></div>
+    </div>
+
+
+</body>
+</html>
+<!-- style/03_div.html  -->
