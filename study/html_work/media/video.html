@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>video</title>
+</head>
+<body>
+    <h1>비디오</h1>
+    <!-- video 태그 
+            src : 영상위치
+            controls : 제어패널 
+            muted : 음소거
+            autoplay : 자동실행 
+            loop : 반복재생
+    -->
+
+    <video  src="../example/media/SampleVideo_1280x720_1mb.mp4"
+            style="width: 300px;" controls></video>
+
+    <!-- autoplay 할 경우 muted 가 필수  -->            
+    <video  src="../example/media/SampleVideo_1280x720_1mb.mp4"
+            style="width: 300px;" autoplay muted></video>
+
+    <video  src="../example/media/SampleVideo_1280x720_1mb.mp4"
+            style="width: 300px;" controls muted></video>
+
+    <video  src="../example/media/SampleVideo_1280x720_1mb.mp4"
+            style="width: 300px;" loop></video>
+
+    <video  src="../example/media/SampleVideo_1280x720_1mb.mp4"
+            style="width: 300px;" autoplay muted loop></video>
+
+    <hr/>
+</body>
+</html>
