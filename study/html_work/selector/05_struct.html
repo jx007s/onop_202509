@@ -10,12 +10,40 @@
             padding: 0;
         }
 
-        tr:first-child{
+        /* tr:first-child{
             background-color: #ff0;
+        } */
+         tr:first-of-type{
+            background-color: #ff0;
+         }
+
+        tr:last-child{
+            background-color: #0f0;
         }
 
         td:first-child{
             color: #f00;
+        }
+        /* td:last-child{
+            color: #00f;
+        } */
+        td:last-of-type{
+            color: #00f;
+        }
+        tr:nth-child(3){ /* 1부터 시작 */
+            background-color: #fa0;
+        }
+
+        td:nth-of-type(4){
+            color: #84a;
+        }
+
+        tr:nth-child(2n){ 
+            background-color: #f0f;
+        }
+
+        td:nth-of-type(3n+1){/* 1, 4, 7 */
+            font-style: italic;
         }
     </style>
 </head>
