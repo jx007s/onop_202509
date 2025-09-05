@@ -97,6 +97,73 @@
         border: 1px solid #f00;
     }
 
+    .br1{
+        border-radius: 20px;
+    }
+    .br2{
+        border-radius: 50px;
+    }
+    .br3{
+        border-radius: 50px 10px;
+        /*              ↖↘  ↗↙  */
+    }
+    .br4{
+        border-radius: 50px 10px 0px 20px;
+        /*              ↖  ↗     ↘   ↙  */
+    }
+    .br5{
+        border-top-left-radius: 50px;       /* ↖  */
+        border-top-right-radius: 10px;      /* ↗  */
+        border-bottom-right-radius: 0px;   /*  ↘  */
+        border-bottom-left-radius: 10px;     /* ↙  */   
+    }
+
+    .bm1{
+        border: 20px 10px 30px 0px ridge #f00; /* 없음 */
+    }
+    .bm2{
+        border-top: 20px ridge #f00;
+        border-right: 10px solid #00f;
+        border-bottom: 30px double #f0f;
+        border-left: 50px dotted #0ff;
+    }
+    .bm3{
+        border-width: 30px;
+        border-color: #f00;
+        border-style: dashed;
+        border-radius: 30px;
+    }
+    .bm4{
+        background-image: url(../fff/family1.JPG);
+        background-size: 50px;
+        border-top: 50px solid #f00;
+        border-right: 50px solid rgb(255,0,255);
+                                    /*  #ff00ff */
+        border-bottom: 50px solid rgba(255, 0, 255, 0.5);
+                                    /*    r   g   b      a(투명도)
+                                      0~255 0~255 0~255   0~1
+                                    */
+    }
+    .tt1{
+        text-align: right;
+    }
+    .tt2{
+        text-align: center;
+    }
+    .tt3{
+        /* text-align: bottom;  없음 */ 
+        line-height: 100px; /* 문자열 1줄의 높이 */
+    }
+    .tt4{
+        /* text-align: bottom;  없음 */ 
+        line-height: 20px; /* 문자열 1줄의 높이 * 2 => 60px */
+        font-size: 10px;
+        height: 60px;
+        padding: 20px 0px;
+        text-align: center;
+        border: 5px solid #f00;
+    }
+
     </style>
 </head>
 <body>
@@ -136,6 +203,23 @@
         <div class="box pd2 br2">보더라운드2</div>
         <div class="box pd2 br3">보더라운드3</div>
         <div class="box pd2 br4">보더라운드4</div>
+        <div class="box pd2 br5">보더라운드5</div>
+    </div>
+
+    <h3>border-multi</h3>
+    <div class="wrapper">
+        <div class="box pd2 bm1">보더멀티1</div>
+        <div class="box pd2 bm2">보더멀티2</div>
+        <div class="box pd2 bm3">보더멀티3</div>
+        <div class="box pd2 bm4">보더멀티4</div>
+    </div>
+
+    <h3>text</h3>
+    <div class="wrapper">
+        <div class="box pd2 tt1">글자1</div>
+        <div class="box pd2 tt2">글자2<br/>내용2</div>
+        <div class="box pd2 tt3">글자3</div>
+        <div class="box pd2 tt4">글자4<br/>내용4</div>
     </div>
 
 
