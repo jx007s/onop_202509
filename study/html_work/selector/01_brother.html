@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01_brother</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        h3+h3+h3{
+            /*
+            <h3></h3>
+            <h3></h3>
+            <h3></h3>   <-- 선택
+            */
+
+            background-color: #ff0;
+        }
+
+        h2+h3+h3+h3{
+            /*
+            <h2></h2>
+            <h3></h3>
+            <h3></h3>
+            <h3></h3>   <-- 선택
+            */
+
+           color: #f00;
+        }
+
+        h4~h3{ /* 
+            h4 이후 모든 h3
+            중간에 다른 객체가 있어도 이후의 형제객체도 선택
+            
+            */
+            text-decoration: line-through;
+        }
+
+
+    </style>
+</head>
+<body>
+    <h1>01_brother</h1>
+
+    <h3>h3_1</h3>
+    <h3>h3_2</h3>
+    <h3>h3_3</h3>
+    <h3>h3_4</h3>
+    <h3>h3_5</h3>
+
+    <h2>h2</h2>
+    <h3>h2...h3_1</h3>
+    <h3>h2...h3_2</h3>
+    <h3>h2...h3_3</h3>
+    <h3>h2...h3_4</h3>
+    <h3>h2...h3_5</h3>
+
+    <h4>h4_1</h4>
+    <h4>h4_2</h4>
+    <h4>h4_3</h4>
+    <h4>h4_4</h4>
+    <h3>h4...h3_1</h3>
+    <h3>h4...h3_2</h3>
+    <h3>h4...h3_3</h3>
+    <h5>h4...h3_3...h5</h5>
+    <h3>h4...h3_4</h3>
+    <h3>h4...h3_5</h3>
+</body>
+</html>
