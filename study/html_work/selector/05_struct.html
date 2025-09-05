@@ -45,6 +45,10 @@
         td:nth-of-type(3n+1){/* 1, 4, 7 */
             font-style: italic;
         }
+
+        tr:nth-child(5) > td:nth-child(6){ 
+            text-decoration: line-through;
+        }
     </style>
 </head>
 <body>
@@ -121,5 +125,54 @@
             <td>7_8</td>
         </tr>
     </table>
+
+    <style>
+        div{
+            width:200px;
+            display: inline-block;
+            border: 1px solid #000;
+        }
+
+        div > div, span{
+            
+            display: block;
+            border: none;
+        }
+
+        div > div:nth-child(3){
+            background-color: #ff0;
+        }
+
+        div> div:nth-of-type(3){
+            color: #f00;
+        }
+
+    </style>
+
+    <div>
+        <div>div_1</div>
+        <span>span</span>
+        <div>div_2</div>
+        <div>div_3</div>
+        <div>div_4</div>
+    </div>
+
+    <div>
+        <div>div_1</div>
+        <div>div_2</div>
+        <span>span</span>
+        <div>div_3</div>
+        <div>div_4</div>
+    </div>
+
+    <div>
+        <div>div_1</div>
+        <div>div_2</div>
+        <div>div_3</div>
+        <span>span</span>
+        <div>div_4</div>
+    </div>
+
+
 </body>
 </html>
