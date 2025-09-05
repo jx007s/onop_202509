@@ -4,6 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>diary</title>
+    <!--
+    태그선택자와 동위선택자만 이용하여 달력 디자인을 편집하세요
+    일(빨간색) 토(파란색)  오늘(노란색)
+    이미지 크기 설정
+    
+    -->
+    <style>
+        img{
+            width: 400px;
+        }
+        h1{
+            text-align: center;
+            color: #000;
+        }
+        td{
+            text-align: center;
+            color: #f00;
+        }
+        td~td{
+            color: #000;
+        }
+        td+td+td+td+td+td+td{
+            color: #00f;
+        }
+    </style>
 </head>
 <body>
     <h1>diary</h1>
@@ -13,19 +38,19 @@
                 <img src="../fff/family8.JPG" alt="">
             </td>
         </tr>
-        <tr align="center">
+        <tr >
             <td colspan="7">
                 <h1>2025년 9월</h1>
             </td>
         </tr>
-        <tr align="center">
+        <tr >
             <td >일</td>
             <td>월</td>
             <td>화</td>
             <td>수</td>
             <td>목</td>
             <td>금</td>
-            <td >토</td>
+            <td>토</td>
         </tr>
         <tr>
             <td></td>
