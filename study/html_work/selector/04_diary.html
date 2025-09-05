@@ -18,14 +18,34 @@
             text-align: center;
             color: #000;
         }
-        td{
+        tr+tr+tr>td{
             text-align: center;
-            color: #f00;
+            background-color: #f00;
+            color: #fff;
         }
-        td~td{
+
+        tr+tr+tr>td~td{
+            text-align: center;
+            background-color: #fff;
             color: #000;
         }
-        td+td+td+td+td+td+td{
+        tr+tr+tr>td+td+td+td+td+td+td{
+            text-align: center;
+            background-color: #00f;
+            color: #fff;
+        }
+
+        tr+tr+tr+tr>td{
+            text-align: center;
+            background-color: #fff;
+            color: #f00;
+        }
+        tr+tr+tr+tr>td~td{
+            background-color: #fff;
+            color: #000;
+        }
+        tr+tr+tr+tr>td+td+td+td+td+td+td{
+            background-color: #fff;
             color: #00f;
         }
     </style>

@@ -9,9 +9,41 @@
             margin: 0;
             padding: 0;
         }
+        h2{
+            color: #f00;
+        }
+
+        /*자식 선택자   aaa 바로 밑에 자식 중 h3 */
+        .aaa > h3{
+            background-color: #ff0;
+        }
+
+        /*후손 선택자 ccc 안에 있는 모든 요소중 h3 */
+        .ccc h3{
+            background-color: #0f0;
+        }
     </style>
 </head>
 <body>
     <h1>03_child</h1>
+    <h2>h2 입니다.</h2>
+    <h3>h3 입니다.</h3>
+    <div class="aaa">
+        <h2>aaa>h2 입니다.</h2>
+        <h3>aaa>h3 입니다.</h3>
+        <div class="bbb">
+            <h2>aaa>bbb>h2 입니다.</h2>
+            <h3>aaa>bbb>h3 입니다.</h3>
+        </div>
+    </div>
+
+    <div class="ccc">
+        <h2>ccc>h2 입니다.</h2>
+        <h3>ccc>h3 입니다.</h3>
+        <div class="bbb">
+            <h2>ccc>bbb>h2 입니다.</h2>
+            <h3>ccc>bbb>h3 입니다.</h3>
+        </div>
+    </div>
 </body>
 </html>
