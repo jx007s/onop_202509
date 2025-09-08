@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11_string</title>
+    <style>
+        *{
+            margin: 0;
+            padding:0;
+        }
+        div:nth-of-type(1)::first-letter{ /* 첫번째 글자*/
+            font-size: 30px;
+            color: #f00;
+        }
+
+
+        div:nth-of-type(even)::first-line{/* 
+            even : 짝수 (2n)
+            first-line 첫번째 줄
+            */
+            color: #00f;
+        }
+        div:not(.asdf){ /* not : 제외 */
+            border: 2px solid #333;
+            margin: 5px;
+            padding: 5px;
+        }
+
+        div::selection{
+            background-color: #ff0;
+            color: #f0f;
+        }
+    </style>
+</head>
+<body>
+    <h1>11_string</h1>
+    <div>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit beatae labore ipsam<br/>
+         explicabo deleniti a cum, laudantium perferendis, asperiores tempora provident facere sunt,<br/> 
+         eaque voluptate quo! Voluptas, in! Doloribus, tempore!
+    </div>
+    <div>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit beatae labore ipsam<br/>
+         explicabo deleniti a cum, laudantium perferendis, asperiores tempora provident facere sunt,<br/> 
+         eaque voluptate quo! Voluptas, in! Doloribus, tempore!
+    </div>
+    <div>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit beatae labore ipsam<br/>
+         explicabo deleniti a cum, laudantium perferendis, asperiores tempora provident facere sunt, <br/>
+         eaque voluptate quo! Voluptas, in! Doloribus, tempore!
+    </div>
+    <div class="asdf">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit beatae labore ipsam<br/>
+         explicabo deleniti a cum, laudantium perferendis, asperiores tempora provident facere sunt,<br/> 
+         eaque voluptate quo! Voluptas, in! Doloribus, tempore!
+    </div>
+    <div>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit beatae labore ipsam<br/>
+         explicabo deleniti a cum, laudantium perferendis, asperiores tempora provident facere sunt,<br/> 
+         eaque voluptate quo! Voluptas, in! Doloribus, tempore!
+    </div>
+</body>
+</html>

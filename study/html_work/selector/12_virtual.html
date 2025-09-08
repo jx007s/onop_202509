@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12_virtual</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box , .aaa, .bbb,.ccc, .ddd, .eee, .fff{
+            width: 200px;
+            height: 200px;
+            background-color: #0f0;
+            margin: 5px;
+        }
+        .box::before{
+            content: "비포입니다";
+            width: 100px;
+            height: 50px;
+            background-color: #ff0;
+            display: block;
+        }
+        .box::after{
+            content: "애프터이지롱";
+            width: 100px;
+            height: 50px;
+            background-color: #0ff;
+            display: block;
+        }
+
+        .aaa:hover::before{
+            content: "hover 비포입니다";
+            width: 100px;
+            height: 50px;
+            background-color: #ff0;
+            display: block;
+        }
+        .aaa:hover::after{
+            content: "hover after입니다";
+            width: 100px;
+            height: 50px;
+            background-image: url(../fff/family16.JPG);
+            background-size: 100px 50px;
+            display: block;
+        }
+
+        .bbb::before{
+            /* content: url(../fff/family14.JPG); 이미지 크기 조정 불가 */
+            content: url(../example/img/small01.jpg);
+            width: 100px;
+            height: 50px;
+            display: block;
+        }
+
+        .ddd{
+           /* 증가변수 : 변수명  변수초기값*/
+            counter-reset: zxcv 5; 
+        }
+        .ddd > p::before{
+            /*증가변수 1씩증가*/
+            counter-increment: zxcv;
+            /*내용 : 증가변수(변수명) */
+            content: counter(zxcv) "번 ";
+        }
+
+        .ccc{
+           /* 증가변수 : 변수명  변수초기값*/
+            counter-reset: qwer 5; 
+        }
+        .ccc > p::before{
+            /*증가변수 10씩증가*/
+            counter-increment: qwer 10;
+            /*내용 : 증가변수(변수명) */
+            content: counter(qwer) "번 ";
+        }
+        .eee > p::before{
+            content: attr(ttt-data) " => ";
+        }
+
+        .fff{
+            margin-left: 100px;
+        }
+
+        li::marker{
+            content: "❤️❤️";
+        }
+
+
+    </style>
+</head>
+<body>
+    <h1>12_virtual</h1>
+    <div class="box">난 box</div>
+    <div class="aaa">난 aaa</div>
+    <div class="bbb">난 bbb</div>
+    <div class="ccc">
+        <p>내용</p>
+        <p>내용</p>
+        <p>내용</p>
+    </div>
+    <div class="ddd">
+        <p>문단</p>
+        <p>문단</p>
+        <p>문단</p>
+    </div>
+    <div class="eee">
+        <p ttt-data="1st">금메달</p>
+        <p ttt-data="2nd">은메달</p>
+        <p ttt-data="3rd">동메달</p>
+    </div>
+    <ul class="fff">
+        <li>오징어</li>
+        <li>육징어</li>
+        <li>칠징어</li>   
+    </ul>
+</body>
+</html>
