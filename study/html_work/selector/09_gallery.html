@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>09_gallery</title>
+    <style>
+        *{
+            padding:0;
+            margin: 0;
+        }
+        .wrapper{
+            width: 588px;
+            height: 350px;
+            padding: 5px;
+            margin: auto;
+            border: 1px solid #ccc;
+            background: #88a;
+        }
+        .wrapper > div:first-child{
+            width: 122px;
+            height: 328px;
+            padding: 5px;
+            margin: 5px;
+           
+            float: left;
+        }
+        
+
+        .wrapper > div:last-child{
+            width: 422px;
+            height: 322px;
+            padding: 5px;
+            margin: 5px;
+            border: 1px solid #ccc;
+            float: left;
+        }
+
+        label>img{
+            width: 100px;
+            height: 60px;
+            padding: 5px;
+            margin: 5px;
+            border: 1px solid #ccc;
+            display: block;
+        }
+
+        label>img:hover{
+            border: 1px solid #f00;          
+        }
+
+        input + img{
+            width: 400px;
+            height: 300px;
+            padding: 5px;
+            margin: 5px;
+            opacity: 0;
+            position: absolute;
+            transition-duration: 0.5s;
+        }
+        input{
+            display: none;
+        }
+        input:checked + img{
+            
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <h1>09_gallery</h1>
+    <div class="wrapper">
+        <div>
+            <label for="c1"><img src="../fff/family1.JPG" alt=""></label>
+            <label for="c2"><img src="../fff/family2.JPG" alt=""></label>
+            <label for="c3"><img src="../fff/family3.JPG" alt=""></label>
+            <label for="c4"><img src="../fff/family4.JPG" alt=""></label>
+        </div>
+        <div>
+            <input type="radio" id="c1" name="big" checked>
+            <img src="../fff/family1.JPG" alt="">
+            <input type="radio" id="c2" name="big">
+            <img src="../fff/family2.JPG" alt="">
+            <input type="radio" id="c3" name="big">
+            <img src="../fff/family3.JPG" alt="">
+            <input type="radio" id="c4" name="big">
+            <img src="../fff/family4.JPG" alt="">
+        </div>
+    </div>
+</body>
+</html>
+<!-- 10_gallery2.html -->
