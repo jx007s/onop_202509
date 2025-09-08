@@ -61,6 +61,20 @@
         #mmdd:checked ~ input[name="mail3"]{
             display: inline-block;
         }
+
+       
+
+        #mmddImg{
+            width: 30px;
+            height: 30px;
+            background-image: url(../example/btn/off.png);
+            background-size: 30px 30px;
+            display: inline-block;
+        }
+
+        #mmdd:checked ~ label > #mmddImg{
+            background-image: url(../example/btn/on.png);
+        }
     </style>
 </head>
 <body>
@@ -114,8 +128,7 @@
                 </select>
                 <input type="text" name="mail3">
 
-                
-                <label for="mmdd">직접입력</label>
+                <label for="mmdd"><div id="mmddImg"></div>직접입력</label>
         </fieldset>
         <fieldset>
             <legend>전화번호</legend>
