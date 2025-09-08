@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>08_status</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .piano > div{
+            width: 50px;
+            height: 50px;
+            transition-duration: 0.5s;
+        }
+         .piano > div:hover{
+            width: 300px;
+         }
+        .piano > div:nth-child(1){ background-color: #f00; }
+        .piano > div:nth-child(2){ background-color: #fa0; }
+        .piano > div:nth-child(3){ background-color: #ff0; }
+        .piano > div:nth-child(4){ background-color: #0f0; }
+        .piano > div:nth-child(5){ background-color: #00f; }
+        .piano > div:nth-child(6){ background-color: #30a; }
+        .piano > div:nth-child(7){ background-color: #f0f; }
+
+        fieldset{
+            width: 600px;
+            height: 50px;
+            margin: 5px;
+        }
+        input:focus{ /* 반응선택자 - 커서가 위치 */
+            background-color: #ff0;
+        }
+        input:hover{
+            background-color: #0ff;
+        }
+        input:read-only{
+            text-decoration: line-through;
+        }
+        input:disabled{
+            color: #00f;
+        }
+        input{
+            /* border: none; */
+        }
+        input:checked{
+            width: 30px;
+        }
+        input[name="gender"]:checked{
+            height: 40px;
+        }
+
+        #mmdd:checked ~ select[name="mail2"]{
+            display: none;
+        }
+        input[name="mail3"]{
+            display: none;
+        }
+        #mmdd:checked ~ input[name="mail3"]{
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <h1>08_status</h1>
+    <div class="piano">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <form action="">
+        <fieldset>
+            <legend>아이디</legend>
+            <label><input type="text" name="pid"></label>
+        </fieldset>
+        <fieldset>
+            <legend>이름</legend>
+            <!-- readonly 수정불가하나 전송 -->
+            <label><input type="text" readonly name="pname" value="정우성"></label>
+        </fieldset>
+        <fieldset>
+            <legend>별명</legend>
+            <!-- disabled 수정불가, 전송하지 않음 -->
+            <label><input type="text" disabled name="nick" value="잘생김"></label>
+        </fieldset>
+        <fieldset>
+            <legend>취미</legend>
+            <label><input type="checkbox" name="hobby" value="cycle">자전거</label>
+            <label><input type="checkbox" name="hobby" value="reading">독서</label>
+            <label><input type="checkbox" name="hobby" value="movie">영화</label>
+        </fieldset>
+        <fieldset>
+            <legend>성별</legend>
+            <label><input type="radio" name="gender" value="m">남</label>
+            <label><input type="radio" name="gender" value="f">여</label>
+            <label><input type="radio" name="gender" value="it">it인</label>
+        </fieldset>
+        <fieldset>
+            <legend>이메일</legend>
+            <input type="text" name="mail1">@
+                <input type="checkbox" id="mmdd" hidden>
+                <select name="mail2" id="">
+                    <option value="google.com">구글</option>
+                    <option value="naver.com">네이버</option>
+                    <option value="daum.net">다음</option>
+                    <option value="nate.com">네이트</option>
+                </select>
+                <input type="text" name="mail3">
+
+                
+                <label for="mmdd">직접입력</label>
+        </fieldset>
+        <fieldset>
+            <legend>전화번호</legend>
+            <label><input type="text" name="tel"></label>
+        </fieldset>
+        <fieldset>
+            <input type="submit" value="가입">
+            <input type="reset" value="초기화">
+        </fieldset>
+    </form>
+</body>
+</html>
