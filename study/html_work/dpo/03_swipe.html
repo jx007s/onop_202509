@@ -58,6 +58,60 @@
         .wrapper3>input:nth-of-type(5):checked ~ div{
             margin-left: -800px;
         }
+        .wwrr{
+            width: 200px;
+            height: 180px;
+            border: 3px solid #f00;
+            margin: auto;
+            
+        }
+
+        .wrapper4{
+            width: 200px;
+            height: 150px;
+            /* border: 3px solid #f00; */
+            overflow: hidden;
+        }
+        .wrapper4> div{
+            width: 200px;
+            height: 750px;
+            background-color: #ff0;
+            transition-duration: 0.5s;
+        }
+
+        .wwrr>input:nth-of-type(2):checked ~ .wrapper4>div{
+            margin-top: -150px;
+        }
+        .wwrr>input:nth-of-type(3):checked ~ .wrapper4>div{
+            margin-top: -300px;
+        }
+        .wwrr>input:nth-of-type(4):checked ~ .wrapper4>div{
+            margin-top: -450px;
+        }
+        .wwrr>input:nth-of-type(5):checked ~ .wrapper4>div{
+            margin-top: -600px;
+        }
+        .wwrr>div>label{
+            background-color: #ff0;
+        }
+        .wwrr>div>label:hover{
+            background-color: #f00;
+        }
+        .wwrr>input:nth-of-type(1):checked ~ div>label[for="no1"]{
+            background-color: #0f0;
+        }
+        .wwrr>input:nth-of-type(2):checked ~ div>label[for="no2"]{
+            background-color: #0f0;
+        }
+        .wwrr>input:nth-of-type(3):checked ~ div>label[for="no3"]{
+            background-color: #0f0;
+        }
+        .wwrr>input:nth-of-type(4):checked ~ div>label[for="no4"]{
+            background-color: #0f0;
+        }
+        .wwrr>input:nth-of-type(5):checked ~ div>label[for="no5"]{
+            background-color: #0f0;
+        }
     </style>
 </head>
 <body>
@@ -96,5 +150,31 @@
         </div>
         
     </div>
+    <div class="wwrr">
+        <input type="radio" name="no" id="no1" hidden checked>
+        <input type="radio" name="no" id="no2" hidden>
+        <input type="radio" name="no" id="no3" hidden>
+        <input type="radio" name="no" id="no4" hidden>
+        <input type="radio" name="no" id="no5" hidden>
+        <div class="wrapper4">    
+            <div>
+                <img src="../fff/family11.JPG" alt="">
+                <img src="../fff/family12.JPG" alt="">
+                <img src="../fff/family13.JPG" alt="">
+                <img src="../fff/family14.JPG" alt="">
+                <img src="../fff/family15.JPG" alt="">
+            </div>
+        </div>
+        <div>
+            <label for="no1">1</label>
+            <label for="no2">2</label>
+            <label for="no3">3</label>
+            <label for="no4">4</label>
+            <label for="no5">5</label>
+        </div>
+    </div>
+    
+
+
 </body>
 </html>
