@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01_display</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div, span, img{
+            width: 100px;
+            height: 30px;
+            background-color: #ff0;
+            /* margin: 5px; */
+        }
+        .bb{
+            display: block;
+            /* float: left; */
+        }
+        .ss{
+            display: inline;
+        }
+        .nn{
+            display: none; /* 공간과 위치를 차지하지 않음*/
+        }
+        .hh{
+            visibility: hidden;/* 공간과 위치를 차지하고 보이지 않음*/
+        }
+
+        .tb{
+            width: 800px;
+            height: 600px;
+            background-color: #0f0;
+            display: table;
+        }
+        .row{
+            /*
+            width: 700px;   의미 없음 - 테이블에 맞춰서 보임
+            height: 100px;
+            */
+            background-color: #0ff;
+            display: table-row;
+        }
+        .cell{
+            /*width: 100px;  의미 없음 - 테이블에 맞춰서 보임
+            height: 60px; */
+            background-color: #f0f;
+            display: table-cell;
+            text-align: center;
+            vertical-align: middle;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <h1>01_display</h1>
+    <h2>block</h2>
+    <div>div1</div>
+    <div class="bb">div2</div>
+    <span class="bb">span3</span> 
+    <img class="bb" src="../fff/family1.JPG" alt="">
+    <img  class="bb" src="../fff/family2.JPG" alt="">
+    <div>div4</div> 
+
+    <h2>span</h2>
+    <span>span5</span>
+    <span class="ss">span6</span>
+    <div class="ss">div7</div> 
+    <img class="ss" src="../fff/family1.JPG" alt="">
+    <img class="ss" src="../fff/family3.JPG" alt="">
+    <div class="ss">div8</div>
+    
+    <h2>none</h2>
+    <div>div9</div>
+    <div class="nn">div10</div>
+    <span class="nn">span11</span> 
+    <img class="nn" src="../fff/family1.JPG" alt="">
+    <div>div12</div>
+
+    <h2>hidden</h2>
+    <div>div13</div>
+    <div class="hh">div114</div>
+    <span class="hh">span15</span> 
+    <img class="hh" src="../fff/family1.JPG" alt="">
+    <div>div16</div>
+
+    <h2>table</h2>
+    <div class="tb">
+        <div class="row">
+            <div class="cell">1</div>
+            <div class="cell">2</div>
+            <div class="cell">3</div>
+        </div>
+        <div class="row">
+            <div class="cell">4</div>
+            <div class="cell">5</div>
+            <div class="cell">6</div>
+        </div>
+    </div>
+</body>
+</html>

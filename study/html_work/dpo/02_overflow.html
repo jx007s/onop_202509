@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02_overflow</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 200px;
+            height: 200px;
+            border: 3px solid #f00;
+            margin: 50px;
+        }
+        img{
+            width: 300px;
+        }
+        div:nth-of-type(2){
+            overflow: hidden;
+        }
+        div:nth-of-type(3){
+            overflow: scroll;
+        }
+        div:nth-of-type(4){
+            overflow: visible;  /* 기본값 */
+        }
+        div:nth-of-type(5),div:nth-of-type(6),div:nth-of-type(7){
+            overflow: auto; /* over 된 방향으로 scroll 생성 */
+        }
+        div:nth-of-type(6) > img{
+            width: 400px;
+            height: 100px;
+        }
+        div:nth-of-type(7) > img{
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1>02_overflow</h1>
+    <div><img src="../fff/family6.JPG" alt=""></div>
+    <div><img src="../fff/family6.JPG" alt=""></div>
+    <div><img src="../fff/family6.JPG" alt=""></div>
+    <div><img src="../fff/family6.JPG" alt=""></div>
+    <div><img src="../fff/family6.JPG" alt=""></div>
+    <div><img src="../fff/family6.JPG" alt=""></div>
+    <div><img src="../fff/family6.JPG" alt=""></div>
+</body>
+</html>

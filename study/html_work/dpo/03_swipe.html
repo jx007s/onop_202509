@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03_swipe</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        img{
+            width: 200px;
+            height: 150px;
+            display: block;
+            float: left;
+        }
+        .wrapper > div, .wrapper3 > div{
+            width: 1000px;
+            height: 150px;
+            background-color: #ff0;
+        }
+
+        .wrapper{
+            width: 200px;
+            height: 170px;
+            border: 3px solid #f00;
+            overflow: auto;
+        }
+
+        .wrapper2{
+            width: 220px;
+            height: 150px;
+            border: 3px solid #f00;
+            overflow: auto;
+        }
+
+        .wrapper3{
+            width: 200px;
+            height: 180px;
+            border: 3px solid #f00;
+            margin: auto;
+            overflow: hidden;
+        }
+        .wrapper3> div{
+            transition-duration: 0.5s;
+        }
+
+        .wrapper3>input:nth-of-type(2):checked ~ div{
+            margin-left: -200px;
+        }
+        .wrapper3>input:nth-of-type(3):checked ~ div{
+            margin-left: -400px;
+        }
+        .wrapper3>input:nth-of-type(4):checked ~ div{
+            margin-left: -600px;
+        }
+        .wrapper3>input:nth-of-type(5):checked ~ div{
+            margin-left: -800px;
+        }
+    </style>
+</head>
+<body>
+    <h1>03_swipe</h1>
+    <div class="wrapper">
+        <div>
+            <img src="../fff/family11.JPG" alt="">
+            <img src="../fff/family12.JPG" alt="">
+            <img src="../fff/family13.JPG" alt="">
+            <img src="../fff/family14.JPG" alt="">
+            <img src="../fff/family15.JPG" alt="">
+        </div>
+    </div>
+
+    <div class="wrapper2">
+        <img src="../fff/family11.JPG" alt="">
+        <img src="../fff/family12.JPG" alt="">
+        <img src="../fff/family13.JPG" alt="">
+        <img src="../fff/family14.JPG" alt="">
+        <img src="../fff/family15.JPG" alt="">
+        
+    </div>
+
+    <div class="wrapper3">
+            <input type="radio" name="no">
+            <input type="radio" name="no">
+            <input type="radio" name="no">
+            <input type="radio" name="no">
+            <input type="radio" name="no">
+        <div>
+            <img src="../fff/family11.JPG" alt="">
+            <img src="../fff/family12.JPG" alt="">
+            <img src="../fff/family13.JPG" alt="">
+            <img src="../fff/family14.JPG" alt="">
+            <img src="../fff/family15.JPG" alt="">
+        </div>
+        
+    </div>
+</body>
+</html>

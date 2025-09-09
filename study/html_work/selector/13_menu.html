@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>13_menu</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            width: 200px;
+        }
+        li{
+            list-style: none;
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            line-height: 40px;
+            border-bottom: 1px solid #888;
+            font-weight: 900;
+        }
+
+        li > ul > li{
+            list-style: none;
+            background-color: #aaa;
+            color: #222;
+            text-align: center;
+            line-height: 30px;
+            border-bottom: 1px solid #555;
+            font-size: 12px;
+            font-weight: 900;
+            transition-duration: 0.5s;
+            display: none;
+        }
+
+        li > ul{
+            height: 0px;
+            transition-duration: 0.5s;
+            overflow: hidden;
+        }
+
+        li:hover > ul{
+            height: 124px;
+            
+        }
+
+        li:hover > ul > li{
+            
+            display: block;
+        }
+
+        li > ul > li:hover{
+            
+            background-color: #f00;
+            color: #ff0;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>13_menu</h1>
+    <ul>
+        <li>메뉴1
+            <ul>
+                <li>sub_1_1</li>
+                <li>sub_1_2</li>
+                <li>sub_1_3</li>
+                <li>sub_1_4</li>
+            </ul>
+        </li>
+        <li>
+            메뉴2
+            <ul>
+                <li>sub_2_1</li>
+                <li>sub_2_2</li>
+                <li>sub_2_3</li>
+                <li>sub_2_4</li>
+            </ul>
+        </li>
+        <li>메뉴3
+            <ul>
+                <li>sub_3_1</li>
+                <li>sub_3_2</li>
+                <li>sub_3_3</li>
+                <li>sub_3_4</li>
+            </ul>
+        </li>
+    </ul>
+</body>
+</html>
