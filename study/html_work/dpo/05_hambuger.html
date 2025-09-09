@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>05_hambuger</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #aside{
+            position: relative;
+            left:0px;
+            top:0px;
+            width: 36px;
+            height: 36px;
+            transition-duration: 0.5s;
+        }
+        .hamburg{
+           
+            position: relative;
+            padding-top: 5px;
+            width: 36px;
+            height: 31px;
+            background-color: #ccc;
+        }
+
+        .hamburg > div{
+
+            position: relative;
+            height: 2px;
+            width: 20px;
+            background-color: #333;
+            border-radius: 1px;
+            margin: 5px;
+        }
+        #aside > ul{
+            position: relative;
+            left:-400px;
+            top:0px;
+            width: 100px;
+            background-color: #aaf;
+            transition-duration: 1s;
+        }
+        #aside:hover > ul{
+            left:0px;
+        }
+        #aside > ul > li{
+            position: relative;
+            list-style: none;
+            width: 100px;
+            height: 40px;
+            line-height: 40px;
+            background-color: #aaf;
+           
+        }
+        #aside > ul > li > ul {
+            left:-400px;
+            top:0px;
+            position: absolute;
+            width: 400px;
+            transition-duration: 0.5s;
+        }
+        #aside > ul > li:hover > ul {
+            left:70px;
+        }
+         #aside > ul > li > ul > li{
+            
+            list-style: none;
+            width: 100px;
+            height: 40px;
+            line-height: 40px;
+            background-color: #f0f;
+            float: left;     
+        }
+
+    </style>
+</head>
+<body>
+    <h1>05_hambuger</h1>
+    <div id="aside">
+        <div class="hamburg">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <ul>
+            <li>메뉴1
+                <ul>
+                    <li>sub_1_1</li>
+                    <li>sub_1_2</li>
+                    <li>sub_1_3</li>
+                    <li>sub_1_4</li>
+                </ul>
+            </li>
+            <li>메뉴2
+                <ul>
+                    <li>sub_2_1</li>
+                    <li>sub_2_2</li>
+                    <li>sub_2_3</li>
+                    <li>sub_2_4</li>
+                </ul>
+            </li>
+            <li>메뉴3
+                <ul>
+                    <li>sub_3_1</li>
+                    <li>sub_3_2</li>
+                    <li>sub_3_3</li>
+                    <li>sub_3_4</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

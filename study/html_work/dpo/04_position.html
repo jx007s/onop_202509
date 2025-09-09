@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>04_position</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .wrapper{
+            width: 600px;
+            height: 500px;
+            background-color: #ff0;
+            margin: 10px;
+            float: left;
+            position: relative;
+        }
+        .wrapper > div{
+            width: 100px;
+            height: 50px;
+            background-color: #0f0;
+            border: 1px solid #ccc;
+            
+        }
+
+        .wrapper:nth-of-type(1) > div{
+            position: static;
+        }
+        .wrapper:nth-of-type(2) > div{
+            position: relative;
+        }
+        .wrapper:nth-of-type(3) > div{
+            position: absolute;
+            
+        }
+
+        .wrapper > div:nth-child(2){
+            left: 30px;
+            top: 50px;
+        }
+
+        .wrapper:nth-of-type(3) > div:nth-child(3){
+            left: 0px;
+            top: 150px;
+            transition-duration: 0.5s;
+        }
+
+        .wrapper:nth-of-type(3):hover > div:nth-child(3){
+            left: 300px;
+            top: 400px;
+        }
+    </style>
+</head>
+<body>
+    <h1>04_position</h1>
+    <div class="wrapper">
+        <div>스태틱1</div>
+        <div>스태틱2</div>
+        <div>스태틱3</div>
+    </div>
+
+    <div class="wrapper">
+        <div>relative 1</div>
+        <div>relative 2</div>
+        <div>relative 3</div>
+    </div>
+
+    <div class="wrapper">
+        <div>absolute 1</div>
+        <div>absolute 2</div>
+        <div>absolute 3</div>
+    </div>
+
+
+</body>
+</html>
