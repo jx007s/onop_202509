@@ -150,7 +150,7 @@
             top : 50px;  
         }
 
-        .shadow > div{
+        .shadow > div, .sizing > div{
             background-color: #fff;
         }
 
@@ -195,11 +195,49 @@
                         -20px 20px 0px #f0f,
                         20px 20px 0px #00f;
         }
-        /* 
-                빨   주    노
-                검   흰    초        
-                보   남    파
-            */
+        .shadow > div:nth-child(7){
+                     
+            box-shadow:inset 5px 5px 10px #333;
+        }
+
+        .sizing > div:nth-child(1){
+                     
+            border: 20px solid #f00;
+        }
+
+        .sizing > div:nth-child(2){
+            box-sizing: border-box; /* border, padding 을 content(width, height) 
+                                        안에서 설정
+                                        margin 은 border-box에서 넣지 않는다
+                                        */                    
+            border: 20px solid #f00;
+        }
+
+        .sizing > div:nth-child(3){
+            box-sizing: content-box; /*기본값*/                    
+            border: 20px solid #f00;
+        }
+
+        .sizing > div:nth-child(4){
+                     
+            padding: 20px;
+        }
+
+        .sizing > div:nth-child(5){
+            box-sizing: border-box;                     
+            padding: 20px;
+        }
+
+        .sizing > div:nth-child(6){
+            border: 20px solid #f00;         
+            padding: 20px;
+        }
+
+        .sizing > div:nth-child(7){
+            box-sizing: border-box; 
+            border: 20px solid #f00;                    
+            padding: 20px;
+        }
     </style>
 </head>
 <body>
@@ -233,6 +271,17 @@
         <div></div>
         <div></div>
         <div></div>
+    </div>
+
+    <h2>sizing</h2> 
+    <div class="wrapper sizing">
+        <div>내용1</div>
+        <div>내용2</div>
+        <div>내용3</div>
+        <div>내용4</div>
+        <div>내용5</div>
+        <div>내용6</div>
+        <div>내용7</div>
     </div>
 </body>
 </html>
