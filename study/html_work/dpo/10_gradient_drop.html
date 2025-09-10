@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10_gradient_drop</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .wrapper{
+            width: 1200px;
+            height: 300px;
+            border: 1px solid #ccc;
+            background-image: url('../fff/family9.JPG');
+            background-position: -50px -200px;
+            margin: 10px;
+            position: relative;
+        }
+        .wrapper > div{
+            margin: 20px;
+            width: 100px;
+            height: 100px;
+            border: 1px solid #ccc;
+            float: left;
+        }
+        .grad > div:nth-child(1){
+            
+            background: linear-gradient(
+             to right, 
+             #fcecfc 0%,
+             #fba6e1 50%,
+             #fd89d7 51%,
+             #ff7cd8 100%); 
+
+        }
+        .grad > div:nth-child(2){
+            background: linear-gradient(
+                to bottom, 
+                #fcecfc 0%,#fba6e1 50%,#fd89d7 51%,#ff7cd8 100%);
+
+        }
+
+        .grad > div:nth-child(3){
+            background: linear-gradient(
+                60deg, 
+            #fcecfc 0%,#fba6e1 50%,#fd89d7 51%,#ff7cd8 100%); 
+
+        }
+        .grad > div:nth-child(4){
+            background: radial-gradient(
+                ellipse at center, 
+                #fcecfc 0%,#fba6e1 50%,#fd89d7 51%,#ff7cd8 100%); 
+
+        }
+        .grad > div:nth-child(5){
+           background: linear-gradient(
+            45deg,
+             #ff0000 0%,
+             #ffa500 21%,
+             #f6ff00 34%,
+             #00ff21 48%,
+             #0000ff 68%,
+             #5f0cb7 83%,
+             #ff7cf6 100%); 
+
+        }
+
+        .grad > div:nth-child(6){
+            background: linear-gradient(
+                45deg, 
+                #ff0000 0%,#ff0000 23%,
+                #f6ff00 23%,#f6ff00 68%,
+                #0000ff 68%,#0000ff 100%); 
+
+        }
+        .grad > div:nth-child(7){
+            background: linear-gradient(
+                45deg, 
+                rgba(255,0,0,0) 0%,
+                rgba(255,148,0,0.28) 28%,
+                rgba(246,255,0,0.51) 51%,
+                rgba(4,255,0,0.75) 75%,
+                rgba(0,0,255,1) 100%);  
+        }
+
+        .grad > div:nth-child(8){
+            background: linear-gradient(45deg, 
+            rgba(255,0,0,1) 0%,
+            rgba(255,63,0,1) 12%,
+            rgba(255,95,0,0) 18%,
+            rgba(255,127,0,0) 24%,
+            rgba(255,148,0,1) 28%,
+            rgba(251,195,0,1) 38%,
+            rgba(249,218,0,0) 43%,
+            rgba(246,250,0,0) 50%,
+            rgba(246,255,0,0.2) 51%,
+            rgba(206,255,0,1) 55%,
+            rgba(125,255,0,1) 63%,
+            rgba(75,255,0,0) 68%,
+            rgba(4,255,0,0) 75%,
+            rgba(4,245,10,1) 76%,
+            rgba(3,163,92,1) 84%,
+            rgba(3,143,112,0) 86%,
+            rgba(2,82,173,0) 92%,
+            rgba(1,51,204,1) 95%,
+            rgba(0,0,255,1) 100%);  
+        }
+        .wrapper > .scope{
+            position: absolute;
+            left: 470px;
+            top:150px;
+            border-radius: 50px;
+            background-image: url('../fff/family9.JPG');
+            background-position: -720px -550px;
+            background-size: 2000px 2000px;
+        }
+        .wrapper > .scope > div{
+            position: relative;
+            border-radius: 50px;
+            background: radial-gradient(ellipse at center, rgba(255,0,0,1) 0%,rgba(231,25,0,0) 4%,rgba(29,230,0,0) 37%,rgba(23,236,0,1) 38%,rgba(4,255,0,1) 41%,rgba(4,246,9,1) 43%,rgba(4,242,13,0) 44%,rgba(1,56,199,0) 87%,rgba(1,47,208,1) 89%,rgba(0,9,246,1) 98%,rgba(0,0,255,1) 100%);
+            width: 100px;
+            height: 100px;
+            
+        }
+        .wrapper > .scope > div > div{
+            width: 30px;
+            height: 1px;
+            background-color: #888;
+            position: absolute;
+        }
+
+        .wrapper > .scope > div > div:nth-child(1){
+            left : 35px;
+            top : 25px;
+            transform: rotate(90deg);
+        }
+        .wrapper > .scope > div > div:nth-child(2){
+            left : 35px;
+            top : 75px;
+            transform: rotate(90deg);
+        }
+        .wrapper > .scope > div > div:nth-child(3){
+            left : 5px;
+            top : 50px;  
+        }
+        .wrapper > .scope > div > div:nth-child(4){
+            right : 5px;
+            top : 50px;  
+        }
+    </style>
+</head>
+<body>
+    <h1>10_gradient_drop</h1>
+    <h2>gradient</h2>
+    <div class="wrapper grad">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div class="scope"><div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div></div>
+</body>
+</html>
