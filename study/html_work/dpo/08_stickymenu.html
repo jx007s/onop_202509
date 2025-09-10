@@ -12,11 +12,12 @@
         .header{
             width: 100%;
             height: 50px;
-            background-color: #84e;
-            border-radius: 0px 0px 20px 20px;
-            position: absolute;
+            background-color: rgba(100, 0, 255, 0.5);
+            padding-top: 20px;
+            border-radius: 20px;
+            position: sticky;
             left: 0px;
-            top:0px;
+            top:-20px;
             overflow: hidden;
             color: #fff;
             font-size: 16px;
@@ -27,7 +28,7 @@
         }
         .header > ul{
             position: absolute;
-            top: 50px;
+            top: 80px;
         }
         .header > ul > li{
             list-style: none;
@@ -39,8 +40,19 @@
             margin: 0px 50px;
         }
         h1{
-            position: absolute;
-            top: 200px;
+            position: relative;
+            top: 0px;
+            width: 100%;
+            height: 400px;
+            line-height: 400px;
+            background-color: #f0f;
+        }
+        .wrapper{
+            position: relative;
+            width: 100%;
+            height: 5000px;
+            left: 0px;
+            top:0px;
         }
 
         .header > .hamburg{
@@ -51,7 +63,7 @@
             border-radius: 22px;
             position: absolute;
             right: 50px;
-            top:5px;
+            top:25px;
             transition-duration: 0.5s;
         }
         .header > .hamburg:hover{
@@ -85,7 +97,7 @@
 
     <h1>08_stickymenu</h1>
 
-    <div class="wrapper"></div>
+    <div class="wrapper">
     <div class="header">top menu 입니다
         <div class="hamburg">
             <div></div>
@@ -93,10 +105,10 @@
             <div></div>
         </div>
         <ul>
-            <li><a href="">상품상세정보</a></li>
-            <li><a href="">배송관련</a></li>
-            <li><a href="">후기</a></li>
-            <li><a href="">회사정보</a></li>
+            <li><a href="#aa">멸공의횃불</a></li>
+            <li><a href="#bb">골든</a></li>
+            <li><a href="#cc">소다팝</a></li>
+            <li><a href="#dd">로보카폴리</a></li>
         </ul>
     </div>
     
@@ -275,7 +287,7 @@ Gotta drink every drop
 
 힘차게 불러봐요 로보카 폴리  
     </div>
-
+</div>
 
 </body>
 </html>
