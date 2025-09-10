@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>09_z_index</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            position: absolute;
+        }
+        .b1{
+            left: 100px;
+            top: 100px;
+            background-color: #f00;
+            z-index: 1;
+        }
+        .b2{
+            left: 120px;
+            top: 120px;
+            background-color: #ff0;
+            z-index: 1;
+        }
+        .b3{
+            left: 140px;
+            top: 140px;
+            background-color: #0f0;
+             z-index: -1;
+        }
+        .wrapper{
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border: 1px solid #333;
+        }
+        .big1{
+            left:50px;
+            top:300px;
+            z-index: 30;
+        }
+        .big2{
+            left:350px;
+            top:300px;
+            z-index: 10;
+        }
+        .big3{
+            left:650px;
+            top:300px;
+            z-index: 20;
+        }
+        .wr11{
+            left: 10px;
+            top: 10px;
+            background-color: #f00;
+             z-index: 2;
+        }
+        .wr12{
+            left: 360px;
+            top: 30px;
+            background-color: #f0f;
+             z-index: -100;
+        }
+        .wr13{
+            left: 50px;
+            top: 50px;
+            background-color: #0f0;
+             z-index: -1;
+        }
+
+        .wr21{
+            left: 10px;
+            top: 10px;
+            background-color: #f00;
+             z-index: 2;
+        }
+        .wr22{
+            left: 30px;
+            top: 30px;
+            background-color: #ff0;
+             z-index: 0;
+        }
+        .wr23{
+            left: 50px;
+            top: 50px;
+            background-color: #0f0;
+             z-index: -1;
+        }
+
+        .wr31{
+            left: 10px;
+            top: 10px;
+            background-color: #f00;
+             z-index: 2;
+        }
+        .wr32{
+            left: 30px;
+            top: 30px;
+            background-color: #ff0;
+             z-index: 0;
+        }
+        .wr33{
+            left: 50px;
+            top: 50px;
+            background-color: #0f0;
+             z-index: -1;
+        }
+    </style>
+</head>
+<body>
+    <h1>09_z_index</h1>
+    <div class="box b1">b1</div>
+    <div class="box b2">b2</div>
+    <div class="box b3">b3</div>
+
+    <div class="wrapper big1">
+        <div class="box wr11">1_1</div>
+        <div class="box wr12">1_2</div>
+        <div class="box wr13">1_3</div>
+    </div>
+
+    <div class="wrapper big2">
+        <div class="box wr21">2_1</div>
+        <div class="box wr22">2_2</div>
+        <div class="box wr23">2_3</div>
+    </div>
+
+    <div class="wrapper big3">
+        <div class="box wr31">3_1</div>
+        <div class="box wr32">3_2</div>
+        <div class="box wr33">3_3</div>
+    </div>
+
+</body>
+</html>
