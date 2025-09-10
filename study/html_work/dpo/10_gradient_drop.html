@@ -149,6 +149,57 @@
             right : 5px;
             top : 50px;  
         }
+
+        .shadow > div{
+            background-color: #fff;
+        }
+
+        .shadow > div:nth-child(1){
+                     /* left top blur   그림자색 */
+            box-shadow: 5px 5px 10px #333;
+        }
+
+        .shadow > div:nth-child(2){
+                     /* left top blur   그림자색 */
+            box-shadow: 20px 0px 0px #f00;
+        }
+
+        .shadow > div:nth-child(3){
+                     /* left top blur   그림자색 */
+            box-shadow: 30px 30px 40px #333;
+        }
+        .shadow > div:nth-child(4){
+                     /* left top blur   그림자색 */
+            box-shadow: 3px 3px 6px #333;
+        }
+         .shadow > div:nth-child(5){
+            /* 다중 설정 불가
+            box-shadow: 20px 0px 0px #f00;
+            box-shadow: 0px 20px 0px #ff0;
+            */
+
+            box-shadow: 20px 0px 0px #f00,
+                        0px 20px 0px #ff0,
+                        -20px 0px 0px #0f0,
+                        0px -20px 0px #00f;
+        }
+
+        .shadow > div:nth-child(6){
+
+            box-shadow: 0px -20px 0px #fa0,
+                        20px 0px 0px #0f0,
+                        0px 20px 0px #31a,
+                        -20px 0px 0px #000,
+                        -20px -20px 0px #f00,
+                        20px -20px 0px #ff0,
+                        -20px 20px 0px #f0f,
+                        20px 20px 0px #00f;
+        }
+        /* 
+                빨   주    노
+                검   흰    초        
+                보   남    파
+            */
     </style>
 </head>
 <body>
