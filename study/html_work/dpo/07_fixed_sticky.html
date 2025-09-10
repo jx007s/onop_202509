@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07_fixed_sticky</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 100px;
+            height: 100px;
+        }
+        div:nth-of-type(1){
+            background-color: #f0f;
+            position: absolute;
+            left: 100px;
+            top:300px;
+        }
+        div:nth-of-type(2){
+            background-color: #fa0;
+            position: fixed;
+            left: 200px;
+            top:300px;
+        }
+        div:nth-of-type(3){
+            background-color: #ff0;
+            position: sticky;
+            left: 300px;
+            top:300px;
+        }
+        div:nth-of-type(4){
+            background-color: #0f0;
+            position: static;
+            left: 400px;
+            top:300px;
+        }
+        div:nth-of-type(5){
+            background-color: #aaf;
+            width: 200px;
+            height: 2000px;
+        }
+        .wrapper{
+            background-color: #faf;
+            width: 1000px;
+            height: 2000px;
+        }
+        .wrapper > span{
+            display: block;
+            background-color: #00f;
+            width: 600px;
+            height: 1000px;
+            margin: 50px;
+        }
+
+        .wrapper > span > span{
+            display: block;
+            width: 100px;
+            height: 100px;
+            color: #fff;
+        }
+
+        .wrapper > span > span:nth-of-type(1){
+            position: sticky;
+            left: 600px;
+            top: 100px;
+            background-color: #555;
+            
+        }
+        .wrapper > span > span:nth-of-type(2){
+            position: fixed;
+            left: 700px;
+            top: 100px;
+            background-color: #aaa;
+            
+        }
+    </style>
+</head>
+<body>
+    <h1>07_fixed_sticky</h1>
+    <div>absolute</div>
+    <div>fixed</div>
+    <div>sticky</div>
+    <div>static</div>
+    <div></div>
+    <div class="wrapper">
+        <span>
+            <span>sticky2</span>
+            <span>fixed2</span>
+        </span>
+        <span></span>
+    </div>
+
+</body>
+</html>
