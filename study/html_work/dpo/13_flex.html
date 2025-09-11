@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>13_flex</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .wrapper{
+            width: 1200px;
+            height: 680px;
+            margin: 0px auto;
+            position: relative;
+           
+            font-size: 12px;
+            color: #555;
+        }
+        li{
+            list-style: none;
+        }
+        .section{
+            position: relative;
+            top:40px;
+            margin: 40px 0px;
+            height: 300px;
+            width: 100%;
+            
+            text-align: center;
+        }
+        .section > div:nth-child(2){
+            font-size: 16px;
+            margin: 5px;
+        }
+        .section > ul{
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .footer{
+            margin: 40px 0px;
+            height: 314px;
+            width: 100%;
+            background-color: #eee;
+            position: relative;
+        }
+
+        .footer > div{
+            
+            height: 100px;
+            width: 400px;
+            float: left;
+            
+            margin-top: 70px;
+            margin-left: 120px;
+            margin-right: 160px;
+        }
+        .footer > img{
+            position: absolute;
+            bottom: 0px;
+        }
+    </style>
+</head>
+<body>
+    <h1>13_flex</h1>
+    <div class="wrapper">
+        <div class="section">
+            <div>"WHAT'S FOR DINNER?"</div>
+            <div>FINALLY HAS<br/>AN EASY ANSWER</div>
+            <ul>
+                <li>
+                    <img src="../example/flex/icon1.png" alt="">
+                    <h4>Chef-Made Meals</h4>
+                    <br/>
+                    Our chef use fresh, seasonal<br/>
+                    ingredients to make affordable,<br/>
+                    tasty, nourishing meals.
+                </li>
+                <li>
+                    <img src="../example/flex/icon2.png" alt="">
+                    <h4>Chef-Made Meals</h4>
+                    <br/>
+                    Our chef use fresh, seasonal<br/>
+                    ingredients to make affordable,<br/>
+                    tasty, nourishing meals.
+                </li>
+                <li>
+                    <img src="../example/flex/icon3.png" alt="">
+                    <h4>Chef-Made Meals</h4>
+                    <br/>
+                    Our chef use fresh, seasonal<br/>
+                    ingredients to make affordable,<br/>
+                    tasty, nourishing meals.
+                </li>
+                <li>
+                    <img src="../example/flex/icon4.png" alt="">
+                    <h4>Chef-Made Meals</h4>
+                    <br/>
+                    Our chef use fresh, seasonal<br/>
+                    ingredients to make affordable,<br/>
+                    tasty, nourishing meals.
+                </li>
+            </ul>
+        </div>
+        <div class="footer">
+            <div>
+                <h2>MEET OUR CHEFS</h2>
+                <br/><br/>
+                    Munchery chefs come from top restaurant kitchens.
+                    They bring mad skills, tons of passion, and expretise
+                    in a delicious array of cuisines. They insit, as we do,
+                    on using only the freshest seasonal ingredints
+            </div>
+            <img src="../example/flex/human.png" alt="">
+        </div>
+    </div>
+</body>
+</html>
