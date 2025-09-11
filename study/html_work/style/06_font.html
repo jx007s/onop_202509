@@ -7,12 +7,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Gaegu&family=Nanum+Brush+Script&family=Sirivennela&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=delete" />
     <style>
         *{
             margin: 0;
             padding:0;
         }
-
+        html{
+            font-size: 10px;/* root */
+        }
 
         p:nth-of-type(1) {
             font-family: "Black Han Sans", sans-serif;
@@ -21,15 +24,17 @@
         }
 
         p:nth-of-type(2) {
-        font-family: "Nanum Brush Script", cursive;
-        font-weight: 400;
-        font-style: normal;
+            font-family: "Nanum Brush Script", cursive;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 2rem;
         }
 
         p:nth-of-type(3) {
             font-family: "Sirivennela", sans-serif;
             font-weight: 400;
             font-style: normal;
+            font-size: 0.5rem;
         }
         p:nth-of-type(4):lang(en) {
             font-family: "Sirivennela", sans-serif;
@@ -53,7 +58,35 @@
             font-weight: 400;
             font-style: normal;
         }
+        .big{ /*아이콘 폰트 변경*/
+            font-size: 60px;
+            color: #EA3323;
+        }
 
+        .wh50{
+            width: 50vw; /*   1vw =  화면너비의 1% : 
+                                    화면너비   1vw       ---> 50vw
+                                    1280px => 12.80px        640px
+
+                        */
+            height: 50vh;/*   1vh =  화면높이의 1% : 2048px => 20px */
+            background-color: #ff0;
+            margin: 5px;
+            font-size: 3vw;  /* 글자크기 : 화면너비의 3% */
+        }
+
+        .per50{
+            width: 50%; /* % : 부모의 크기를 비례한다. */
+            height: 200px;
+            background-color: #f0f;
+            margin: 5px;
+            font-size: 3vw;  /* 글자크기 : 화면너비의 3% */
+        }
+        .wrapper{
+            width: 700px; 
+            height: 900px;
+            background-color: #0ff;
+        }
     </style>
 </head>
 <body>
@@ -88,5 +121,19 @@
         日月火水木金土<br/>
         1234567890<br/>
     </p>
+    <span class="material-symbols-outlined">
+        delete
+    </span>
+    <span class="material-symbols-outlined big">
+        delete
+    </span>
+
+    <div class="wh50">장수풍뎅이와 사슴벌레</div>
+    <div class="per50">티라노와 브라키오</div>
+
+    <div class="wrapper">
+        <div class="wh50">나는무너 꿈을 꾸는 무너</div>
+        <div class="per50">나는 징어 잠을 깨는 징어</div>
+    </div>
 </body>
 </html>
