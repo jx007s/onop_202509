@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=q, initial-scale=1.0">
+    <title>11_stickybar</title>
+    <style>
+        *{
+            margin: 0;
+            padding:0;
+        }
+        .wrapper{
+            width: 500px;
+            height: 1300px;
+            background-color: #ff0;
+            position: absolute;
+            left: 50%; 
+            margin-left: -250px;
+            top:150px;
+        }
+        .nav{
+            position: fixed;
+            width: 500px;
+            height: 100px;
+            background-color: #f0f8; /*rgba*/
+            left: 50%; 
+            margin-left: -250px;
+            top:50px;
+            box-shadow: 10px 10px 20px #000a;
+            z-index: 1;
+        }
+        
+
+
+        .header{
+            width: 500px;
+            height: 100px;
+            background-color: #fa0;
+            position: relative;
+        }
+
+        .header > div:first-child{
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+            float: left;
+            font-size: 32px;
+        }
+
+        .header > div:last-child{
+            width: 250px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            float: right;
+            margin-top:50px;
+            background-color: #0f0;
+        }
+
+        .section{
+            width: 500px;
+            height: 1000px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .section > img{
+            width: 200px;
+            margin: 20px;
+        }
+        .footer{
+            width: 100%;
+            height: 200px;
+            background-color: #0f0;
+            position: relative;
+        }
+
+        .shortCut{
+            width: 50px;
+            height: 300px;
+            background-color: #fff;
+            position: fixed;
+            right: 50px;
+            top: 50%;
+            margin-top: -150px;
+            z-index: 1;
+            padding: 5px;
+            border: 5px double #f00;
+            border-radius: 10px;
+            box-shadow: 10px 10px 20px #000a;
+            counter-reset: num;
+        }
+        .shortCut > div{
+            width: 50px;
+            height: 67px;
+            margin: 10px 0px;
+            border-bottom:1px solid #999;
+        }
+
+        .shortCut > div::before{
+            position: absolute;
+            counter-increment: num;
+            content: counter(num);
+        }
+
+
+        .shortCut > div> img, .shortCut >   a{
+            width: 50px;
+            height: 50px;
+            display: block;
+            line-height: 50px;
+            text-align: center;
+        }
+        .shortCut >   a{
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-sizing: border-box;
+        }
+
+    </style>
+</head>
+<body>
+    <h1 id="top">11_stickybar</h1>
+    <div class="wrapper">
+        <div class="nav">난 메뉴바지롱</div>
+        <div class="shortCut">
+            <div><img src="../example/img/apple_image01.jpg" alt=""></div>
+            <div><img src="../example/img/apple_image02.jpg" alt=""></div>
+            <div><img src="../example/img/apple_image03.jpg" alt=""></div>
+            <a href="#top">top</a>
+        </div>
+        <div class="header">
+            <div>로고</div>
+            <div>로그인 | 마이페이지 | 회원가입</div>
+        </div>
+        <div class="section">
+            <img src="../fff/family9.JPG" alt="" align="left">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+             Dolorem vitae reiciendis repellat odio fuga optio ducimus ex ipsa similique, 
+             quam cupiditate placeat alias incidunt quod, neque accusantium nesciunt 
+             obcaecati nulla.
+             <img src="../fff/family9.JPG" alt="" align="left">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+             Dolorem vitae reiciendis repellat odio fuga optio ducimus ex ipsa similique, 
+             quam cupiditate placeat alias incidunt quod, neque accusantium nesciunt 
+             obcaecati nulla.
+             <img src="../fff/family9.JPG" alt="" align="left">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+             Dolorem vitae reiciendis repellat odio fuga optio ducimus ex ipsa similique, 
+             quam cupiditate placeat alias incidunt quod, neque accusantium nesciunt 
+             obcaecati nulla.
+             <img src="../fff/family9.JPG" alt="" align="left">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+             Dolorem vitae reiciendis repellat odio fuga optio ducimus ex ipsa similique, 
+             quam cupiditate placeat alias incidunt quod, neque accusantium nesciunt 
+             obcaecati nulla.
+             <img src="../fff/family9.JPG" alt="" align="left">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+             Dolorem vitae reiciendis repellat odio fuga optio ducimus ex ipsa similique, 
+             quam cupiditate placeat alias incidunt quod, neque accusantium nesciunt 
+             obcaecati nulla.
+        </div>
+        <div class="footer">푸터</div>
+    </div>
+</body>
+</html>
