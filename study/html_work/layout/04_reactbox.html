@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>04_reactbox</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        wrapper{
+            display: block;
+            width: 1080px;
+            height: 600px;
+            background-color: #ff0;
+            margin: auto;
+        }
+        header{
+            font-size: 5rem;
+            height: 100px;
+            width: 320px;
+            line-height: 100px;
+            background-color: #00f;
+            color:#fff;
+            margin: auto;
+            text-align: center;
+        }
+        section > div{ /* 220 * 120 */
+            font-size: 2rem;
+            height: 100px;
+            width: 200px;
+            line-height: 100px;
+            text-align: center;
+            border: 1px solid #f00;
+            float: left;
+            margin: 10px;
+            box-sizing: border-box;
+        }
+        section{
+            font-size: 2rem;
+            height: 240px;
+            width: 880px;
+            background-color: #ffc;
+            margin: 50px;
+            padding: 50px;
+        }
+       
+        @media screen and (max-width:1100px){
+
+            wrapper{
+               
+                width: 520px;
+                height: 660px;
+                background-color: #0ff;
+            }
+
+            section{
+                height: 480px;
+                width: 440px;
+                margin: 20px;
+                padding: 20px;
+            }
+        }
+
+        @media screen and (max-width:600px){
+            header{
+               width: 220px;
+            }
+
+            wrapper{
+               
+                width: 300px;
+                height: 1140px;
+                background-color: #f0f;
+            }
+
+            section{
+                height: 960px;
+                width: 220px;
+                margin: 20px;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>04_reactbox</h1>
+    <wrapper>
+        <header>로고</header>
+        <section>
+            <div>내용1</div>
+            <div>내용2</div>
+            <div>내용3</div>
+            <div>내용4</div>
+            <div>내용5</div>
+            <div>내용6</div>
+            <div>내용7</div>
+            <div>내용8</div>
+        </section>
+    </wrapper>
+</body>
+</html>
