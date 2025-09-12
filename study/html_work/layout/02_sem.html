@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02_sem</title>
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+        }
+        wrapper{
+            display: block;
+            width: 1024px;
+            height: 700px;
+            margin: 0 auto;
+        }
+        header,article, aside, footer{
+            margin: 10px;
+            border:2px solid #000;
+        }
+
+        header{
+            width: 1000px;
+            height: 100px;
+        }
+        header > h1{
+            width: 200px;
+            height: 100px;
+            line-height: 100px;
+            background-color: #ff0;
+            text-align: center;
+            float: left;
+        }
+
+        nav{
+            width: 320px;
+            height: 100px;
+            float: right;
+        }
+        li{
+            width: 80px;
+            height: 30px;
+            line-height: 30px;
+            background-color: #ff0;
+            text-align: right;
+            float: right;
+            list-style: none;
+        }
+
+        nav> ul:last-of-type>li{
+            background-color: #fa0;
+            margin-top: 40px; 
+        }
+
+        section{
+            width: 700px;
+            height: 480px;
+            float: left;
+        }
+        article{
+            padding:20px;
+        }
+        aside{
+            width: 220px;
+            height: 280px;
+            float: right;
+             padding:20px;
+        }
+
+        aside > div{
+            width: 200px;
+            height: 60px;
+            background-color: #888;
+        }
+
+        footer{
+            width: 960px;
+            height: 50px;
+            clear: both;
+            text-align: center;
+            padding:20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>02_sem</h1>
+    <wrapper>
+        <header>
+            <h1>WEB-logo</h1>
+            <nav>
+                <ul>
+                    <li>menu-1</li>
+                    <li>menu-1</li>
+                    <li>menu-1</li>
+                    <li>menu-1</li>
+                </ul>
+                <ul>
+                    <li>menu-2</li>
+                    <li>menu-2</li>
+                    <li>menu-2</li>
+                    <li>menu-2</li>
+                </ul>
+            </nav>
+        </header>
+        <section>
+            <article>
+                <h2>Main Article</h2>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+                    Consequatur atque, in explicabo dolores dolorum laudantium eius 
+                    iure odit et, hic alias aliquam molestias provident nemo qui ad nobis, 
+                    cum quidem.</p>
+            </article>
+            <article>
+                <h2>Main Article</h2>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+                    Consequatur atque, in explicabo dolores dolorum laudantium eius 
+                    iure odit et, hic alias aliquam molestias provident nemo qui ad nobis, 
+                    cum quidem.</p>
+            </article>
+            <article>
+                <h2>Main Article</h2>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+                    Consequatur atque, in explicabo dolores dolorum laudantium eius 
+                    iure odit et, hic alias aliquam molestias provident nemo qui ad nobis, 
+                    cum quidem.</p>
+            </article>
+        </section>
+        <aside>
+            <h2>right aside</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+                    Consequatur atque, in explicabo dolores dolorum laudantium eius 
+                    iure odit et, hic alias aliquam
+            </p>
+            <input type="text"><br/>
+            <button>mailto</button>
+            <div>
+                <h2>TEXT</h2>
+                <p>banner</p>
+            </div>
+        </aside>
+        <footer>
+            <h2>html5</h2>
+            <p>divcss.cafe24.com</p>
+        </footer>
+    </wrapper>
+</body>
+</html>
