@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02_menu</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        nav{
+            margin: 20px;
+            width: 800px;
+            height: 60px;
+            position: relative;
+            left: 100px;
+            overflow: hidden;
+        }
+        nav > div{
+            width: 200px;
+            height: 60px;
+            background-color: #ff0;
+            float: left;
+            text-align: center;
+            line-height: 60px;
+            position: relative;
+        }
+        nav > div > div{
+            width: 180px;
+            height: 50px;
+            background-color: #0f08;
+            position: absolute;
+            z-index: 1;
+            box-shadow: 3px 3px 5px #000;
+            top: 5px;
+            left:-800px;
+             transform: skewX(30deg);
+            transition: all ease 1s 0s;
+        }
+
+        nav > div:hover > div{
+            left:10px;
+           
+        }
+
+    </style>
+</head>
+<body>
+    <h1>02_menu</h1>
+    <nav>
+        <div>회사소개<div></div></div>
+        <div>제품<div></div></div>
+        <div>갤러리<div></div></div>
+        <div>고객센터<div></div></div>
+    </nav>
+</body>
+</html>
