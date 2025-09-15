@@ -43,12 +43,31 @@
             left:10px;
            
         }
+        .ver{
+            width: 200px;
+            height: 240px;
+        }
+        .ver > div:nth-of-type(even) > div{
+            left:400px;
+        }
+
+        .ver > div:hover > div{
+            left:10px;
+           
+        }
 
     </style>
 </head>
 <body>
     <h1>02_menu</h1>
     <nav>
+        <div>회사소개<div></div></div>
+        <div>제품<div></div></div>
+        <div>갤러리<div></div></div>
+        <div>고객센터<div></div></div>
+    </nav>
+
+    <nav class="ver">
         <div>회사소개<div></div></div>
         <div>제품<div></div></div>
         <div>갤러리<div></div></div>
