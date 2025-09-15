@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>08_var</title>
+    <style>
+        *{
+            margin: 0;
+            padding:0;
+        }
+        :root{  /* 모든 범위 -- 전역 */
+            --ccc : #0000ff;   /*변수 선언 : 변수를 만듬
+                                    변수명 : 변수값;    변수명은 -- 로 시작
+                                */
+        } 
+        
+        header, footer{
+            --fontS:2rem;   /*지역 변수 선언 : 변수가 선언된 영역에서만 사용 가능*/
+            color: var(--ccc);  /* 변수 호출 시 var(변수명)   */
+            font-size: var(--fontS);
+        }
+
+        li{
+            border: 1px solid  var(--ccc);
+        }
+        main{
+            background-color: var(--ccc);
+            font-size: var(--fontS);/* 타 영역에서 다른 영역의 지역변수 호출 불가 : 없는 변수임*/
+        }
+        nav{
+            background-color: var(--bbb);  /* 선언되지 않은 변수 호출시 기본값으로 대체 */
+        }
+    </style>
+</head>
+<body>
+    <h1>08_var</h1>
+    <header>
+        헤더여
+    </header>
+    <nav>메뉴여</nav>
+    <aside>사이드 지롱</aside>
+    <section>
+        <article>내용이여
+            <ul>
+                <li>목록1</li>
+                <li>목록2</li>
+                <li>목록3</li>
+            </ul>
+        </article>
+        <main>메인이지</main>
+    </section>
+    <footer>푸터여</footer>
+</body>
+</html>
