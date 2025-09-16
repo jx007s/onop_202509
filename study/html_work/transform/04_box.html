@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>04_box</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        section{
+            height: 300px;
+            width: 600px;
+            
+            margin-left: 200px;
+            position: relative;
+        }
+        section > div{
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            border: 1px solid #000;
+            left:0px;
+            top:0px;
+        }
+
+        section > div:nth-child(1){
+            transform:  rotateX(70deg) rotateZ(45deg);
+            background-color: #f00;
+        }
+        section > div:nth-child(2){
+            width: 70px;
+            height: 150px;
+            transform: rotateX(70deg) skewY(45deg) translate(-20px,60px);
+            background-color: #0f0;
+        }
+        section > div:nth-child(3){
+            width: 70px;
+            height: 150px;
+            transform: rotateX(70deg) skewY(-45deg) translate(50px,90px);
+            background-color: #00f;
+        }
+    </style>
+</head>
+<body>
+    <h1>04_box</h1>
+    <section>
+        <div></div>
+        <div></div>
+        <div></div>
+    </section>
+</body>
+</html>
