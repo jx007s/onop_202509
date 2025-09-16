@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07_animation</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        @keyframes bbb{
+            0%{
+                top:50px;
+                left: 100px;
+                width: 30px;
+                height: 30px;
+                background-color: #f0f;
+            }
+
+            20%{
+                top:50px;
+                left: 100px;
+                width: 200px;
+
+            }
+
+            80%{
+                top:300px;
+                left: 500px;
+                width: 200px;
+
+            }
+
+            100%{
+                top:150px;
+                left: 150px;
+                width: 30px;
+                background-color: #0ff;
+            }
+        }
+        div{
+            position: relative;
+            top:50px;
+            left: 100px;
+            width: 30px;
+            height: 30px;
+            background-color: #fa0;
+            margin: 3px;
+            border: 1px solid #ccc;
+            animation-name: bbb;
+            animation-duration: 5s;
+        }
+
+        div:nth-of-type(2){
+            animation-direction: reverse;
+        }
+        div:nth-of-type(3){
+            animation-iteration-count: 5;
+        }
+        div:nth-of-type(4){
+            /* 숫자값 , infinite(무한반복) */
+            animation-iteration-count: infinite;
+        }
+        div:nth-of-type(5){
+            /*
+            nomal : 정방향(기본값)
+            reversere : 역방향
+            alternate : 정 -> 역 -> 정 -> 역 ... 반복횟수가 여러번일 때 의미 있음
+            alternate-reverse : 역 -> 정 -> 역 -> 정  ... 반복횟수가 여러번일 때 의미 있음
+            */
+            animation-direction: alternate;
+            animation-iteration-count: 5;
+        }
+        div:nth-of-type(6){
+             /*
+             none : 종료 후 기본위치(기본값)
+             forwards : 종료 후 마지막 프레임
+             backwards : 애니메이션 시작되기 전 상태
+             both : (backwards+forwards)애니메이션 시작되기 전 상태 ,종료 후 마지막 프레임 
+             */
+            animation-fill-mode: forwards; /*종료 후 마지막 프레임*/
+        }
+        div:nth-of-type(7){
+            animation-fill-mode: backwards; /*애니메이션 시작되기 전 상태*/
+        }
+        div:nth-of-type(8){
+            /*
+             running : 애니메이션 실행(기본값)
+             paused : 애니메이션 일시정지(시작은 하고 멈춰있음)
+             */
+            animation-play-state: paused;
+        }
+
+
+        span{
+            display: block;
+            position: relative;
+            top:50px;
+            left: 100px;
+            width: 30px;
+            height: 30px;
+            background-color: #00f;
+            margin: 3px;
+            border: 1px solid #ccc;
+            animation: bbb     5s        ease        0s         3        alternate   running      forwards;
+            /*       name duration time-function  delay itration-count    direction  fill-mode   play-state
+                한번에 작성가능 , 생략시 뒤에서 부터 순서대로 가능
+            */
+        }
+
+    </style>
+</head>
+<body>
+    <h1>07_animation</h1>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+
+    <div>5</div>
+    <div>6</div>
+    <div>7</div>
+    <div>8</div>
+    <span>span</span>
+</body>
+</html>
+<!-- 08_aniRotate.html-->
