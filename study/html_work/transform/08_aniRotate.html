@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>08_aniRotate</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        section{
+            position: relative;
+            width: 200px;
+            height: 200px;
+            background-color: #ff0;
+            border-radius: 100px;
+            margin: auto;
+        }
+
+        @keyframes watch {
+            from{
+                transform: rotate(0deg);
+            }
+            to{
+                transform: rotate(359deg);
+            }
+        }
+
+        section > div{
+            position: absolute;
+            width: 2px;
+            height: 85px;
+            background-color: #f00;
+            box-shadow: 3px 3px 5px #000;
+            left:99px;
+            top:15px;
+            transform-origin: bottom center;
+            animation-name: watch;
+            animation-duration: 59s;
+            /* animation-timing-function: linear; */
+            animation-timing-function: steps(59);
+        }
+
+    </style>
+</head>
+<body>
+    <h1>08_aniRotate</h1>
+    <section>
+        <div></div>
+    </section>
+</body>
+</html>
