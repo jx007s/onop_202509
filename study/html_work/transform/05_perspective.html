@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>05_perspective</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        section{
+            position: relative;
+            width: 100px;
+            height: 100px;
+            top: 50px;
+            left: 50px;
+            transform: rotateX(-30deg) rotateY(45deg);
+            transform-style: preserve-3d; 
+            /* flat : 2D화 -기본값
+               preserve-3d : 입체화*/
+        }
+
+        section > div{
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: #f88c;
+            border: 1px solid #900;
+            line-height: 100px;
+            color: #fff;
+            text-align: center;
+            box-sizing: border-box;
+        }
+        .top{
+            transform: rotateX(90deg) translateZ(50px);
+            z-index: 1;
+        }
+        .bottom{
+            transform: rotateX(-90deg) translateZ(50px);
+        }
+        .front{
+            transform: translateZ(50px);
+        }
+        .back{
+            transform: rotateY(180deg) translateZ(50px);
+        }
+        .left{
+            transform: rotateY(-90deg) translateZ(50px);
+        }
+        .right{
+            transform: rotateY(90deg) translateZ(50px);
+        }
+    </style>
+</head>
+<body>
+    <h1>05_perspective</h1>
+    <section>
+        <div class="top">위</div>
+        <div class="bottom">아래</div>
+        <div class="front">앞</div>
+        <div class="back">뒤</div>
+        <div class="right">오른쪽</div>
+        <div class="left">왼쪽</div>
+    </section>
+</body>
+</html>
+<!--06_dice.html-->
