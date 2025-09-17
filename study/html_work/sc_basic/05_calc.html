@@ -111,11 +111,124 @@
         document.write(`20 < 10 + 15 : ${ 20 < 10 + 15}`)
     </script>
 
+
     <h2>2.3 논리연산자</h2>
     <script>
         // param : boolean (다른 자료형은 boolean 으로 변환하여 연산)
         // return : boolean
+        a = false ; b = false
+        document.write(`and : ${a} && ${b} : ${a && b}<br/>`)
+        document.write(`or  : ${a} || ${b} : ${a || b}<br/>`)
+        document.write(`not  : !${a} : ${!a}<br/><br/>`)
+
+        a = 0 ; b = 100
+        document.write(`and : ${a} && ${b} : ${a && b}<br/>`)
+        document.write(`or  : ${a} || ${b} : ${a || b}<br/>`)
+        document.write(`not  : !${a} : ${!a}<br/><br/>`)
+
+        a = "" ; b = false
+        document.write(`and : ${a} && ${b} : ${a && b}<br/>`)
+        document.write(`or  : ${a} || ${b} : ${a || b}<br/>`)
+        document.write(`not  : !${a} : ${!a}<br/><br/>`)
+
+        const age = 51
+        //const ageChk = age <= 25
+        const color = "빨강"
+        //const colorChk = color == "빨강"
+
+        //document.write(`and : ${ageChk && colorChk}<br/>`)
+        //document.write(`or  : ${ageChk || colorChk}<br/>`)
+
+        document.write(`and : ${age <= 25 && color == "빨강"}<br/>`)
+        document.write(`or  : ${age <= 25 || color == "빨강"}<br/>`)
+    </script>
+    <h2>2.4 bit연산자</h2>
+    <script>
+        a = 5; b = 6
+        document.write(`bit and : ${a} & ${b} : ${a & b}<br/>`)
+        document.write(`bit  or : ${a} | ${b} : ${a | b}<br/>`)
+        document.write(`bit xor : ${a} ^ ${b} : ${a ^ b}<br/>`)
+
+/*
+5 : 0101
+6 : 0110
+---------------
+&   0100 -→ 4
+|   0111 -→ 7
+^   0011 -→ 3
+
+5 & 6 : 4
+5 | 6 : 7
+5 ^ 6 : 3
+*/
+    </script>
+    <h2>2.5 shift 연산자</h2>
+    <script>
+        a = 5
+        document.write(`${a} << 2 : ${a << 2}<br/>`)
+        document.write(`${a} >> 2 : ${a >> 2}<br/>`)
+        document.write(`${a} >>> 2 : ${a >>> 2}<br/>`)
+
+        a = -5
+        document.write(`${a} << 2 : ${a << 2}<br/>`)
+        document.write(`${a} >> 2 : ${a >> 2}<br/>`)
+        document.write(`${a} >>> 2 : ${a >>> 2}<br/>`)
+/*
+5 : 0101 << 2
+    0101 00
+
+    0  1  0  1  0  0
+    32 16 8  4  2  1
+       16 +  4 : 20
+
+5 : 0101 >> 2
+    00 0101
+         --  제거
+    0001  : 1
+
+5 : 0101 >>> 2
+    00 0101
+         --  제거
+    0001  : 1
+
+
+    1byte                   2byte
+    0000 0000   0   0       0000 0000 0000 0000
+    0000 0001   1   1       0000 0000 0000 0001
+    0000 0010   2   2       0000 0000 0000 0010
+    ...
+    0111 1110   126 126     0000 0000 0111 1110
+    0111 1111   127 127     0000 0000 0111 1111
+    1000 0000   -128 128    0000 0000 1000 0000
+    1000 0001   -127 129    0000 0000 1000 0001
+    1000 0010   -126 130    0000 0000 1000 0010
+    1000 0011   -125 131    0000 0000 1000 0011
+    ...
+    1111 1110   -2  254     0000 0000 1111 1110
+    1111 1111   -1  255     0000 0000 1111 1111
+  1 0000 0000   0   256     0000 0001 0000 0000
+
+
+  -5 : 1111 1011
+
+  -5 : 1111 1011 << 2
+       1111 1011 00
+       
+       1110 1100  : -20
+
+-5 : 1111 1011 >> 2  :: 부호에 맞춰 오른쪽 쉬프트 양수:0, 음수:1
+     11 1111 1011
+              -- 제거
+     1111 1110  : -2
+
+5 : 1111 1011 >>> 2   :: 부호와 상관없이 0 쉬프트
+    00 1111 1111  1111 1111  1111 1111  1111 1011
+                                                  --  제거
+    00 1111 1111  1111 11 11 1111 1111  1111 10 : 1073741822
+    
+*/        
     </script>
 </body>
 </html>
+
 
