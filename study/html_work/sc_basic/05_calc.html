@@ -7,10 +7,50 @@
 </head>
 <body>
     <h1>05_calc</h1>
+    <h2>1. 1항 연산자</h2>
+    <script>
+        var c = 123
+        document.write(`-${c} : ${-c}<br/>`)
+        c = 123
+        document.write(`!${c} : ${!c}<br/>`)
+        c = c + 1
+        document.write(`c = c + 1 : ${c}<br/>`)
+        c++ // 증감연산자 ++, -- 
+        document.write(`c++ : ${c}<br/>`)
+        c--
+        document.write(`c-- : ${c}<br/>`)
+        //c**
+        //c//
+        //c%%
+        c = 4
+        document.write(`c : ${c}<br/>`)
+        document.write(`c++ : ${c++}<br/>`) //후치연산 : 현재 값을 연산식에 호출하고 이후 ++ 연산
+        document.write(`c : ${c}<br/>`)
+        document.write(`++c : ${++c}<br/>`) //전치연산 : ++ 연산 이후 연산식에 호출
+        document.write(`c : ${c}<br/>`)
+
+        var aa=5, bb = 6, cc = 10
+        var dd = aa++ + ++cc - bb-- * --aa + aa++
+        /*
+            dd =  5   +  11  -  6   *   5  +    5
+                  5   +  11  -   30  +    5
+
+            aa    6                     5       6              
+            cc            11
+            bb                  5
+        
+        */
+
+        document.write(`aa : ${aa}<br/>`)
+        document.write(`bb : ${bb}<br/>`)
+        document.write(`cc : ${cc}<br/>`)
+        document.write(`dd : ${dd}<br/>`)
+
+    </script>
 
     <h2>2.1 산술연산자</h2>
     <script>
-        // param : 숫자(+ - * / %), 기타 (+)
+        // param : 숫자(+ - * / % **), 기타 (+)
         // return : 숫자            문자열
 
         var a = 15, b = 7
@@ -19,6 +59,7 @@
         document.write(`${a} * ${b} : ${a * b}<br/>`)
         document.write(`${a} / ${b} : ${a / b}<br/>`)
         document.write(`${a} % ${b} : ${a % b}<br/>`)
+        document.write(`2 ** 4 : ${2**4}<br/>`)
 
         a = 10; b = "장서건"
         document.write(`${a} + ${b} : ${a + b}<br/>`) //숫자가 아닌 값은 +  연산만 가능(문자열결합)
@@ -228,7 +269,58 @@
     
 */        
     </script>
+    <h2>2.5 대입연산자</h2>
+    <script>
+        a = 5
+        document.write(`a : ${a}<br/>`)
+        a = a + 2
+        document.write(`a = a + 2 : ${a}<br/>`)
+        a += 2
+        document.write(`a += 2 : ${a}<br/>`)
+        a -= 3
+        document.write(`a -= 3 : ${a}<br/>`)
+        a *= 5
+        document.write(`a *= 5 : ${a}<br/>`)
+        a /= 2
+        document.write(`a /= 2 : ${a}<br/>`)
+        a %= 6
+        document.write(`a %= 6 : ${a}<br/>`)
+        a **= 3
+        document.write(`a **= 3 : ${a}<br/>`)
+    </script>
+    <h2>3. 조건연산자</h2>
+    <script>
+        document.write(`true ? "참이지롱" : "거짓부렁" : ${true ? "참이지롱" : "거짓부렁"}<br/>`)
+        document.write(`false ? "참이지롱" : "거짓부렁" : ${false ? "참이지롱" : "거짓부렁"}<br/>`)
+        var jum = 78
+        document.write(`${jum} : ${jum >=80 ? "합격" : "불합격"}<br/>`)
+        
+        // 80 : 우수  , 60 : 양호, 40: 정상 , 미달 
+
+        // 필터링 시 작은 영역부터 처리할 것
+        // 80 > 60 > 40 
+        var res =   jum >= 80 ? "우수" : 
+       //             jum >= 40 ? "정상" : 
+                    jum >= 60 ? "양호" :
+                    jum >= 40 ? "정상" : 
+                    "미달"
+        
+        document.write(`${jum} : ${res}<br/>`)
+
+    </script>
 </body>
 </html>
 
+<!--
+06_exam.html
+이름, 국어, 영어, 수학 점수를 가지고
+총점, 평균을 계산하세요
+평균의 점수를 이용하여 등급을 출력하세요
+90 점이상 : 수
+80 점이상 : 우
+70 점이상 : 미
+60 점이상 : 양
+나머지 : 가
 
+테이블로 구성
+-->
