@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01_if</title>
+</head>
+<body>
+    <h1>01_if</h1>
+    <script>
+        if(true){
+            document.write("참이지롱 1 <br/>")
+            document.write("참이지롱 1 <br/>")
+            document.write("참이지롱 1 <br/>")
+        }
+
+        document.write("if 종료 -----------1  <br/>")
+         if(false) // {}  없을 경우 이하 1개의 종속 명령구문 필수
+            document.write("참이지롱 2 <br/>")  // 이 명령구문만 if문에 종속
+
+
+        document.write("참이지롱 2 <br/>")  //if 문과 상관없음
+        document.write("참이지롱 2 <br/>")
+        document.write("if 종료 -----------2  <br/>")
+    </script>
+</body>
+</html>
+<!--
+02_car.html
+
+ //자동차 성능을 점수로 계산하세요
+  //각 점수는 100점 만점을 기준으로 입력된다
+  //성능 점수의 반영도 속도->40%, 연비->25%, 안정성->35% 
+                                             글자색
+  ///  결과 : 성능 점수 : 80 이상 - 우수        파랑
+                        60 이상 - 보통        녹색
+                        나머지 - 불량         빨강
+
+결과물은 div로 구성할 것
+-->
