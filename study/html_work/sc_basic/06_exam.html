@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>06_exam</title>
+    <style>
+        .수{
+            background-color: #f00;
+        }
+        .우{
+            background-color: #fa0;
+        }
+        .미{
+            background-color: #ff0;
+        }
+        .양{
+            background-color: #0f0;
+        }
+        .가{
+            background-color: #0ff;
+        }
+    </style>
+</head>
+<body>
+    <h1>06_exam</h1>
+    <table border="">
+        <script>
+            const pos = 2
+            const pname = "차은우"
+            const kor = 87, eng = 78, mat = 67
+            const tot = kor + eng + mat
+            const avg = tot / 3
+            
+            const avg2 = ((tot* 10 ** pos +1.5) - (tot* 10 ** pos+1.5) %3) / 3 / 10**pos
+            /* 
+                232
+                23200
+                23200 - 1
+                23199
+                7733
+                77.33
+
+            	233
+                23300
+                23300 - 2
+                23298
+                7766.6666+0.5 -- 7767.16666
+                77.66
+            */
+            const grade =   avg >= 90 ? "수" : 
+                            avg >= 80 ? "우" : 
+                            avg >= 70 ? "미" : 
+                            avg >= 60 ? "양" : 
+                            "가"
+
+            document.write(`<tr><td>이름</td><td>${pname}</td></tr>`)
+            document.write(`<tr><td>국어</td><td>${kor}</td></tr>`)
+            document.write(`<tr><td>영어</td><td>${eng}</td></tr>`)
+            document.write(`<tr><td>수학</td><td>${mat}</td></tr>`)
+            document.write(`<tr><td>총점</td><td>${tot}</td></tr>`)
+            document.write(`<tr><td rowspan=2>평균</td><td>${avg}</td></tr>`)
+            document.write(`<tr><td>${avg2}</td></tr>`)
+            document.write(`<tr><td>등급</td><td class='${grade}'>${grade}</td></tr>`)
+
+        </script>
+        
+    </table>
+</body>
+</html>
