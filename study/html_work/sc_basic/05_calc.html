@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>05_calc</title>
+</head>
+<body>
+    <h1>05_calc</h1>
+
+    <h2>2.1 산술연산자</h2>
+    <script>
+        // param : 숫자(+ - * / %), 기타 (+)
+        // return : 숫자            문자열
+
+        var a = 15, b = 7
+        document.write(`${a} + ${b} : ${a + b}<br/>`)
+        document.write(`${a} - ${b} : ${a - b}<br/>`)
+        document.write(`${a} * ${b} : ${a * b}<br/>`)
+        document.write(`${a} / ${b} : ${a / b}<br/>`)
+        document.write(`${a} % ${b} : ${a % b}<br/>`)
+
+        a = 10; b = "장서건"
+        document.write(`${a} + ${b} : ${a + b}<br/>`) //숫자가 아닌 값은 +  연산만 가능(문자열결합)
+        document.write(`${a} - ${b} : ${a - b}<br/>`) // NaN : not a number : 숫자가 아니다
+        document.write(`${a} * ${b} : ${a * b}<br/>`)
+        document.write(`${a} / ${b} : ${a / b}<br/>`)
+        document.write(`${a} % ${b} : ${a % b}<br/>`)
+
+        a =  20; b = true  // true, false  - 논리 자료형  ==> 숫자로 처리시 true : 1, false : 0
+        document.write(`${a} + ${b} : ${a + b}<br/>`)
+        document.write(`${a} - ${b} : ${a - b}<br/>`)
+        document.write(`${a} * ${b} : ${a * b}<br/>`)
+        document.write(`${a} / ${b} : ${a / b}<br/>`)
+        document.write(`${a} % ${b} : ${a % b}<br/>`)
+
+        document.write(`2 + 3 * 4 : ${2 + 3 * 4}<br/>`)
+        document.write(`(2 + 3) * 4 : ${(2 + 3) * 4}<br/>`)
+
+    </script>
+
+     <h2>2.2 비교연산자</h2>
+    <script>
+        // param : 같은 자료형(모두 가능), 다른 자료형(같다, 다르다)
+        // return : boolean
+        a = 10; b = 10;
+        document.write(`10 , 10 <br/>`)
+        document.write(`${a} > ${b} : ${a > b}<br/>`)
+        document.write(`${a} >= ${b} : ${a >= b}<br/>`)
+        document.write(`${a} <= ${b} : ${a <= b}<br/>`)
+        document.write(`${a} < ${b} : ${a < b}<br/>`)
+        document.write(`${a} == ${b} : ${a == b}<br/>`)
+        document.write(`${a} != ${b} : ${a != b}<br/>`)
+        document.write(`${a} === ${b} : ${a === b}<br/>`)
+        document.write(`${a} !== ${b} : ${a !== b}<br/><br/>`)
+
+        a = 10; b = '10';  // 같은 값으로 인지
+        document.write(`10 , '10' <br/>`)
+        document.write(`${a} > ${b} : ${a > b}<br/>`)
+        document.write(`${a} >= ${b} : ${a >= b}<br/>`)
+        document.write(`${a} <= ${b} : ${a <= b}<br/>`)
+        document.write(`${a} < ${b} : ${a < b}<br/>`)
+        document.write(`${a} == ${b} : ${a == b}<br/>`)   //값이 일치
+        document.write(`${a} != ${b} : ${a != b}<br/>`)   //값이 불일치
+        document.write(`${a} === ${b} : ${a === b}<br/>`)   //자료형과 값이 일치
+        document.write(`${a} !== ${b} : ${a !== b}<br/>`)   //자료형과 값이 불일치
+
+        a = "장동건"; b = "장남건";
+        //  ㄱ < ㅎ , ㅏ < ㅣ , a < z
+        document.write(`${a} > ${b} : ${a > b}<br/>`)
+        document.write(`${a} >= ${b} : ${a >= b}<br/>`)
+        document.write(`${a} <= ${b} : ${a <= b}<br/>`)
+        document.write(`${a} < ${b} : ${a < b}<br/>`)
+        document.write(`${a} == ${b} : ${a == b}<br/>`)
+        document.write(`${a} != ${b} : ${a != b}<br/>`)
+        document.write(`${a} === ${b} : ${a === b}<br/>`)
+        document.write(`${a} !== ${b} : ${a !== b}<br/><br/>`)
+
+
+        a = true; b = false;
+        document.write(`${a} > ${b} : ${a > b}<br/>`)
+        document.write(`${a} >= ${b} : ${a >= b}<br/>`)
+        document.write(`${a} <= ${b} : ${a <= b}<br/>`)
+        document.write(`${a} < ${b} : ${a < b}<br/>`)
+        document.write(`${a} == ${b} : ${a == b}<br/>`)
+        document.write(`${a} != ${b} : ${a != b}<br/>`)
+        document.write(`${a} === ${b} : ${a === b}<br/>`)
+        document.write(`${a} !== ${b} : ${a !== b}<br/><br/>`)
+
+        a = 20; b = "이효리";  //크기비교 : false,     같다 , 다르다 : 확인 가능
+        document.write(`${a} > ${b} : ${a > b}<br/>`)
+        document.write(`${a} >= ${b} : ${a >= b}<br/>`)
+        document.write(`${a} <= ${b} : ${a <= b}<br/>`)
+        document.write(`${a} < ${b} : ${a < b}<br/>`)
+        document.write(`${a} == ${b} : ${a == b}<br/>`)
+        document.write(`${a} != ${b} : ${a != b}<br/>`)
+        document.write(`${a} === ${b} : ${a === b}<br/>`)
+        document.write(`${a} !== ${b} : ${a !== b}<br/><br/>`)
+
+        a = 10; b = false;  //false : 0 , 모든 비교 가능
+        document.write(`${a} > ${b} : ${a > b}<br/>`)
+        document.write(`${a} >= ${b} : ${a >= b}<br/>`)
+        document.write(`${a} <= ${b} : ${a <= b}<br/>`)
+        document.write(`${a} < ${b} : ${a < b}<br/>`)
+        document.write(`${a} == ${b} : ${a == b}<br/>`)
+        document.write(`${a} != ${b} : ${a != b}<br/>`)
+        document.write(`${a} === ${b} : ${a === b}<br/>`)
+        document.write(`${a} !== ${b} : ${a !== b}<br/><br/>`)
+
+        // 연산자를 섞어서 사용가능
+        document.write(`20 < 10 + 15 : ${ 20 < 10 + 15}`)
+    </script>
+
+    <h2>2.3 논리연산자</h2>
+    <script>
+        // param : boolean (다른 자료형은 boolean 으로 변환하여 연산)
+        // return : boolean
+    </script>
+</body>
+</html>
+
