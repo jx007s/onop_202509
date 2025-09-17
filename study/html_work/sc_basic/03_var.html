@@ -95,9 +95,30 @@
         var StudNum = 8         // 파스칼표기법 - 정의할 경우 사용
         console.log(StudNum) 
 
-        
+
         //회원의 이름, 나이, 키, 근무시작,근무종료 시각을 작성하고
         //근무시간을 계산하여 출력하세요
+        const pname = "장동건"
+        const age = 49
+        const height = 187.4
+        const startT = 9, endT = 17
+        const workT = endT - startT
+
+        document.write("<table border=''>")
+        document.write("<tr>")
+        document.write("<td>이름</td>")
+        document.write("<td>")
+        document.write(pname)
+        document.write("</td>")
+        document.write("</tr>")
+
+        document.write("<tr><td>나이</td><td>"+age+"</td></tr>")
+        //  문자열 + 변수 : `문자내용${변수}문자내용`
+        document.write(`<tr><td>키</td><td>${height}</td></tr>`)
+        document.write(`<tr><td>근무시작</td><td>${startT}</td></tr>`)
+        document.write(`<tr><td>근무종료</td><td>${endT}</td></tr>`)
+        document.write(`<tr><td>근무시간</td><td>${workT}</td></tr>`)
+        document.write("</table>")
     </script>
 </body>
 </html>
