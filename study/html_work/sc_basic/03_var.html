@@ -20,6 +20,84 @@
                         // 변수 공간안에 있는 값을 복사하여 가져와 사용
 
         //5678 = dd  변수 대입, 초기화 시 대입연산자의 좌항에 변수가 위치 해야 한다.
+
+        dd = 10 //변수 선언및 초기화
+        console.log("dd:", dd)  //변수 호출
+        dd = 20 //변수 대입
+        console.log("dd:", dd)  //변수 호출 - 현재 대입된 변수의 값이 호출(대입 이전의 값은 의미없음)
+
+        const ee = 30;      // const : 상수화(키워드 - 프로그램에서 사용하기위해 지정해 놓은 예약어) 
+                            // 최초대입만 가능(필수)
+        console.log("ee:", ee)
+        //ee = 40   상수 대입 불가
+
+        var ff //(지역)변수 선언
+
+        console.log("ff:", ff)  //선언만 하고 초기화(최초대입) 하지 않은 변수는 undefined 출력
+        ff = 50
+        console.log("ff:", ff)
+
+        var ff = 60    //변수 중복선언 금지
+
+        console.log(ee); console.log(ff)  // ; 명령어 종결 표시 - 1행에 명령문이 1개인 경우 생략 가능
+
+        var qq = 11, ww = 22, rr= 33    // 변수 다중선언 가능
+        console.log(qq)
+        console.log(ww)
+        console.log(rr)
+
+        var ss = 44, hh = ss, jj = hh
+        console.log(ss)
+        console.log(hh)
+        console.log(jj)
+
+        /*
+        코드의 진행순서
+        ---→
+          ↓
+        
+        */
+
+        var zz = xx, xx = vv , vv = 55
+        console.log("zz :",zz)  //undefined
+        console.log("xx :",xx)  //undefined
+        console.log("vv :",vv)
+
+
+        //변수 이름 규칙
+        //var var = 30  키워드 불가
+        //var 34 = 56  숫자로 시작 불가
+        //var 2asdf = 78
+        var as34fg = 90
+        //var +as = 11 특수기호 불가
+        var _ = 22  // 예외 _ $
+        var $ = 22
+        //var r t = 33 띄어쓰기 불가
+        var AbCd = 33   //대소문자 구분
+        var abCd = 44
+        console.log("AbCd :",AbCd)
+        console.log("abCd :",abCd)
+        var 국어 = 88       //한글사용금지
+        console.log("국어 :",국어)
+
+        var aass = 5, ddff = 8, gghh = 10
+        var ttyy = (aass + ddff) * gghh
+        console.log(ttyy)
+
+        var studentnumber = 25
+        console.log(studentnumber)
+        var studnum = 19        //변수명 줄이기 - 자음, 앞글자
+        console.log(studnum) 
+        var studNum = 16        // 카멜표기법 - 합성된 단어의 첫글자를 대문자
+        console.log(studNum) 
+        var stud_num = 11       // 언더스코어(스네이크) 표기법
+        console.log(stud_num) 
+        var StudNum = 8         // 파스칼표기법 - 정의할 경우 사용
+        console.log(StudNum) 
+
+        
+        //회원의 이름, 나이, 키, 근무시작,근무종료 시각을 작성하고
+        //근무시간을 계산하여 출력하세요
     </script>
 </body>
 </html>
