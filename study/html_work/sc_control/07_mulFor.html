@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07_mulFor</title>
+</head>
+<body>
+    <h1>07_mulFor</h1>
+    <script>
+        for (let h = 1; h <=12; h++) {
+            document.write(`<h3>${h}시</h3>`)
+
+            for (let m = 0; m < 60; m++) {
+                document.write(`${h} : ${m} <br/>`)
+            }
+
+            //document.write(`${h} : ${m} <br/>`)
+        }
+
+        for (let dan = 2; dan <10; dan++) {
+            document.write(`<h3>${dan}단</h3>`)
+
+            for (let gob = 1; gob < 10; gob++) {
+                document.write(`${dan} x ${gob} = ${dan * gob}  <br/>`)
+            }   
+        }
+
+
+        /// 2단계
+        for (let gob = 1; gob < 10; gob++) {
+            let ttt = ''
+            for (let dan = 2; dan <10; dan++) {
+                ttt+=`${dan}x${gob}=${dan * gob}\t`
+            } 
+            console.log(ttt)  
+        }
+    </script>
+</body>
+</html>

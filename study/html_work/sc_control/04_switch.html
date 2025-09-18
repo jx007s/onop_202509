@@ -137,7 +137,7 @@
         }
 
         let money = base * (1 + bonus)
-        document.write(money)
+        document.write(money+"<br/>")
 
 /*
         커피를 주문받아 처리하세요
@@ -146,6 +146,25 @@
         아시아노   : 3000
         아프리카노 : 4000
 */
+        let menu = "아시아노"
+        let cnt = 3
+        switch(menu){
+            case "아메리카노":
+                var price = 2000
+                break
+            case "아시아노":
+                var price = 3000
+                break
+            case "아프리카노":
+                var price = 4000
+                break
+            default:
+                var price = 0
+                break
+        }
+
+        money = cnt * price
+        document.write(`${menu}(${cnt}) : ${money} <br/>`)
 
     </script>
 </body>
