@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03_scope</title>
+</head>
+<body>
+    <h1>03_scope</h1>
+    <script>
+        var a = 10
+        var b
+
+        if(true){
+            b = 20  //지역변수 - 선언된 함수에서 적용, 제어문구간은 고려 안함
+            c = 30  //전역변수
+            var d = 40 //지역변수 - 선언된 함수에서 적용, 제어문구간은 고려 안함
+            let e = 50 //지역변수 - 선언된 함수, 제어문 구간에서 적용 
+            const f = 60 //상수 - 선언된 함수, 제어문 구간에서 적용
+        }
+
+        document.write(`a : ${a}<br/>`)
+        document.write(`b : ${b}<br/>`)
+        document.write(`c : ${c}<br/>`)
+        document.write(`d : ${d}<br/>`)
+        //document.write(`e : ${e}<br/>`) // 제어문을 벗어나 e를 확인할 수 없음
+        //document.write(`f : ${f}<br/>`)
+
+
+        aa = "전역aa여"
+        ee = "전역ee여"
+        //let bb = "letbb여"
+        var aa = "varaa여", bb="varbb여", cc="varcc여", dd="vardd여"  //bb 선언불가 - 작은영역의 변수중첩불가
+        let ff = 'letff여', gg='letgg여'
+        const hh = 'consthh여', jj = "constjj여"
+
+        document.write(`main 1 : ${aa},${bb},${cc},${dd},${ee},${ff},${gg},${hh},${jj}<br/>`)
+        if(1){
+            // 구간에서 선언한 변수 중첩되며 우선순위가 높음
+            let cc ="if_letcc여"   // var 와 중첩가능 - 우선순위가 더 높음
+            var dd = "if_vardd여"
+            let ff ="if_letff여"
+            let jj  ="if_letjj여"
+
+            document.write(`if 1 : ${aa},${bb},${cc},${dd},${ee},${ff},${gg},${hh},${jj}<br/>`)    
+            //hh = 1234 상수이므로 대입불가
+            jj = 5678
+            document.write(`if 2 : ${aa},${bb},${cc},${dd},${ee},${ff},${gg},${hh},${jj}<br/>`)  
+        }
+        document.write(`main 2 : ${aa},${bb},${cc},${dd},${ee},${ff},${gg},${hh},${jj}<br/>`)
+        
+
+    </script>
+</body>
+</html>
