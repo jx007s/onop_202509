@@ -28,7 +28,7 @@
         <script>
             const pos = 2
             const pname = "차은우"
-            const kor = 87, eng = 78, mat = 67
+            const kor = 87, eng = 82, mat = 93
             const tot = kor + eng + mat
             const avg = tot / 3
             
@@ -54,6 +54,23 @@
                             avg >= 60 ? "양" : 
                             "가"
 
+            var grade2
+
+            if(avg >= 90){
+                grade2="수"
+            }else if(avg >= 80){
+                grade2="우"
+                if(kor >=80 && eng >=80 && mat >=80){
+                    grade2+="(균등)"
+                }
+            }else if(avg >= 70){
+                grade2="미"
+            }else if(avg >= 60){
+                grade2="양"
+            }else{
+                grade2="가"
+            }
+
             document.write(`<tr><td>이름</td><td>${pname}</td></tr>`)
             document.write(`<tr><td>국어</td><td>${kor}</td></tr>`)
             document.write(`<tr><td>영어</td><td>${eng}</td></tr>`)
@@ -61,10 +78,14 @@
             document.write(`<tr><td>총점</td><td>${tot}</td></tr>`)
             document.write(`<tr><td rowspan=2>평균</td><td>${avg}</td></tr>`)
             document.write(`<tr><td>${avg2}</td></tr>`)
-            document.write(`<tr><td>등급</td><td class='${grade}'>${grade}</td></tr>`)
+            document.write(`<tr><td rowspan=2>등급</td><td class='${grade}'>${grade}</td></tr>`)
 
         </script>
-        
+        <tr>
+        <script>
+            document.write(`<td class='${grade2}'>${grade2}</td>`)
+        </script>
+        </tr>
     </table>
 </body>
 </html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02_car</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+            width: 984px;
+            height: 82px;
+            clear: both;
+        }
+        li > div{
+            float: left;
+            width: 200px;
+            height: 50px;
+            line-height: 50px;
+            font-size: 2rem;
+            text-align: center;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 5px;
+        }
+        .우수{
+            color: #00f;
+        }
+        .보통{
+            color: #0f0;
+        }
+        .불량{
+            color: #f00;
+        }
+    </style>
+    <script>
+        const velocity = 70;
+        const fuelEfficiency = 80;
+        const stability = 60;
+
+        const res = velocity *0.4+fuelEfficiency *0.25+stability *0.35 
+        const resCC = res >= 80 ? '우수' :  res >= 60 ? "보통" :'불량'
+        const resStr = `<div class="${resCC}">${resCC}(${res})</div>`
+    </script>
+</head>
+<body>
+    <h1>02_car</h1>
+    <ul>
+        <li>
+            <div>속도</div>
+            <div>
+                <script>document.write(velocity)</script>
+            </div>
+        </li>
+        <li>
+            <div>연비</div>
+            <div>
+                <script>document.write(fuelEfficiency)</script>
+            </div>
+        </li>
+        <li>
+            <div>안정성</div>
+            <div>
+                <script>document.write(stability)</script>
+            </div>
+        </li>
+        <li>
+            <div>성능</div>
+            <script>document.write(resStr)</script>
+        </li>
+    </ul>
+</body>
+</html>
