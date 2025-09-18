@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>04_switch</title>
+</head>
+<body>
+    <h1>04_switch</h1>
+    <script>
+        switch(20){
+            case 30:
+                document.write("30이지롱 1<br/>")
+            case 10:  //동일값 가능
+                document.write("10이지롱<br/>")
+            case 30:
+                document.write("30이지롱 2<br/>")
+            case 20:            // 이동하여 실행
+                document.write("20이지롱 1<br/>")
+            case 40:
+                document.write("40이지롱<br/>")
+            case 20:
+                document.write("20이지롱 2<br/>")
+        }
+        
+        document.write("switch 종료 ------- 1 <br/>")
+
+        switch(20){
+            case 30:
+                document.write("30이지롱 1<br/>")
+                break //제어문 탈출
+            case 10:  //동일값 가능
+                document.write("10이지롱<br/>")
+                break //제어문 탈출
+            case 30:
+                document.write("30이지롱 2<br/>")
+                break //제어문 탈출
+            case 20:            // 같은 값이 있을 경우 먼저 설정된 case 실행
+                document.write("20이지롱 1<br/>")
+                break //제어문 탈출
+            case 40:
+                document.write("40이지롱<br/>")
+                break //제어문 탈출
+            case 20:    // 
+                document.write("20이지롱 2<br/>")
+        }
+        
+        document.write("switch 종료 ------- 2 <br/>")
+
+        switch(100){
+            case 30:
+                document.write("30이지롱 1<br/>")
+                break 
+            case 10: 
+                document.write("10이지롱<br/>")
+                break 
+            default: //else 와 같음
+                document.write("기본값 이지롱<br/>")
+                break   
+            case 20:      
+                document.write("20이지롱 1<br/>")
+                break 
+            case 40:
+                document.write("40이지롱<br/>")
+                break 
+        }
+        
+        document.write("switch 종료 ------- 3 <br/>")
+
+        switch(123.456){// 정수,실수,문자열,boolean 모두 가능
+            case true:
+                document.write("true이지롱 <br/>")
+                break 
+            case 123.456: 
+                document.write("123.456이지롱 <br/>")
+                break 
+            default: //else 와 같음
+                document.write("기본값 이지롱<br/>")
+                break   
+            case "나는무너":      
+                document.write("나는무너 이지롱<br/>")
+                break 
+            case 50,60,70:
+                document.write("50,60,70 이지롱<br/>")
+                break 
+            case 40:
+                document.write("40이지롱<br/>")
+                break
+        }
+        
+        document.write("switch 종료 ------- 4 <br/>")
+
+        switch(50){
+            case true:
+                document.write("true이지롱 <br/>")
+                break 
+            case 123.456: 
+                document.write("123.456이지롱 <br/>")
+                break 
+            default: 
+                document.write("기본값 이지롱<br/>")  //기본값 출력
+                break   
+            case "나는무너":      
+                document.write("나는무너 이지롱<br/>")
+                break 
+            case 50,60,70:  //50 진입 안함
+                document.write("50,60,70 이지롱<br/>")
+                break 
+            case 40:
+                document.write("40이지롱<br/>")
+                break
+        }
+        
+        document.write("switch 종료 ------- 5 <br/>")
+
+        //직급별 월급을 계산 하세요
+        //부장 : 50%, 과장 : 30%, 대리 : 20%, 사원:10%
+        //월급 :  기본급 + 기본급*보너스
+        //직급과 기본급은 입력받아 처리
+
+        let grade = "과장"
+        let base = 500
+
+        switch(grade){
+            case "부장":
+                var bonus = 0.5
+                break
+            case "과장":
+                var bonus = 0.3
+                break
+            case "대리":
+                var bonus = 0.2
+                break
+            default:
+                var bonus = 0.1
+                break
+        }
+
+        let money = base * (1 + bonus)
+        document.write(money)
+
+/*
+        커피를 주문받아 처리하세요
+        메뉴, 가격, 수량
+        아메리카노 : 2000
+        아시아노   : 3000
+        아프리카노 : 4000
+*/
+
+    </script>
+</body>
+</html>
