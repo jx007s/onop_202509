@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02_arrFunc</title>
+</head>
+<body>
+    <h1>02_arrFunc</h1>
+    <script>
+
+        // 배열 생성
+        let arr1 = [55,66,22,33,66,11,44,66,77,66,88]
+        document.write(`arr1 : ${arr1} <br/>`)
+
+        let arr2 = new Array(55,66,22,33,66,11,44,66,77,66,88)
+        document.write(`arr2 : ${arr2} <br/>`)
+
+        let rr = arr1.push(100)  //뒤에 추가 - 리턴 : 원소갯수
+        document.write(`push(100) : ${arr1} <br/>`)
+        document.write(`rr : ${rr} <br/>`)
+
+        rr = arr1.unshift(200)  //앞에 추가 - 리턴 : 원소갯수
+        document.write(`unshift(200) : ${arr1} <br/>`)
+        document.write(`rr : ${rr} <br/>`)
+
+        rr = arr1.pop()  //뒤에 제거 - 리턴으로 제거된 원소
+        document.write(`pop() : ${arr1} <br/>`)
+        document.write(`rr : ${rr} <br/>`)
+
+        rr = arr1.shift()  //앞에 제거 - 리턴으로 제거된 원소
+        document.write(`shift() : ${arr1} <br/>`)
+        document.write(`rr : ${rr} <br/>`)
+
+        // 중간 삭제 (시작번호,삭제갯수)
+        rr = arr1.splice(2,3)
+        //리턴 : 삭제시킨 원소들의 배열
+        document.write(`splice(2,3) : ${arr1} <br/>`)
+        document.write(`rr : ${rr} <br/>`)
+
+        // 중간삽입    (시작번호,삭제갯수, 추가원소1, 추가원소2....)
+        rr = arr1.splice(2,0,1234,5678)
+        document.write(`splice(2,0,1234,5678) : ${arr1} <br/>`)
+        document.write(`rr : ${rr}, ${rr.length} <br/>`)
+
+        // 중간 삭제 (시작번호,삭제갯수, 추가원소1, 추가원소2....)
+        rr = arr1.splice(5,2,1010,2020,3030,4040)
+        //리턴 : 삭제시킨 원소들의 배열
+        document.write(`splice(5,2,1010,2020,3030,4040) : ${arr1} <br/>`)
+        document.write(`rr : ${rr} <br/>`)
+
+
+        /// 검색, 확인
+        let a = 100
+        document.write(`Array.isArray(arr1) : ${Array.isArray(arr1)} <br/>`)
+        document.write(`Array.isArray(a) : ${Array.isArray(a)} <br/>`)
+        document.write(`Array.isArray("아기상어") : ${Array.isArray("아기상어")} <br/>`)
+        //원소존재유무
+        document.write(`includes(11) : ${arr1.includes(11)} <br/>`)
+        document.write(`includes('나는무너') : ${arr1.includes('나는무너')} <br/>`)
+        //원소번호
+        document.write(`indexOf(66) : ${arr1.indexOf(66)} <br/>`)
+        //                                          찿는값, 시작위치
+        document.write(`indexOf(66,3) : ${arr1.indexOf(66, 3)} <br/>`)
+        // 찾는값이 없으면 -1
+        document.write(`indexOf('나는무너') : ${arr1.indexOf('나는무너')} <br/>`)
+
+        document.write(`indexOf(66) : ${arr1.lastIndexOf(66)} <br/>`)
+                            // 4--> 8-1 원소로 구성된 배열 리턴
+        let arr3 = arr1.slice(4,8)
+        document.write(`slice(4,8) : ${arr3} <br/>`)
+        let arr4 = [456,789,123]
+        let arr5 = arr3.concat(arr4)  //배열 결합
+        document.write(`concat : ${arr5} <br/>`)
+        arr5.reverse()
+        document.write(`reverse : ${arr5} <br/>`)
+        arr5.sort()  //오름차순 정렬 : 달리기
+        document.write(`sort : ${arr5} <br/>`)
+    </script>
+</body>
+</html>

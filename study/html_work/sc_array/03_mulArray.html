@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03_mulArray</title>
+</head>
+<body>
+    <h1>03_mulArray</h1>
+    <script>
+                                                                      //1차원
+        let arr = [
+            [11,      22,      33,        44,         55],           //arr[0]
+            [100,    200,     300],                                  //arr[1]
+            new Array(123,456,789)                                   //arr[2]
+//2차원 arr[?][0], arr[?][1], arr[?][2], arr[?][3], arr[?][4]
+        ]
+
+        document.write(`arr : ${arr} <br/>`)
+        document.write(`arr[0] : ${arr[0]} <br/>`)
+        document.write(`arr[1] : ${arr[1]} <br/>`)
+        document.write(`arr[2] : ${arr[2]} <br/>`)
+        document.write(`arr[0][3] : ${arr[0][3]} <br/>`)
+        document.write(`arr[2][1] : ${arr[2][1]} <br/>`)
+
+        //1. 입력부
+        let studs = [
+            ['장동건',77,78,71],
+            ['장서건',67,68,61],
+            ['장남건',97,98,91],
+            ['북두신건',87,88,81]
+        ]
+
+        //2. 계산부
+        for (let i in studs) {
+            let tot = 0
+            let jumsu = studs[i].slice(1)
+            for (const j of jumsu) {
+                tot += j
+                console.log(j, tot)
+            }
+
+            studs[i].push(tot)
+            studs[i].push(tot/jumsu.length)
+
+        }
+
+        //3. 등수
+        for (let me in studs) {
+            let rank = 1
+            console.log("me  : ",studs[me][5])
+            for (let you in studs) {
+                console.log(studs[you][5])
+                if(studs[me][5]<studs[you][5]){
+                    rank++
+                }
+            }
+
+            studs[me].push(rank)
+        }
+        console.log(studs)
+
+        //4. 출력부
+         for (let rr=1 ; rr<=studs.length;rr++) {
+
+            document.write(`${(rr)} <br/>`)
+            for (const st of studs) {
+                if(rr==st[6]){
+                    document.write(`${st} <br/>`)
+                }
+            }
+
+         }
+
+
+            /* 
+            반 , 성별 , 성명 ,국어,영어 수학 총점  평균  등급  등수
+    
+            1. 입력순서
+            2. 전체 등수
+            3. 반별 등수
+            4. 성별별 등수
+            5. 반성별별 등수
+
+            2~3인 그룹을 형성하여 할 것
+            데이터는 40개이상
+            결과는 div로 구성
+            수 - 빨강, 우-주황, 미-노랑, 양-녹색, 가 - 하늘
+            90        80     70       60
+            */
+
+    </script>
+</body>
+</html>

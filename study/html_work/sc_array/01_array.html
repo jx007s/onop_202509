@@ -98,10 +98,26 @@
             }
             document.write(`${ee}, ${tot} <br/>`)
         }
-        document.write(`tot : ${tot} <br/>`)
+        document.write(`tot : ${tot} ---------------------<br/>`)
         
         // 45,78,90,34,87,64,83, 92, 77
         // 70 점 이상인 점수의 합계와 평균을 구하세요
+        // 70 점 이상인 배열을 구현하세요
+        
+        let arr3 = [45,78,90,34,87,64,83, 92, 77]
+        let arr4 = []
+        let 아브라카타브라 = 0
+        tot = 0
+        for (const ee of arr3) {
+            if(ee>=70){
+                tot += ee
+                arr4[아브라카타브라]=ee
+                아브라카타브라++
+            }
+            document.write(`${ee}, ${아브라카타브라}, ${tot}, [${arr4}] <br/>`)
+        }
+        document.write(`${tot}, ${tot/아브라카타브라},${아브라카타브라} <br/>`)
+        document.write(`${arr4} <br/>`)
 
     </script>
 </body>
