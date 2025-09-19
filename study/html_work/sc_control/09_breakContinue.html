@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>09_breakContinue</title>
+</head>
+<body>
+    <h1>09_breakContinue</h1>
+    <script>
+        for (let i = 0; i < 5; i++) {
+            console.log('break 시작', i)
+            if(i==2){
+                break           // 구간내 중간 탈출
+            }
+            console.log('break 끝', i)
+        }
+
+        console.log('break 종료 --------- 1')
+
+        for (let i = 0;    ; i++) { //조건이 없어도 정상실행
+            console.log('break 시작', i)
+            if(i==2){
+                break           // 구간내 중간 탈출
+            }
+            console.log('break 끝', i)
+        }
+
+        console.log('break 종료 --------- 2')
+
+        for (let big = 100; big <500; big+=100) {
+            console.log('big 시작', big)
+
+            for (let small = 10; small <50; small+=10) { //작은 for문 탈출
+                console.log('\t small 시작', big, small)
+                if(small==20){
+                    break  //작은 for문 탈출
+                }
+                console.log('\t small 끝', big, small)
+            }
+            console.log('big 끝', big)
+        }
+        console.log('break 종료 --------- 3')
+
+
+        for (let big = 100; big <500; big+=100) {
+            console.log('big 시작', big)
+
+            for (let small = 10; small <50; small+=10) { //작은 for문 탈출
+                console.log('\t small 시작', big, small)
+                if(big==200){
+                    break  //작은 for문 탈출
+                }
+                console.log('\t small 끝', big, small)
+            }
+            console.log('big 끝', big)
+        }
+        console.log('break 종료 --------- 4')
+
+
+        AAA:for (let big = 100; big <500; big+=100) {
+            console.log('big 시작', big)
+
+            BBB:for (let small = 10; small <50; small+=10) { //작은 for문 탈출
+                console.log('\t small 시작', big, small)
+                if(big==200){
+                    break  AAA // naming 한 반복문 탈출
+                }
+                console.log('\t small 끝', big, small)
+            }
+            console.log('big 끝', big)
+        }
+        console.log('break 종료 --------- 5')
+
+
+         for (let i = 0; i < 5; i++) {
+            console.log('continue 시작', i)
+            if(i==2){
+                continue           // 이하 구문 실행하지 않고 반복문 위로 이동
+            }
+            console.log('continue 끝', i)
+        }
+
+        console.log('continue 종료 --------- 1')
+
+        for (let i = 0; i < 5; i++) {
+            console.log('if 시작', i)
+            if(i!=2){
+                console.log('if 끝', i)
+            }
+            
+        }
+
+         console.log('if 종료 --------- 1')
+    </script>
+</body>
+</html>
