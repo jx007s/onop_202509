@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11_login2</title>
+</head>
+<body>
+    <h1>11_login2</h1>
+    <script>
+        /*
+
+        id,    pw, 이름
+        aaa, 1111,  장동건
+        bbb, 2222,  장서건
+        ccc, 3333,  장남건
+        
+        로그인 성공시
+        장동건님 안녕하세요 메세지 출력
+        */
+
+
+        for(;;){
+            let msg = '로그인 실패'
+
+            let pid = prompt("아이디")
+            let pw =  prompt("암호")
+
+            if(pid=='aaa' && pw=='1111'){
+                msg = "장동건님 안녕하세요"
+            }
+            if(pid=='bbb' && pw=='2222'){
+                msg = "장서건님 안녕하세요"
+            }
+            if(pid=='ccc' && pw=='3333'){
+                msg = "장남건님 안녕하세요"
+            }
+
+            alert(msg)
+
+            if(msg=='로그인 실패'){
+                continue
+            }
+
+            break
+        }
+    </script>
+</body>
+</html>
