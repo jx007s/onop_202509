@@ -45,19 +45,20 @@
 
         for (const st of studs) {
             //console.log(st)
-            if(st.score>=70){
+            if(st['score']>=70){
                 let vv = 1
-                if(st.hakkwa in res){
+                if(st['hakkwa'] in res){
                     vv += res[st.hakkwa]
                 }
                 res[st.hakkwa] = vv
             }
         }
+        console.log(res)
 
         for(const kk in res){
             document.write(`${kk} : ${res[kk]}<br/>`)
         }
-         document.write(`<hr/>`)
+        document.write(`<hr/>`)
         let keys = Object.keys(res)
         keys.sort()
         console.log(keys)

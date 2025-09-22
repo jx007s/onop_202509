@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02_param</title>
+</head>
+<body>
+    <h1>02_param</h1>
+    <script>
+        function fn_1(a,b,c){
+            document.write(`fn_1 : ${a}, ${b}, ${c} <br/>`)
+        }
+
+        // c = 300 매개변수 초기값 : 함수 호출시 생략되었을 경우 초기값으로 대입
+        function fn_2(a,b,c=300){
+            document.write(`fn_2 : ${a}, ${b}, ${c} <br/>`)
+        }
+
+        function fn_3(a,b=200,c){
+            document.write(`fn_3 : ${a}, ${b}, ${c} <br/>`)
+        }
+        function fn_4(a=11,b=22,c=33){
+            document.write(`fn_4 : ${a}, ${b}, ${c} <br/>`)
+        }
+
+        fn_1("아기상어","엄마상어","아빠상어")
+        fn_1("아기상어","엄마상어")
+        fn_1("아기상어")
+        fn_1()
+        document.write(`<hr/>`)
+        fn_2("아기상어","엄마상어","아빠상어")
+        fn_2("아기상어","엄마상어")
+        fn_2("아기상어")
+        fn_2()
+        document.write(`<hr/>`)
+        fn_3("아기상어","엄마상어","아빠상어")
+        fn_3("아기상어","엄마상어")
+        fn_3("아기상어")
+        fn_3()
+        document.write(`<hr/>`)
+        fn_4("아기상어","엄마상어","아빠상어")
+        fn_4("아기상어","엄마상어")
+        fn_4("아기상어")
+        fn_4()
+        document.write(`<hr/>`)
+    </script>
+</body>
+</html>

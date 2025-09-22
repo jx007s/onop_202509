@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01_function</title>
+</head>
+<body>
+    <h1>01_function</h1>
+    <script>
+        /*
+        함수정의
+        함수이름 : fn_1
+        매개변수 : aa, bb
+        리턴값 : 100
+        */
+        function fn_1(aa, bb){
+            document.write(`fn_1() 실행  : ${aa}, ${bb}<br/>`)
+            return 100
+        }
+
+        function fn_2(){
+            document.write(`fn_2() 실행  : param X, ret X <br/>`)
+        }
+
+        function fn_3(aa, bb, cc){
+            document.write(`fn_3() 실행  : ${aa}, ${bb}, ${cc}, ret X <br/>`)
+        }
+
+        function fn_4(){
+            document.write(`fn_4() 실행  : param X, ret 나는무너 <br/>`)
+            return "나는무너"
+        }
+
+
+        let rr = fn_1("아기상어","엄마상어") // 함수호출 - 함수명(인수1, 인수2) : 인수갯수를 맞춰야 한다
+                                            // 함수 실행 후 함수호출 된 자리에 return 값을 받아온다
+                                            //  변수에 대입은 return 이후 실행된다.
+        document.write(`rr  : ${rr}<br/>`)
+
+        rr = fn_1("장수풍뎅이","사슴벌레") //함수 재호출
+        document.write(`rr  : ${rr}<br/>`)
+
+        fn_1() //함수 재호출
+        document.write(`rr  : ${rr}<br/>`)
+
+        rr = fn_2("장수풍뎅이","사슴벌레") 
+        document.write(`rr  : ${rr}<br/>`)
+
+        fn_2() 
+
+        rr = fn_3("상어","고래", "갈치") 
+        document.write(`rr  : ${rr}<br/>`)
+
+        rr = fn_4("상어","고래", "갈치") 
+        document.write(`rr  : ${rr}<br/>`)
+        //22,4,56,7,8,90,12,3,45,6,22,31,45,63,86,57
+        // 다음 숫자들의 각 약수들의 갯수를 구하세요 단 0,1 자신 제외
+
+        //직각삼각형, 원의 넓이/둘레를 출력하는 함수를 각각 정의/호출하세요
+        function triangle(w, h, a){
+            let area = w * h / 2
+            let border = w + h + a
+            document.write(`직각삼각형 ${area}, ${border}<BR/>`)
+        }
+
+        function circle(r){
+            const PI = 3.14
+            let area = r **2* PI
+            let border = r * 2* PI
+            document.write(`원 ${area}, ${border}<BR/>`)
+        }
+
+        triangle(4,5,8)
+        circle(5)
+
+    </script>
+</body>
+</html>
