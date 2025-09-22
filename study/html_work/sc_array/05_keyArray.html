@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>05_keyArray</title>
+</head>
+<body>
+    <h1>05_keyArray</h1>
+    <script>
+        let arr1 = [11,44,33,22,44]
+
+        // 키배열 생성
+        /* 
+            key:value 가 한쌍 
+            순서가 없고, key는 중복되지 않음
+        */
+        let arr2 = {호랑이:"포유류","독수리":"조류","사자":"보이즈", 10:"십이지롱","사자":"팔자"}
+        document.write(`arr1 : ${arr1} <br/>`)
+        document.write(`arr2 : ${arr2} <br/>`)
+        console.log('arr1', arr1)
+        console.log('arr2', arr2)
+
+        document.write(`arr2[0] : ${arr2[0]} <br/>`)
+        document.write(`arr2["호랑이"] : ${arr2["호랑이"]} <br/>`)
+        arr2["독수리"] = "맹금류"   // 대입
+        console.log('arr2', arr2)
+        arr2["악어"] = "파충류"     //추가
+        console.log('arr2', arr2)
+
+        delete arr2["사자"]     //삭제
+        console.log('arr2', arr2)
+
+        document.write(`arr2.호랑이 : ${arr2.호랑이} <br/>`)
+        //document.write(`arr2.호랑이 : ${arr2."호랑이"} <br/>`)
+        //document.write(`arr2[호랑이] : ${arr2[호랑이]} <br/>`)  호랑이 : 변수로 인식
+
+        //document.write(`arr2.includes("호랑이") : ${arr2.includes("호랑이")} <br/>`)
+        document.write(`"호랑이" in arr2 : ${"호랑이" in arr2} <br/>`)  //key 존재유무
+        document.write(`"맹금류" in arr2 : ${"맹금류" in arr2} <br/>`)  //value 유무판단 불가
+
+        document.write(`for in : key를 순차로 반복--------------<br/>`)
+        for (const kk in arr2) {
+           
+            document.write(`${kk} : ${arr2[kk]} <br/>`)
+        }
+
+        /*
+        document.write(`for of : value를 순차로 반복불가--------------<br/>`)
+        for (const vv of arr2) {
+           
+            document.write(`${vv} <br/>`)
+        }*/
+        document.write(`<hr/>`)
+
+        let kkArr1 = Object.keys(arr1)  //key, index 만 배열로 추출
+        document.write(`Object.keys(arr1) : ${kkArr1} <br/>`)
+        let kkArr2 = Object.keys(arr2)  //key, index 만 배열로 추출
+        document.write(`Object.keys(arr2) : ${kkArr2} <br/>`)
+
+        let vvArr2 = Object.values(arr2)  //value를 배열로 추출
+        document.write(`Object.values : ${vvArr2} <br/>`)
+
+        for (const vv of vvArr2) {
+           
+            document.write(`${vv} <br/>`)
+        }
+    </script>
+</body>
+</html>
