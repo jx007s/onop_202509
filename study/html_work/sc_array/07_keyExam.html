@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07_keyExam</title>
+</head>
+<body>
+    <h1>07_keyExam</h1>
+    <script>
+        const studs = [
+            {hakkwa:"약과", name:"원빈",  score:31},
+            {hakkwa:"수정과", name:"투빈", score:41},
+            {hakkwa:"사과", name:"김우빈", score:51},
+            {hakkwa:"수정과", name:"현빈", score:61},
+            {hakkwa:"사과", name:"골빈", score:71},
+            {hakkwa:"약과", name:"미스터빈", score:81},
+            {hakkwa:"약과", name:"장희빈", score:91},
+            {hakkwa:"수정과", name:"커피빈", score:61},
+            {hakkwa:"무화과", name:"텅빈", score:78},
+            {hakkwa:"무화과", name:"증기터빈", score:81},
+            {hakkwa:"사과", name:"속이빈", score:51},
+            {hakkwa:"약과", name:"숙빈", score:41},
+            {hakkwa:"약과", name:"삼빈", score:31},
+            {hakkwa:"약과", name:"사빈", score:21},
+            {hakkwa:"무화과", name:"오빈", score:91},
+            {hakkwa:"약과", name:"육빈", score:31},
+            {hakkwa:"무화과", name:"칠빈", score:61},
+            {hakkwa:"무화과", name:"팔빈", score:61},
+            {hakkwa:"사과", name:"구빈", score:76},
+            {hakkwa:"수정과", name:"잘못빈", score:34}
+        ]
+
+        let res = {}
+
+         /*
+        07_keyExam.html
+        
+        20명 학생 중 점수가 70 점이상인 학생이 각 학과별 몇명인지 출력하세요
+        학과, 이름, 점수
+
+        학과 : ??명
+        
+        */
+
+        for (const st of studs) {
+            //console.log(st)
+            if(st.score>=70){
+                let vv = 1
+                if(st.hakkwa in res){
+                    vv += res[st.hakkwa]
+                }
+                res[st.hakkwa] = vv
+            }
+        }
+
+        for(const kk in res){
+            document.write(`${kk} : ${res[kk]}<br/>`)
+        }
+         document.write(`<hr/>`)
+        let keys = Object.keys(res)
+        keys.sort()
+        console.log(keys)
+        for(const kk of keys){
+            document.write(`${kk} : ${res[kk]}<br/>`)
+        }
+
+    </script>
+</body>
+</html>
