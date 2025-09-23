@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>05_funcExam</title>
+    <style>
+        *{
+            margin: 0;
+            padding :0;
+        }
+        section > div{
+            clear: both;
+        }
+        section > div>div{
+            float: left;
+            width: 100px;
+            height: 30px;
+            border: 1px solid #ccc;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <h1>05_funcExam</h1>
+    <script>
+        function exam(){
+
+            function studOne(stud){
+                let res = '<div>'
+                for (const k in stud) {
+                    res += `<div>${stud[k]}</div>`
+                }
+                res+='</div>'
+                return res
+            }
+
+            function ppp(){
+                let ttt = '<section>'
+                for (const st of studs) {
+                    
+                    ttt += studOne(st) 
+                }
+                ttt += '</section>'
+                document.write(ttt)
+            }
+
+                // 1. 입력부
+             let studs = studInit()
+             //console.log(studs)
+
+             //2. 계산부
+             calc(studs)    //studs는 주소참조
+             console.log(studs)
+
+             //3. 출력부
+             ppp()
+        }
+
+        function studInit(){
+            return [
+                {name:'조인성',jum:[77,78,72]},
+                {name:'정우성',jum:[67,68,62]},
+                {name:'감우성',jum:[97,98,92]},
+                {name:'감수성',jum:[57,78,82]},
+                {name:'진주성',jum:[47,98,32]},
+                {name:'왜그래성',jum:[87,88,82]}
+            ]
+        }
+        function calc(arr){
+            for (let st of arr) {
+                st.tot = 0
+                for (const j of st.jum) {
+                    st.tot += j
+                }
+                st.avg = st.tot/st.jum.length
+            }
+            
+        }
+        
+
+        exam()
+
+
+        /*
+        직사각형의  가로와 세로를 입력받아 넓이와 둘레를 처리하는 함수를 구현하세요
+        1. 입력(recInit), 연산(recCalc), 출력부(recPPP)로 나누어 모듈 함수를 정의
+        2. 모듈함수를 연동하여 처리하는 함수(rectangle) 정의
+        */
+    </script>
+</body>
+</html>
