@@ -12,6 +12,9 @@
         section > div{
             clear: both;
         }
+        section{
+            clear: both;
+        }
         section > div>div{
             float: left;
             width: 100px;
@@ -81,7 +84,29 @@
 
         exam()
 
+        function rectangle(){
 
+            let area, border, ww, hh
+            function recInit(){
+                ww = 5; hh = 6
+            }
+
+            function recCalc(){
+                area = ww* hh
+                border = (ww + hh)*2
+            }
+
+            function recPPP(){
+
+                document.write(`<h3>넓이 : ${area} , 둘레 : ${border}</h3>`)
+            }
+
+            recInit()
+            recCalc()
+            recPPP()
+        }
+
+        rectangle()
         /*
         직사각형의  가로와 세로를 입력받아 넓이와 둘레를 처리하는 함수를 구현하세요
         1. 입력(recInit), 연산(recCalc), 출력부(recPPP)로 나누어 모듈 함수를 정의
