@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>04_funcCall</title>
+</head>
+<body>
+    <h1>04_funcCall</h1>
+    <script>
+        function fn_1(){
+            let a = 10      //블럭변수(제어문 선언 구간에서만 사용)
+            var b = 2000    //지역변수(선언된 함수 구간에서만 사용)
+            c = 3333        //전역변수 - 모든 구간에서 사용
+            document.write(`fn_1() 시작 ${a} ${b} ${c}<br/>`)
+
+            document.write(`fn_1() 끝<br/>`)
+        }
+
+        function fn_2(){
+            //document.write(`fn_2() 시작 ${a} ${b}<br/>`)
+            let aa = 90      //블럭변수(제어문 선언 구간에서만 사용)
+            var bb = 800    //지역변수(선언된 함수 구간에서만 사용)
+            cc = 7000
+            document.write(`fn_2() 시작 ${c}, ${aa}, ${bb}, ${cc}<br/>`)
+            fn_3()
+            cc++
+            document.write(`fn_2() 끝 ${aa}, ${bb}, ${cc}<br/>`)
+        }
+
+        function fn_3(){
+            //document.write(`&nbsp;&nbsp;&nbsp; fn_3() 시작  ${aa}, ${bb}, ${cc}<br/>`)
+            document.write(`&nbsp;&nbsp;&nbsp; fn_3() 시작 ${cc}<br/>`)
+            fn_4()
+            cc++
+            document.write(`&nbsp;&nbsp;&nbsp; fn_3() 끝 ${cc}<br/>`)
+        }
+
+        function fn_4(){
+            document.write(`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; fn_4() 시작 ${cc}<br/>`)
+            //fn_2() 순환구조하지 말 것
+            cc++
+            document.write(`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; fn_4() 끝 ${cc}<br/>`)
+        }
+
+
+
+        function fn_5(){
+            let a = 10      //블럭변수(제어문 선언 구간에서만 사용)
+            var b = 2000    //지역변수(선언된 함수 구간에서만 사용)
+
+            //함수 중첩 정의
+            function sub(){
+                // a, b - 함수가 정의된 외부에서의 지역,블럭변수는 전역으로 사용
+                document.write(`&nbsp;&nbsp;&nbsp; sub() 시작 ${a}, ${b}<br/>`)
+                tt = "sub_전역"
+                let zz = "sub_블럭"
+                var xx = "sub_지역"
+                document.write(`&nbsp;&nbsp;&nbsp; sub() 끝 ${a}, ${b}, ${tt}, ${zz}, ${xx}<br/>`)
+            }
+           
+            document.write(`fn_5() 시작 ${a} ${b}<br/>`)
+            sub()
+            //document.write(`fn_5() 끝 ${a} ${b}, ${tt}, ${zz}, ${xx}<br/>`)
+            // 내부함수에서 선언한 전역변수는 외부함수에서 사용가능
+            // 내부함수의 지역,블럭변수는 함수 호출이 종료됨과 동시에 변수도 소멸되어 접근 불가
+            document.write(`fn_5() 끝 ${a} ${b}, ${tt}<br/>`)
+        }
+
+        fn_1()
+        fn_2()
+
+        fn_5()
+
+        // 전역변수는 함수가 종료되어도 소멸되지 않음 
+        document.write(`main : ${c} ${cc}, ${tt}<br/>`)
+        //document.write(`main : ${b} ${bb}<br/>`)
+
+        document.write(`<hr/>`)
+
+        function fn_6(aa){  //매개변수 var aa 와 같음
+            document.write(`fn_6() 시작 ${aa}<br/>`)
+            let res = fn_7(10)
+            document.write(`fn_6() 끝 ${aa} ${res}<br/>`)
+            return res/10
+        }
+
+        function fn_7(bb){
+            // 콜러의 매개변수 접근 불가
+            //document.write(`&nbsp;&nbsp;&nbsp; fn_7() 시작 ${aa} ${bb}<br/>`)
+            document.write(`&nbsp;&nbsp;&nbsp; fn_7() 시작 ${bb}<br/>`)
+            let res = fn_8(100,200,300)
+            document.write(`&nbsp;&nbsp;&nbsp; fn_7() 끝 ${bb} ${res}<br/>`)
+            return res+5678
+        }
+        function fn_8(cc,dd,ee){
+            
+            document.write(`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; fn_8() 시작 ${cc} ${dd} ${ee}<br/>`)
+            var cc = 444  //매개변수와 중첩가능
+            //let dd = 555 에러발생
+            document.write(`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; fn_8() 끝 ${cc} ${dd} ${ee}<br/>`)
+            return 1234
+        }
+
+        let rr = fn_6(3)
+        document.write(`main : ${rr}<br/>`)
+    </script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03_spread</title>
+</head>
+<body>
+    <h1>03_spread</h1>
+    <script>
+        let arr1 = [11,22,33,44,55]
+        let arr2 = {"고등어구이":7000,"삼치구이":8000,"전어구이":7000}
+
+        // ... : spread 연산자
+        // 배열 원소를 개별로 나열 혹은 개별로 나열된 요소들을 배열로 묶음
+        console.log(arr1)
+        console.log(...arr1)
+
+        console.log(arr2)
+        //console.log(...arr2)  key배열은 spread 연산자 불가
+
+        function fn_1(a,b,c){
+            console.log("fn_1 실행 : ",a,b,c)
+        }
+
+        function fn_2(arr){ //arr 이 배열
+            console.log("fn_2 시작 ---- ")
+            for (const i in arr) {
+                console.log("\t",i,arr[i])
+            }
+            console.log("fn_2 끝 ---- ")
+        }
+
+
+        function fn_3(...arr){ // 매개변수들을 묶어 배열 처리
+            console.log("fn_3 시작 ---- ")
+            for (const i in arr) {
+                console.log("\t",i,arr[i])
+            }
+            console.log("fn_3 끝 ---- ")
+        }
+
+        function fn_4(a,b,...arr){ // 매개변수들을 묶어 배열 처리
+            console.log("fn_4 시작 : ",a,b)
+            for (const i in arr) {
+                console.log("\t",i,arr[i])
+            }
+            console.log("fn_4 끝 ---- ")
+        }
+
+        /* spread 매개변수는 마지막에 배치
+        function fn_5(...arr,a,b){
+           
+        }
+            */
+        function fn_6(a,b = 2000 ,...arr){ 
+            console.log("fn_6 시작 : ",a,b)
+            for (const i in arr) {
+                console.log("\t",i,arr[i])
+            }
+            console.log("fn_6 끝 ---- ")
+        }
+ /* spread 매개변수는 마지막에 배치
+        function fn_7(a ,...arr,b = 2000){ 
+           
+        }
+ 
+        spread 매개변수 다중처리 불가
+        function fn_8(...arr1, ...arr2){ 
+            
+        }
+*/
+        fn_1("아기상어","엄마상어","아빠상어")
+        fn_2(["현빈","원빈","미스터빈"])
+        fn_2(12,34,56,78)  //배열이 아니어서 나열불가
+        fn_3(12,34,56,78)   // arr = [12,34,56,78]
+                                    //0   1  2  3
+        fn_3([12,34,56,78])// arr = [[12,34,56,78]]
+                                //   -------------
+                                //     arr[0]
+
+        fn_3(12,34)                                
+        fn_3(12)
+        fn_3()
+
+        fn_4(12,34,56,78)   // a=12,b=34,arr = [56,78]
+
+        fn_6(12,34,56,78) 
+        fn_6(12,34) 
+        fn_6() 
+
+
+        function even(...arr){
+            let tot = 0
+            for (const ee of arr) {
+                if(ee%2==0){
+                    tot += ee
+                }
+            }
+            console.log(tot)
+        }
+
+        even(23,46,71,12,89,32)
+
+        ///숫자들을 입력하여 기본수의 배수의 총점, 평균을 출력하는 함수를 구현하세요
+        // 기본수 : 첫째 매개변수
+        // 단 배수가 0개일 경우 "3의 배수가 없습니다." 출력
+        
+        function multiple(no,...su){
+            let tot = 0, cnt = 0
+            for (const s of su) {
+                if(s%no == 0){
+                    tot+=s
+                    cnt++
+                }
+            }
+
+            if(cnt){
+                console.log(`${tot}, ${tot/cnt}`)
+            }else{
+                console.log(`${no}의 배수가 없습니다.`)
+            }
+        }
+
+         multiple(5,34,6,89,12,9,46)
+         multiple(3,34,6,89,12,9,46)
+         multiple(3,34,6,89,12,9,46)
+
+    </script>
+</body>
+</html>
