@@ -93,8 +93,82 @@
         rr = (document.write(` 익명 매개없음2 () <br/>`) )( )
         document.write(`rr : ${rr}<br/>`) */
 
+        /* 매개변수가 1개인 경우 () 생략 가능 */
         rr = (aa => document.write(` 익명 ${aa} <br/>`) )('탄지로' )
         document.write(`rr : ${rr}<br/>`)
+
+
+        function big1(aa, bb,cc){
+            let res = bb*aa + cc/aa
+            document.write(`big1 : ${res}<br/>`)
+        }
+
+        big1(3,10,15)
+
+        function big2( bb,cc){
+
+            function small(x,y){
+                return x-y
+            }
+            let res = small(cc,bb)
+            document.write(`big2 : ${res}<br/>`)
+        }
+
+        big2(10,15)
+
+        function big3( bb,cc){
+
+            function small(x,y){
+                return x+y
+            }
+            let res = small(cc,bb)
+            document.write(`big3 : ${res}<br/>`)
+        }
+
+        big3(10,15)
+
+
+        function big4(small, bb,cc){  //고차함수 - 함수를 매개변수로 사용하는 함수
+
+            let res = small(cc,bb) + 1000
+            document.write(`big4 : ${res}<br/>`)
+        }
+
+        function qqq(x,y){
+            document.write(`qqq 실행 : ${x}, ${y}<br/>`)
+            return y/x
+        }
+
+        big4(qqq,10,15)
+
+        big4(function ggg(x,y){
+            document.write(`ggg 실행 : ${x}, ${y}<br/>`)
+            return y%x
+        },10,15)
+
+
+        big4(function (x,y){
+            document.write(`함수표현식 실행 : ${x}, ${y}<br/>`)
+            return x - y + 50
+        },10,15)
+
+
+        big4((x,y)=>x/y+ 20    ,10,15)
+       
+        /*
+        
+        대학별 시험점수를 다르게 출력하는 함수를 구현하세요
+
+        입력정보 :이름, 국어 , 영어, 수학
+        합격점수 : 70점
+
+        a대학 : 국어 50%, 영어:30%, 수학:20%
+        b대학 : 국어 10%, 영어:20%, 수학:70%
+        c대학 : 국어 33%, 영어:33%, 수학:34%
+
+        시험 함수는 1개이며 각대학의 점수계산을 고차함수로 처리하세요
+        */
+
 
     </script>
 </body>
