@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>06_funcDef</title>
+</head>
+<body>
+    <h1>06_funcDef</h1>
+    <script>
+
+        // 선언적 형태로 정의
+        function fn_1(aa,bb){
+            document.write(`fn_1()실행 : ${aa}, ${bb}<br/>`)
+            return 1234
+        }
+
+        fn_1("티라노","브라키오")
+
+        let rr = fn_1("두치","뿌꾸")
+        document.write(`rr : ${rr}<br/>`)
+
+        let ff1 = fn_1  //함수를 변수로 대입
+        document.write(`ff1 : ${ff1}<br/>`) //함수 정의내용 출력
+        document.write(`fn_1 : ${fn_1}<br/>`)
+
+        rr = ff1("장수풍뎅이","사슴벌레")   //변수를 함수로 사용(호출)
+        document.write(`rr : ${rr}<br/>`)
+
+        /*
+        function(aa,bb){
+            document.write(`익명()실행 : ${aa}, ${bb}<br/>`)
+            return 5678
+        }
+*/
+        // 함수표현식으로 정의
+        let ff2 = function(aa,bb){
+            document.write(`익명()실행 : ${aa}, ${bb}<br/>`)
+            return 5678
+        }
+
+        rr = ff2("톰","제리")
+        document.write(`rr : ${rr}<br/>`)
+
+
+        // 화살표 함수로 정의     (매개변수1, 매개변수2...) => {}
+        let ff3 = (aa,bb) => {
+            document.write(`화살표함수()실행 : ${aa}, ${bb}<br/>`)
+            return 9012
+        }
+
+        rr = ff3("서수남","하청일")
+        document.write(`rr : ${rr}<br/>`)
+
+
+        // 익명 함수(함수재접근이 불가) 호출
+        rr = (function(aa,bb){
+            document.write(`익명 직접실행() : ${aa}, ${bb}<br/>`)
+            return 123
+        })("키라","아스란")
+
+        document.write(`rr : ${rr}<br/>`)
+
+        rr = ((aa,bb) => {
+            document.write(`화살표함수 익명 직접 실행() : ${aa}, ${bb}<br/>`)
+            return 456
+        })("이치고","루키아")
+
+        document.write(`rr : ${rr}<br/>`)
+
+        rr = (() => {
+            document.write(` 익명 매개없음1 () <br/>`)
+            return 456
+        })( )
+
+        document.write(`rr : ${rr}<br/>`)
+
+        rr = (() => {
+            return 789
+        })( )
+
+        document.write(`rr : ${rr}<br/>`)
+
+        //실행구문이 1개인 경우 {} 생략
+        rr = (() => 111 )( )
+
+        document.write(`rr : ${rr}<br/>`)
+
+        rr = (() => document.write(` 익명 매개없음2 () <br/>`) )( )
+        document.write(`rr : ${rr}<br/>`)
+
+        /* 매개변수가 없을 경우 () 를 생략할 수 없다
+        rr = (document.write(` 익명 매개없음2 () <br/>`) )( )
+        document.write(`rr : ${rr}<br/>`) */
+
+        rr = (aa => document.write(` 익명 ${aa} <br/>`) )('탄지로' )
+        document.write(`rr : ${rr}<br/>`)
+
+    </script>
+</body>
+</html>
