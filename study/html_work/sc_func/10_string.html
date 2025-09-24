@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10_string</title>
+</head>
+<body>
+    <h1>10_string</h1>
+    <script>
+        let tt = "aBcD EfG 오엔오피 OnoP computer 123 EfeG"
+        //        0123456789 0 1 234567890123456789012345
+        
+        document.write("tt : ", tt,"<br/>")
+        document.write("tt[2] : ", tt[2],"<br/>")
+        document.write("tt[23] : ", tt[33],"<br/>")
+        document.write("tt[-2] : ", tt[-2],"<br/>")
+        document.write("tt.length : ", tt.length,"<br/>")
+        document.write("tt.charAt(2) : ", tt.charAt(2)," , ", tt.charCodeAt(2),"<br/>")
+
+        // 문자 -> ASCII
+        document.write("tt.charAt(10) : ", tt.charAt(10)," , ", tt.charCodeAt(10),"<br/>")
+
+        // ASCII -> 문자열
+        let tt4 = String.fromCharCode(100,65,49,110)
+        document.write("String.fromCharCode(100,65,49,110) : ", tt4,"<br/>")
+
+        tt[10] = '가'
+        //tt.push('다')   문자열 : 추가,삭제,변경 불가
+        document.write("tt : ", tt,"<br/>")
+
+        //검색
+        document.write("tt.includes('m') : ", tt.includes('m'),"<br/>")
+        document.write("tt.includes('ompu') : ", tt.includes('ompu'),"<br/>")
+        document.write("tt.includes('k') : ", tt.includes('k'),"<br/>")
+
+        document.write("tt.indexOf('put') : ", tt.indexOf('put'),"<br/>")
+        document.write("tt.indexOf('k') : ", tt.indexOf('k'),"<br/>")
+        document.write("tt.indexOf('e') : ", tt.indexOf('e'),"<br/>")
+        document.write("tt.indexOf('e',26) : ", tt.indexOf('e',26),"<br/>")
+
+        document.write("tt.lastIndexOf('e') : ", tt.lastIndexOf('e'),"<br/>")
+        document.write("tt.lastIndexOf('e',33) : ", tt.lastIndexOf('e',33),"<br/>")
+
+        document.write("tt.startsWith('aBc') : ", tt.startsWith('aBc'),"<br/>")
+        document.write("tt.startsWith('EfG') : ", tt.startsWith('EfG'),"<br/>")
+        document.write("tt.endsWith('feG') : ", tt.endsWith('feG'),"<br/>")
+        document.write("tt.endsWith('aBc') : ", tt.endsWith('aBc'),"<br/>")
+
+        //추출
+        let tt2 = tt.slice(3,10)    //3-> 10-1
+        document.write("tt.slice(3,10) : ", tt2,"<br/>")
+        tt2 = tt.substring(3,10)    //3-> 10-1
+        document.write("tt.substring(3,10) : ", tt2,"<br/>")
+        tt2 = tt.substr(3,10)    //3-> 10자
+        document.write("tt.substr(3,10) : ", tt2,"<br/>")
+
+        //변환
+        tt2 = tt.toLowerCase()
+        document.write("tt.toLowerCase() : ", tt2,"<br/>")
+        tt2 = tt.toUpperCase()
+        document.write("tt.toUpperCase() : ", tt2,"<br/>")
+
+        tt2 = "공룡메카드".repeat(4)
+        document.write(`"공룡메카드".repeat(4) : `, tt2,"<br/>")
+        tt2 = tt.replace("o", 5)  //최초1개 변경
+        document.write(`tt.replace("o", 5) : `, tt2,"<br/>")
+        tt2 = tt.replaceAll("e", 2)  //모두 변경
+        document.write(`tt.replaceAll("e", 2) : `, tt2,"<br/>")
+        let tt3 = "     오엔오피 IT   "
+        document.write(`${tt3} , ${tt3.length}<br/>`)
+        tt2 = tt3.trimStart()
+        console.log(`tt3.trimStart() : ${tt2} , ${tt2.length}`)
+        tt2 = tt3.trimEnd()
+        console.log(`tt3.trimEnd() : ${tt2} , ${tt2.length}`)
+        tt2 = tt3.trim()
+        console.log(`tt3.trim() : ${tt2} , ${tt2.length}`)
+        tt3 = "신라면,참깨라면.너구리,안성탕면,,짜파게티"
+        console.log(`tt3 : ${tt3}, ${typeof(tt3)}`)
+        tt2 = tt3.split(',') //문자열 -> 배열 : , 를 구분자로 하여 배열로 분할
+        console.log(`tt3.split(',') : ${tt2}, ${typeof(tt2)}`)
+        console.log(`tt2[0] : ${tt2[0]}`)
+        for (const i in tt2) {
+            console.log(`${i} : ${tt2[i]}`)
+        }
+        let arr = [11,22,33,44]
+        console.log(`arr : ${arr}, ${typeof(arr)}`)
+        tt2 = arr.join('&') //배열 -> 문자열
+        console.log(`arr.join('&') : ${tt2}, ${typeof(tt2)}`)
+         // 11_jumin.html  주민번호를 이용하여 성별, 국적, 생년월일을 출력하세요
+    </script>
+</body>
+</html>
+
