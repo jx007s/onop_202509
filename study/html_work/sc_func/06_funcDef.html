@@ -168,8 +168,25 @@
 
         시험 함수는 1개이며 각대학의 점수계산을 고차함수로 처리하세요
         */
+        function exam(univ, st){
+            let res = '불합격'
+            let avg = univ(st.jum)
+            if(70<= avg){
+                res = "합격"
+            }
+            document.write(`${st.name}님 ${res}(${avg})입니다.<br/>`)
+        }
 
-
+        exam(arr=> arr[0]*0.5+arr[1]*0.3+arr[2]*0.2, {name:'정우성',jum:[96,68,32]} )
+        exam(arr=> {
+            let res = 0
+            let rate =[0.1,0.2,0.7]
+            for (const i in rate) {
+                res += arr[i]*rate[i]
+            }
+            return res
+        }, {name:'정우성',jum:[96,68,32]} )
+        exam(arr=> arr[0]*0.33+arr[1]*0.33+arr[2]*0.34, {name:'정우성',jum:[96,68,32]} )
     </script>
 </body>
 </html>
