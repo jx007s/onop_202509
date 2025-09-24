@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11_jumin</title>
+</head>
+<body>
+    <h1>11_jumin</h1>
+    <script>
+        /*
+        1. 기획 -  주민번호를 이용하여 성별, 국적, 생년월일을 출력하세요
+        2. 요구사항 
+            1) 주민번호 뒤의 첫자리를 찾아온다
+            2) 그 숫자가 1,3,5,7/ 2,4,6,8 로 구분한다.
+            3)            짝수 홀수 확인
+            4)          남자      여자
+
+        3. 설계
+            1) 변수 - 주민번호뒷자리 
+            2) 제어문으로 확인 - 2로 나눈 나머지 
+            3) 출력 - 문자열
+        4. 구현
+             검증 - 디버깅, 화면출력
+*/
+        let jumin = '970320-8234567'
+        let pos = eval(jumin[7])
+        console.log('여남'[pos%2]+'자')
+        console.log('내외'[parseInt(pos/5)]+'국인')
+        let title = '년월일'
+/*
+
+        -1      %4  /2  +19
+19  1    0      0   0   19
+19  2    1      1   0
+--------------------------------------------------
+20  3    2      2   1   20
+20  4    3      3   1
+-------------------------------------------
+19  5    4      0
+19  6    5      1
+20  7    6      2
+20  8    7      3
+
+*/
+        let birth = parseInt((pos-1) %4/2)+19+''
+        for (let i=0;i<title.length;i++) {
+            birth += jumin.substr(i*2,2)+title[i]
+        }
+        console.log(birth)
+    </script>
+</body>
+</html>
