@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>08_number</title>
+</head>
+<body>
+    <h1>08_number</h1>
+    <script>
+        //isNaN( ) : 매개변수 내용이 숫자가 아닌지 - 숫자가아니면 true
+        document.write(`isNaN(100) : ${isNaN(100)} <br/>`)
+        document.write(`isNaN('100') : ${isNaN('100')} <br/>`)
+        document.write(`isNaN('아기상어') : ${isNaN('아기상어')} <br/>`)
+
+        document.write(`'123'+5 : ${'123'+5} <br/>`)
+        document.write(`123+5 : ${123+5} <br/>`)
+
+        // Number() : 문자열-> 숫자, 수식은 변환불가
+        document.write(`Number('123')+5 : ${Number('123')+5} <br/>`)
+        document.write(`Number('5+3') : ${Number('5+3')} <br/>`)
+
+        //정수화
+        document.write(`parseInt('123')+5 : ${parseInt('123')+5} <br/>`)
+        document.write(`parseInt('123.456')+5 : ${parseInt('123.456')+5} <br/>`)
+        document.write(`parseInt(987.654) : ${parseInt(987.654)} <br/>`)
+        document.write(`parseInt(987.654)+5 : ${parseInt(987.654)+5} <br/>`)
+
+        //실수화
+        document.write(`parseFloat('123.456')+5 : ${parseFloat('123.456')+5} <br/>`)
+
+        // eval() : 문자열-> 수식
+        document.write(`eval('123')+5 : ${eval('123')+5} <br/>`)
+        document.write(`(5+3) * 4 : ${eval('(5+3) * 4')} <br/>`)
+
+        // 숫자와 관련된 메세지(에러)
+        document.write(`0/10 : ${0/10} <br/>`)
+        document.write(`10/0 : ${10/0} <br/>`) //Infinity - 극한
+        document.write(`'9'+5 : ${'9'+5} <br/>`) // '95'
+        document.write(`'9'-5 : ${'9'-5} <br/>`) // 4
+        document.write(`'a'-5 : ${'a'-5} <br/>`) // NaN - 숫자가 아니다 (Not a Number)
+
+        //isFinite( ) : 매개변수내용이 숫자(유리수)인지
+        document.write(`isFinite(123) : ${isFinite(123)} <br/>`)
+        document.write(`isFinite(123.456) : ${isFinite(123.456)} <br/>`)
+        document.write(`isFinite('123.456') : ${isFinite('123.456')} <br/>`)
+        document.write(`isFinite('엄마상어') : ${isFinite('엄마상어')} <br/>`) // false
+        document.write(`isFinite(NaN) : ${isFinite(NaN)} <br/>`)            // false
+        document.write(`isFinite(Infinity) : ${isFinite(Infinity)} <br/>`)  // false
+        document.write(`isFinite(undefined) : ${isFinite(undefined)} <br/>`)// false
+        //Number.isFinite( ) : 매개변수가 숫자(유리수)인지  - 문자열내용이 숫자인 경우 false
+        document.write(`Number.isFinite(123) : ${Number.isFinite(123)} <br/>`)
+        document.write(`Number.isFinite(123.456) : ${Number.isFinite(123.456)} <br/>`)
+        document.write(`Number.isFinite('123.456') : ${Number.isFinite('123.456')} <br/>`)//false
+        document.write(`Number.isFinite('엄마상어') : ${Number.isFinite('엄마상어')} <br/>`) // false
+        document.write(`Number.isFinite(NaN) : ${Number.isFinite(NaN)} <br/>`)            // false
+        document.write(`Number.isFinite(Infinity) : ${Number.isFinite(Infinity)} <br/>`)  // false
+        document.write(`Number.isFinite(undefined) : ${Number.isFinite(undefined)} <br/>`)// false
+
+
+        let a = 123.45678
+        document.write(`a : ${a} <br/>`)
+        document.write(`a.toFixed(2) : ${a.toFixed(2)} <br/>`) //반올림
+        document.write(`a.toPrecision(2) : ${a.toPrecision(2)} <br/>`) //지수
+
+        //내림
+        document.write(`Math.floor : ${Math.floor(123.456)}, ${Math.floor(-123.456)}, ${Math.floor(987.654)}, ${Math.floor(-987.654)} <br/>`) 
+        //올림
+        document.write(`Math.ceil : ${Math.ceil(123.456)}, ${Math.ceil(-123.456)}, ${Math.ceil(987.654)}, ${Math.ceil(-987.654)} <br/>`) 
+        //반올림
+        document.write(`Math.round : ${Math.round(123.456)}, ${Math.round(-123.456)}, ${Math.round(987.654)}, ${Math.round(-987.654)} <br/>`) 
+        //소숫점 제거
+        document.write(`Math.trunc : ${Math.trunc(123.456)}, ${Math.trunc(-123.456)}, ${Math.trunc(987.654)}, ${Math.trunc(-987.654)} <br/>`) 
+        //절대값
+        document.write(`Math.abs : ${Math.abs(123.456)}, ${Math.abs(-123.456)} <br/>`) 
+        //제곱
+        document.write(`Math.pow(2,4) : ${Math.pow(2,4)} <br/>`)  // 2**4
+        //제곱근
+        document.write(`Math.sqrt(2) : ${Math.sqrt(2)} <br/>`)  
+        
+        document.write(`Math.log(10) : ${Math.log(10)} <br/>`)  
+        document.write(`Math.max(34,92,8,12,3,46) : ${Math.max(34,92,8,12,3,46)} <br/>`)  
+        document.write(`Math.min(34,92,8,12,3,46) : ${Math.min(34,92,8,12,3,46)} <br/>`)
+
+        document.write(`Math.PI : ${Math.PI} <br/>`) 
+        document.write(`Math.sin(30) : ${Math.sin(30)} <br/>`)   
+        document.write(`Math.sin(30*Math.PI/180) : ${Math.sin(30*Math.PI/180)} <br/>`)
+        document.write(`Math.cos(30*Math.PI/180) : ${Math.cos(30*Math.PI/180)} <br/>`)
+        document.write(`Math.tan(30*Math.PI/180) : ${Math.tan(30*Math.PI/180)} <br/>`)
+
+
+        document.write(`Math.atan2(1,1) : ${Math.atan2(1,1)} <br/>`)
+        document.write(`Math.atan2(1,1)/Math.PI*180 : ${Math.atan2(1,1)/Math.PI*180} <br/>`)
+
+        /* 0 < x < 1 난수 발생 */
+        document.write(`Math.random() : ${Math.random()} <br/>`)
+        /* 20 <= x < 60 난수 발생 */
+        document.write(`Math.trunc(Math.random()*40+20) : ${Math.trunc(Math.random()*40+20) } <br/>`)
+    </script>
+</body>
+</html>

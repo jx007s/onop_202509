@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07_internal</title>
+</head>
+<body>
+    <h1>07_internal</h1>
+    <script>
+        //alert("경고창입니다.")
+        //let rr = prompt("소원을 말해봐")
+        //let rr = confirm("주문하실래요?")
+        //document.write(`rr : ${rr} <br/>`)
+
+        let no = 0
+        function aaa(){
+            no++
+            document.write(`aaa 이지롱 ${no} <br/>`)
+        }
+
+        function aaaStop(){
+            clearInterval(rr)  // setInterval() 을 종료
+        }
+        //aaa()
+
+        // 2000 이후 aaa() 실행
+        //setTimeout(aaa, 2000)  // ms : 밀리초 ( 1/1000 초 )
+
+        // 1000 간격으로 aaa() 실행
+        //setInterval(aaa, 1000)
+
+        let rr = setInterval(aaa, 1000)
+
+        //aaaStop() 바로 종료됨
+
+        setTimeout(aaaStop, 10000)
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>09_lotto</title>
+</head>
+<body>
+    <h1>09_lotto</h1>
+    <script>
+        let arr = []
+        while(arr.length!=6){
+            let no = parseInt(Math.random()*45+1)
+            if(!arr.includes(no)){
+                arr.push(no)
+            }
+        }
+        arr.sort()
+        document.write(`${arr} <br/>`)
+
+
+/*
+
+빙고를 구현해 주세요
+
+ 숫자 범위 : 1-> 100
+
+ 출력모양 : 5 x 5
+
+ * * * * *
+ * * * * *
+ * * * * *
+ * * * * *
+ * * * * *
+
+
+*/
+
+
+    </script>
+</body>
+</html>
