@@ -35,7 +35,21 @@
 
 
 */
+        let bingo = []
+        while(bingo.length!=25){
+            let no = parseInt(Math.random()*100+1)
+            if(!bingo.includes(no)){
+                bingo.push(no)
+            }
+        }
+        //document.write(`${bingo} <br/>`)
 
+        for (const i in bingo) {
+            document.write(`${bingo[i]} `)
+            if(i%5==4){
+                document.write(`<br/>`)
+            }
+        }
 
     </script>
 </body>
