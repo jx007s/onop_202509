@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12_date</title>
+</head>
+<body>
+    <h1>12_date</h1>
+    <script>
+        let today = new Date()
+
+        console.log(today)
+
+        let first = new Date(0) // timestamp : 1970-1-1 0:0:0 를 기준으로 1/000 마다 1증가
+                                // UTC 기준
+        console.log(first)
+
+                        //문자열로 날짜 및 시간 입력
+        let birth = new Date("1997-03-20 15:23:47")
+
+        console.log(birth)
+                        //년,월,일,시,분,초
+                        //월 : 0 -> 11
+        birth = new Date(2002,9-1,2,16,40,12)
+
+        console.log(birth)
+
+    </script>
+</body>
+</html>
