@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03_DOM</title>
+    <style>
+        #cons{
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px;
+        }
+    </style>
+    <script>
+
+    </script>
+</head>
+<body>
+    <h1>03_DOM</h1>
+
+    <div class="aaa">
+        aaa0
+        <div class="bbb" id="b0">bbb0</div>
+        <div qwer="11" id="q1">qwer11</div>
+        <div qwer="11" id="q1" class="bbb">qwer22 bbb1</div>
+        <span zz-data="1234">span0</span>
+        <span>span1</span>
+    </div>
+
+    <div zz-data="부모지롱">
+        <div class="bbb" >bbb2</div>
+        <div>box1</div>
+        <div>box2</div>
+        <div>box3</div>
+        <div qwer="33" id="q1">qwer33</div>
+        <div qwer="44" id="q2">qwer44
+            <div zz-data="자식이지">자식자식</div>
+        </div>
+        <span class="bbb">span2</span>
+    </div>
+
+    <div id="cons"></div>
+
+</body>
+</html>
