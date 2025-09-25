@@ -12,6 +12,89 @@
         }
     </style>
     <script>
+        function conLog(msg){
+            //id : cons 인 요소 
+            let cons = document.getElementById("cons")
+            // innerHTML :  텍스트노드(글자내용)
+            cons.innerHTML += msg+"<br/>"
+        }
+
+        window.onload = function(){
+            conLog("와 객체다")
+
+            //전체
+            let rrtt = document.documentElement
+            //console.log(rrtt)
+
+            // 전체의 하위 객체 배열 - 자식을 가져옴(후손은 직접가져오지 않음)
+            let arr = rrtt.childNodes
+            console.log(arr)
+            console.log(rrtt.childElementCount)  //하위 갯수
+
+            let arr2 = arr[2].childNodes
+            console.log(arr2)
+            console.log(arr2[1])
+
+            //tag 배열
+            let spans = document.getElementsByTagName("span")
+            console.log(spans)
+            console.log(spans[1])
+            conLog(spans[1].innerHTML)
+            spans[0].innerHTML = '스팬제로'
+            conLog(spans[0].getAttribute('zz-data'))
+            spans[0].setAttribute('zz-data', 5678)
+            spans[2].setAttribute('zz-data', 5454)
+            spans[0].removeAttribute('zz-data')
+            spans[1].style.color="#f00"
+
+            //class 배열
+            let bbbs = document.getElementsByClassName("bbb")
+            console.log(bbbs)
+            bbbs[1].style.border = "1px solid #0f0"
+            bbbs[2].setAttribute("id", "b2")
+
+            //id - 최초 1개
+            let b0 = document.getElementById("b0")
+            conLog(b0.innerHTML)
+
+            let q1 = document.getElementById("q1")
+            conLog(q1.innerHTML)
+
+            let b2 = document.getElementById("b2")
+            conLog(b2.innerHTML)
+
+            let q2 = document.getElementById("q2")
+            q2.removeAttribute("id")
+            q2.setAttribute("id", "qq33")
+
+            //요소생성 및 추가
+            //생성
+            let nnItem = document.createElement("div")
+            nnItem.innerHTML = "새로운div"
+            nnItem.className = "ccc"
+            console.log(nnItem)
+            bbbs[2].appendChild(nnItem)
+            
+            //자신을 삭제
+            bbbs[3].remove()
+            //q2.removeChild(div)
+            let q2Child = q2.childNodes
+            console.log(q2Child)
+
+            //자식을 삭제
+            q2.removeChild(q2Child[1])
+            
+            // box 로 작성된 div 삭제
+            let divs = document.getElementsByTagName("div")
+            for (let i = divs.length-1 ; i>=0 ; i--) {
+                let dd = divs[i]
+                if(dd.innerHTML.startsWith("box")){
+                    console.log(dd)
+                    dd.remove()
+                }
+            }
+
+        }
 
     </script>
 </head>
