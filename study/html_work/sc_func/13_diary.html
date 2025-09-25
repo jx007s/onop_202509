@@ -4,11 +4,93 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>13_diary</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        img{
+            width: 400px;
+        }
+        td{
+            padding:10px;
+        }
+        tr:nth-of-type(3) > td:nth-of-type(1){
+            background-color: #f00;
+            color: #fff;
+        }
+        tr:nth-of-type(3) > td:nth-of-type(7){
+            background-color: #00f;
+            color: #fff;
+        }
+        tr:nth-of-type(3)~tr > td{
+            text-align: right;
+        }
+        tr:nth-of-type(3)~tr > td:nth-of-type(1){
+            color: #f00;
+        }
+        tr:nth-of-type(3)~tr > td:nth-of-type(7){
+            color: #00f;
+        }
+        .now{
+            background-color: #ff0;
+        }
+    </style>
+    <script>
+        let today = new Date()
+        let title = `${today.getFullYear()}년 ${today.getMonth()+1}월`
+        let now = today.getDate()
+
+        today.setDate(1)
+        let first = today.getDay()
+
+        let last = new Date(today.getFullYear(), today.getMonth()+1, 0).getDate()
+        //console.log(last)
+    </script>
 </head>
 <body>
     <h1>13_diary</h1>
-    <script>
-        
-    </script>
+    <table cellpadding="3px" border="" cellspacing="0">
+        <tr>
+            <td colspan="7">
+                <img src="../fff/family13.JPG" alt="">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="7" align="center">
+                <h2><script>document.write(title)</script></h2>
+            </td>
+        </tr>
+        <tr align="center">
+            <script>
+                let week = "일월화수목금토".split("")
+                for (const ww of week) {
+                    document.write(`<td>${ww}</td>`)
+                }
+            </script>
+        </tr>
+        <tr>
+            <script>
+                for (let i = 0; i <first; i++) {
+                    document.write(`<td></td>`)
+                }
+
+
+                for (let i = 1; i <=last; i++) {
+                    today.setDate(i)
+                    let nowCC = ""
+                    if(now==i){
+                        nowCC = "class='now'"
+                    }
+                    document.write(`<td ${nowCC} >${i}</td>`)
+                    if(today.getDay()==6){
+                        document.write(`</tr><tr>`)
+                    }
+                }
+            </script>
+
+        </tr>
+    </table>
+    
 </body>
 </html>
