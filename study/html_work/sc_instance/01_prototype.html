@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01_prototype</title>
+</head>
+<body>
+    <h1>01_prototype</h1>
+    <script>
+        //객체 선언
+        let mm1 = {
+            name:'김태희',
+            age:54,
+            marriage:true,
+            //key : value - 함수
+            fn_1:function(){
+                console.log('fn_1 실행()')
+            },
+
+            fn_2:function(){
+                //console.log(`fn_2 실행() ${name}`) //this 필요
+                // this : 멤버접근자 - 선언된 객체의 요소를 접근한다.
+                console.log(`fn_2 실행() ${this.name}`)
+            }
+        }
+
+        console.log('mm1',mm1)
+        mm1.fn_1() //멤버요소인 함수 호출
+        mm1.fn_2() 
+    </script>
+</body>
+</html>

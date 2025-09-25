@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02_instance</title>
+    <script>
+        //myFrm.phone.value="11122223333"  
+        // myFrm 를 인식하지 못함 - 하위 코드 진행이 되지 않았기 때문
+
+        //window.onload 함수 overriding(재정의)
+        window.onload = function(){
+            myFrm.phone.value="44455556666"
+            //alert(myFrm.pid.value)
+            myFrm.pw.style.background="#ff0"
+
+            //객체 멤버함수(메서드) 로 정의 - 외부에서 접근 불가
+            function asdf(){
+                alert(`asdf() 실행`)
+            }
+
+            //로드 후 객체 접근하여 객체관련 이벤트를 재정의 - 객체 이벤트로 실행
+            myFrm.agree.onclick=function(){
+                alert(`agree 눌렀구만?`)
+            }
+        }
+
+        function qwer(){
+            // 함수호출 시점이 하위 객체가 생성된 이후 이므로 객체 접근 가능
+            alert(`중복확인을 눌렀구만? ${myFrm.pid.value}`)
+        }
+    </script>
+</head>
+<body>
+    <h1>02_instance</h1>
+    <form action="" name="myFrm">
+        id : <input type="text" name="pid" value="aaa">
+            <input type="button"  value="중복확인" onclick="qwer()">
+        <br/>
+        암호 : <input type="text" name="pw"><br/>
+        전화 : <input type="text" name="phone" value="0101234567">
+                
+                <!-- asdf()가 전역형태가 아니므로 직접호출 불가 -->     
+        <br/>
+        <input type="button"  value="동의" name="agree">
+    </form>
+    <script>
+        myFrm.pid.value="bbb"
+    </script>
+</body>
+</html>
