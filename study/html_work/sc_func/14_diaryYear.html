@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>14_diaryYear</title><style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        img{
+            width: 400px;
+            height: 300px;
+        }
+        td{
+            padding:10px;
+        }
+        .mmt tr:nth-of-type(3) > td:nth-of-type(1){
+            background-color: #f00;
+            color: #fff;
+        }
+        .mmt tr:nth-of-type(3) > td:nth-of-type(7){
+            background-color: #00f;
+            color: #fff;
+        }
+        .mmt tr:nth-of-type(3)~tr > td{
+            text-align: right;
+        }
+        .mmt tr:nth-of-type(3)~tr > td:nth-of-type(1){
+            color: #f00;
+        }
+        .mmt tr:nth-of-type(3)~tr > td:nth-of-type(7){
+            color: #00f;
+        }
+        .now{
+            background-color: #ff0;
+        }
+
+        .birth{
+            background-color: #0f0;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>14_diaryYear</h1>
+    <script>
+        let now = dateStr(new Date())
+        let birth = '2_20'
+
+        function dateStr(ddd){
+            
+            return `${ddd.getMonth()}_${ddd.getDate()}`
+        }
+
+        function monthTable(yyyy, mm){
+            let week = "일월화수목금토".split("")
+
+            let today = new Date(yyyy,mm-1, 1)
+            let title = `${today.getFullYear()}년 ${today.getMonth()+1}월`
+
+            today.setDate(1)
+            let first = today.getDay()
+
+            let last = new Date(today.getFullYear(), today.getMonth()+1, 0).getDate()
+
+
+            let ttt = `<table class='mmt' cellpadding="3px" border="" cellspacing="0">
+            <tr>
+                <td colspan="7">
+                    <img src="../fff/family${mm}.JPG" alt="">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="7" align="center">
+                    <h3>${title}</h3>
+                </td>
+            </tr>
+            <tr align="center">
+            `
+            for (const ww of week) {
+                ttt += `<td>${ww}</td>`
+            } 
+            
+            ttt += `</tr><tr>`
+            for (let i = 0; i <first; i++) {
+                ttt += `<td></td>`
+            }
+
+
+            for (let i = 1; i <=last; i++) {
+                today.setDate(i)
+                let nowCC = ""
+                let todayStr = dateStr(today)
+                if(todayStr==now){
+                    nowCC = "class='now'"
+                }
+                if(todayStr==birth){
+                    nowCC = "class='birth'"
+                }
+                ttt += `<td ${nowCC} >${i}</td>`
+                if(today.getDay()==6){
+                    ttt += `</tr><tr>`
+                }
+            }    
+            ttt += `</tr></table>`
+
+            return ttt
+        }
+     </script>
+     <h2>1번</h2>
+     <script>
+        for (let m = 1; m <=12; m++) {
+            document.write(monthTable(2025,m))    
+            
+        }
+     </script>
+
+     <h2>2번</h2>
+     <table><tr>
+     <script>
+        for (let m = 1; m <=12; m++) {
+            document.write(`<td valign="top">${monthTable(2025,m)}</td>`)       
+        }
+     </script>
+     </tr></table>
+
+     <h2>3번</h2>
+     <table>
+     <script>
+        for (let big = 1; big <=12; big+=3) {
+            document.write("<tr>")     
+            for (let m = big; m <big+3; m++) {
+                 document.write(`<td valign="top">${monthTable(2025,m)}</td>`) 
+            }         
+            document.write("</tr>")     
+        }
+     </script>
+    </table>
+
+</body>
+</html>
