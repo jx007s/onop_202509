@@ -8,7 +8,9 @@
 <body>
     <h1>12_date</h1>
     <script>
-        let today = new Date()
+
+        //1. 날짜 생성
+        let today = new Date()  //OS 현재시간
 
         console.log(today)
 
@@ -18,14 +20,86 @@
 
                         //문자열로 날짜 및 시간 입력
         let birth = new Date("1997-03-20 15:23:47")
-
         console.log(birth)
+
+        birth = new Date("1993/12/07 13:20:35")
+        console.log(birth)
+
                         //년,월,일,시,분,초
                         //월 : 0 -> 11
         birth = new Date(2002,9-1,2,16,40,12)
 
         console.log(birth)
+                        //년,월,일
+        birth = new Date(2013,10-1,11)
 
+        console.log(birth)
+
+                        //년,월,일,시,분
+        birth = new Date(2015,8-1,6,5,12)
+        console.log(birth)
+
+        //시간 단위를 초과한 수치도 자동 연산 처리
+        birth = new Date(2015,45-1,152,78,247,987)
+        console.log(birth)
+
+        birth = new Date(2015,-20,-58,-78,-247,-987)
+        console.log(birth)
+
+        //문자열 입력은 시간 수치에 맞춰야 함
+        birth = new Date("1997-78-84 95:83:82")
+        console.log(birth)
+
+
+        birth = new Date(2025,9-1,1)
+        console.log(birth)
+
+        //전월의 마지막날짜
+        birth = new Date(2025,9-1,0)
+        console.log(birth)
+
+        //2. 날짜 가져오기
+        console.log("년도",today.getFullYear())
+        console.log("월",today.getMonth()+1)
+        console.log("일",today.getDate())
+        console.log("요일",today.getDay())
+        //  일 월 화 수 목 금 토
+        //  0  1  2 3  4  5 6
+        console.log("시간",today.getHours())
+        console.log("분",today.getMinutes())
+        console.log("초",today.getSeconds())
+        console.log("밀리초",today.getMilliseconds())
+        console.log("Timezone",today.getTimezoneOffset()) //분단위 UTC 차이
+        console.log("time",today.getTime())
+        console.log("time",today.getTime()/1000/60/60/24/365 +1970)
+
+        today.setFullYear(1234)
+        console.log(today)
+        today.setMonth(50-1)
+        console.log(today)
+        today.setDate(15)
+        console.log(today)
+        //today.setDay()
+        today.setHours(37)
+        console.log(today)
+        today.setMinutes(50)
+        console.log(today)
+        today.setSeconds(20)
+        console.log(today)
+        today.setMilliseconds(987)
+        console.log(today)
+        today.setTime(0)
+        console.log(today)
+        //2020-2-10 (월) 10:50  형식으로 출력해 주세요
+
+        function dateToStr(ddd){
+            let res = `${ddd.getFullYear()}-${ddd.getMonth()+1}-${ddd.getDate()}`
+            res+=` (${'일월화수목금토'[ddd.getDay()]}) ${ddd.getHours()}:${ddd.getMinutes()}`
+            console.log(res)
+        }
+
+        dateToStr(new Date())
+        dateToStr(new Date('1996-2-8 15:20:30'))
     </script>
 </body>
 </html>
