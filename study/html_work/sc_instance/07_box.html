@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07_box</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        section{
+            position: relative;
+            left:200px;
+            top:50px;
+            width: 600px;
+            height: 500px;
+            border: 1px solid #ccc;
+        }
+
+        #me{
+            position: absolute;
+            left:200px;
+            top:200px;
+            width: 50px;
+            height: 50px;
+            background-color: #faf;
+        }
+
+        .box{
+            position: absolute;
+            left:400px;
+            top:400px;
+            width: 50px;
+            height: 50px;
+            background-color: #0f0;
+        }
+    </style>
+    <script>
+        var me
+        var gaming
+        window.onload=function(){
+
+            me = document.querySelector("#me")
+
+            me.xx = 200     //키로 xx, yy 설정
+            me.yy = 200
+
+
+            var box = document.querySelector(".box")
+
+            box.xx = 400     //키로 xx, yy 설정
+            box.yy = 400
+
+            box.dx = 2
+            box.dy = 2
+
+            function boxMove(){
+                box.xx+=box.dx
+                box.yy+=box.dy
+
+                if(box.yy>500-50 || box.yy<0){
+                    box.dy*=-1
+                }
+                if(box.xx>600-50 || box.xx<0){
+                    box.dx*=-1
+                }
+
+                box.style.left = box.xx+"px"
+                box.style.top = box.yy+"px"
+            }
+
+            gaming = setInterval(boxMove,20)
+        }
+        window.onkeydown=function(e){
+            console.log(e.keyCode)
+
+            switch(e.keyCode){
+                case 37:        //왼쪽
+                    me.xx-=5
+                    break
+                case 39:        // 오른쪽
+                    me.xx+=5
+                    break
+                case 38:        //위
+                    me.yy-=5
+                    break
+                case 40:        // 아래
+                    me.yy+=5
+                    break
+                case 88:
+                    clearInterval(gaming)
+                    break
+            }
+            
+            me.style.left = me.xx+"px"
+            me.style.top = me.yy+"px"
+        }
+    </script>
+</head>
+<body>
+    <h1>07_box</h1>
+    <section>
+        <div id="me"></div>
+        <div class="box"></div>
+    </section>
+</body>
+</html>
