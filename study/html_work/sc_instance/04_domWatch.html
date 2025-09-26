@@ -15,12 +15,68 @@
         .time{
             font-size: 3rem;
         }
+
+        section{
+            position: relative;
+            width: 200px;
+            height: 200px;
+            background-color: #ff0;
+            border-radius: 100px;
+            margin: auto;
+        }
+
+        section > .grad{
+            position: absolute;
+            width: 2px;
+            height: 85px;
+            background-color: #777;
+            box-shadow: 3px 3px 5px #000;
+            left:99px;
+            top:5px;
+            transform-origin: bottom center;
+        }
+
+        section > .niddle{
+            position: absolute;
+            width: 2px;
+            height: 85px;
+            background-color: #f00;
+            box-shadow: 3px 3px 5px #000;
+            left:99px;
+            top:15px;
+            transform-origin: bottom center;
+        }
+
+        section > .niddle:nth-of-type(2){
+            
+            width: 2px;
+            height: 75px;
+            background-color: #0f0;
+            left:99px;
+            top:25px;  
+        }
+
+        section > .niddle:nth-of-type(1){
+            
+            width: 4px;
+            height: 65px;
+            background-color: #00f;
+            left:98px;
+            top:35px;  
+        }
+
+
     </style>
     <script>
         window.onload=function(){
             
             let dateBox = document.querySelector(".date")
             let timeBox = document.querySelector(".time")
+            let sec = document.querySelector("section > .niddle:nth-of-type(3)")
+            let minute = document.querySelector("section > .niddle:nth-of-type(2)")
+            let hour = document.querySelector("section > .niddle:nth-of-type(1)")
+            //console.log(sec)
+            
 
             function dateGo(){
                 let now = new Date()
@@ -29,6 +85,11 @@
                 dateBox.innerHTML = ttt
 
                 timeBox.innerHTML = `${now.getHours() }:${now.getMinutes()}:${now.getSeconds()}`
+
+                sec.style.transform = `rotate(${now.getSeconds()*6}deg)`
+                minute.style.transform = `rotate(${now.getMinutes()*6}deg)`
+                hour.style.transform = `rotate(${(now.getHours()+now.getMinutes()/60)*30}deg)`
+                //console.log(((now.getHours()+now.getMinutes()/60)*30)%360)
             }
 
             let dg = setInterval(dateGo,1000)
@@ -38,9 +99,16 @@
 </head>
 <body>
     <h1>04_domWatch</h1>
-    <section>
+    <div>
         <div class="date">2020년 7월 12일</div>
         <div class="time">17:30:20</div>
+    </div>
+
+    <section>
+        <div class="niddle"></div>
+        <div class="niddle"></div>
+        <div class="niddle"></div>
+        <div class="grad"></div>
     </section>
 </body>
 </html>
