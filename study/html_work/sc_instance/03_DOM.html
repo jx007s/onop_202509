@@ -41,11 +41,28 @@
             console.log(spans[1])
             conLog(spans[1].innerHTML)
             spans[0].innerHTML = '스팬제로'
-            conLog(spans[0].getAttribute('zz-data'))
-            spans[0].setAttribute('zz-data', 5678)
+
+            //속성
+            conLog(spans[0].getAttribute('zz-data'))  //속성 가져오기
+            spans[0].setAttribute('zz-data', 5678)  //속성변경
+            conLog(`hasAttribute : ${spans[0].hasAttribute('zz-data')}`)    //속성유무
             spans[2].setAttribute('zz-data', 5454)
-            spans[0].removeAttribute('zz-data')
-            spans[1].style.color="#f00"
+            spans[0].removeAttribute('zz-data')     //속성삭제
+            conLog(`hasAttribute : ${spans[0].hasAttribute('zz-data')}`)    //속성유무
+            spans[0].className = "ddd"
+            spans[0].className = "eee"
+            spans[0].removeAttribute('class') 
+            spans[0].setAttribute('class', 'jjj')
+            spans[0].classList.add('mmm')   //추가
+            spans[0].classList.add('ooo')   //추가
+            spans[0].classList.add('mmm')   //이미 존재하는 클래스는 중첩 추가하지 않는다.
+            conLog(`mmm 유무 : ${spans[0].classList.contains('mmm')}`)
+            conLog(`wer 유무 : ${spans[0].classList.contains('wer')}`)
+            spans[0].classList.remove('mmm')//삭제
+            conLog(`mmm 유무 : ${spans[0].classList.contains('mmm')}`)
+            spans[0].classList.toggle('sss')//토글 - 없으면 추가
+            spans[0].classList.toggle('sss')//토글 - 있으면 삭제
+            spans[1].style.color="#f00"         
 
             //class 배열
             let bbbs = document.getElementsByClassName("bbb")
@@ -63,17 +80,38 @@
             let b2 = document.getElementById("b2")
             conLog(b2.innerHTML)
 
+            
             let q2 = document.getElementById("q2")
-            q2.removeAttribute("id")
-            q2.setAttribute("id", "qq33")
+            q2.removeAttribute("id")        
+            q2.setAttribute("id", "qq33")   
+
 
             //요소생성 및 추가
             //생성
             let nnItem = document.createElement("div")
             nnItem.innerHTML = "새로운div"
-            nnItem.className = "ccc"
+            nnItem.className = "ccc"        //클래스변경
             console.log(nnItem)
-            bbbs[2].appendChild(nnItem)
+            bbbs[2].appendChild(nnItem) //자식으로 추가(하위요소중 맨뒤)
+
+            let aaa = document.getElementsByClassName("aaa")[0]
+            console.log(aaa)
+
+            let rrr = document.createElement("div")
+            rrr.innerHTML="rrr"
+            aaa.prepend(rrr)    //자식으로 추가(하위요소중 맨앞)
+
+            let fff = document.createElement("div")
+            fff.innerHTML="fff"
+            aaa.insertBefore(fff, q1)    //자식으로 추가(하위요소중 q1 앞)
+
+            aaa.insertBefore(rrr, q1)   // 이미 추가된 요소를 다시 추가할 경우 -> 이동
+
+            let ggg = document.createElement("div")
+            ggg.innerHTML="ggg"
+            aaa.insertBefore(ggg, null)    //자식으로 추가(참조요소가 null 일경우 맨뒤로 이동) == append
+
+
             
             //자신을 삭제
             bbbs[3].remove()
@@ -94,6 +132,34 @@
                 }
             }
 
+            let qq33Par = q2.parentNode //부모노드
+            console.log("qq33Par : ",qq33Par)
+            conLog(qq33Par.getAttribute("zz-data"))
+
+            let bro1 = q2.previousElementSibling    //앞의노드
+            console.log(bro1)
+
+            let bro2 = bro1.nextElementSibling  //뒤의 노드
+            console.log(bro2)
+
+            let qsb2 = document.querySelector("#b2") //style  선택자 사용
+            console.log(qsb2)
+
+            let qs = document.querySelector(".aaa > div:nth-of-type(3)")
+            conLog(qs.innerHTML)
+
+            qs = document.querySelector(".bbb") //해당객체가 여러개인 경우 최초 1개만 리턴
+            console.log(qs)
+
+            let qsArr = document.querySelectorAll(".bbb") //해당객체가 여러개인 경우 배열 
+            console.log(qsArr)
+
+
+            qsArr = document.querySelectorAll("#b2") //1개 일지라도 배열
+            console.log(qsArr)
+
+            qsArr = document.querySelectorAll("#q1") //같은 id가 여러개인경우 배열로 가능
+            console.log(qsArr)
         }
 
     </script>

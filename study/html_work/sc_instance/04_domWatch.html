@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>04_domWatch</title>
+    <style>
+        *{
+            margin: 0;
+            padding:0;
+        }
+        .date{
+            font-size: 4rem;
+        }
+        .time{
+            font-size: 3rem;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            
+            let dateBox = document.querySelector(".date")
+            let timeBox = document.querySelector(".time")
+
+            function dateGo(){
+                let now = new Date()
+                let ttt = `${now.getFullYear() }년 ${now.getMonth()+1 }월 ${now.getDate() }일`
+                //console.log(ttt)
+                dateBox.innerHTML = ttt
+
+                timeBox.innerHTML = `${now.getHours() }:${now.getMinutes()}:${now.getSeconds()}`
+            }
+
+            let dg = setInterval(dateGo,1000)
+
+        }
+    </script>
+</head>
+<body>
+    <h1>04_domWatch</h1>
+    <section>
+        <div class="date">2020년 7월 12일</div>
+        <div class="time">17:30:20</div>
+    </section>
+</body>
+</html>
+
+
+
