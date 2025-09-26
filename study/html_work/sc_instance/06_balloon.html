@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>06_balloon</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        section{
+            width: 640px;
+            height: 360px;
+        }
+
+        
+    </style>
+    <script>
+        window.onload=function(){
+            let arr=[
+                {en:"click",
+                    action:"background:#fa0"
+                },
+                {en:"mouseover",
+                    action:"box-shadow:10px 10px 20px #000"
+                },
+                {en:"mouseout",
+                    action:"opacity:0.3"
+                },
+                {en:"mouseup",
+                    action:"transform:rotate(90deg)"
+                }
+            ]
+
+            let section = document.querySelector("section")
+
+            for (let i = 0; i < arr.length*2; i++) {
+                let img = document.createElement("img")
+                img.setAttribute("src",`../example/풍선/0${i+1}.png`)
+                //console.log(img)
+                section.appendChild(img)
+            }
+
+            for (const i in arr) {
+                let no = eval(i)
+                let me = arr[i]
+                //console.log(no+1, me.en, no+5, me.action)
+                document.querySelector(`section > img:nth-of-type(${no+1})`).addEventListener(
+                    me.en,()=>{
+                        let ttt = document.querySelector(`section > img:nth-of-type(${no+5})`)
+                        console.log(ttt)
+                        ttt.setAttribute("style",me.action)
+                    }
+                )
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <h1>06_balloon</h1>
+    <section/>
+</body>
+</html>
