@@ -54,3 +54,12 @@ drop table person;
 숫자         문자     실수          날짜,      날짜시간,   정수
 옷번호,     제품명,   가격(천단위),    출시일,      판매일,   크기
 */
+
+create table cloth(
+	no int,
+    title varchar(100),
+    price double,
+    reg_date date,
+    sale_date datetime,
+	size int
+);
