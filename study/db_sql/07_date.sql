@@ -77,3 +77,35 @@ date_format('2023-08-09 15:06:45', '%Y년 %c월 %d일 ('),
 mid('일월화수목금토',date_format('2023-08-09 15:06:45', '%w')+1,1),
 date_format('2023-08-09 15:06:45', ') %T %p'));
 
+
+select unix_timestamp(), unix_timestamp('1970-1-1 9:0:0'), unix_timestamp('1970-1-1 9:0:10');
+select from_unixtime(0),from_unixtime(100),from_unixtime(1759219490);
+
+-- 날자 ==> 일자 숫자로 변경: 000
+select to_days('1970-01-01'), to_days('0000-02-15');
+
+select from_days(1), from_days(50), from_days(367);
+
+select time_to_sec('0:01:15'), time_to_sec('3:02:15');
+
+select sec_to_time(100);
+
+insert into exam 
+(id, hakgi,name, pid,     reg_date, kor,eng,mat) values
+(17,  1,  'final','aaa','2025-07-17',78,92,54);
+
+-- 에러
+insert into exam 
+(id, hakgi,name, pid,     reg_date, kor,eng,mat) values
+(18,  1,  'final','bbb','2025년07월17일',58,62,84);
+
+-- 문자열 -> 날짜
+select str_to_date('2025년07월17일', '%Y년%m월%d일');
+
+
+insert into exam 
+(id, hakgi,name, pid,     reg_date, kor,eng,mat) values
+(18,  1,  'final','bbb',str_to_date('2025년07월17일', '%Y년%m월%d일'),58,62,84);
+
+-- 주민번호를 이용하여 출생일의 요일을 구하세요
+-- 주민뒷번호는 자동으로 처리한다.
