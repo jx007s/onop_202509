@@ -85,3 +85,34 @@ values
 (16,2,'final','ddd','2025-12-19',37,94,75);
 
 select * from exam;
+
+-- order by : 정렬
+-- order by 컬럼1, 컬럼 2 :: 정렬순서
+-- desc : 내림차순  ,   asc or 생략 : 오름차순
+select * from exam
+order by kor desc;
+
+select * from exam
+order by pid desc, reg_date desc;
+
+-- limit 시작번호, 갯수: 갯수 제한
+-- 시작번호 : 0
+select * from exam
+order by id
+limit 3,5;
+-- 순서
+-- select , update, delete ...
+-- where
+-- order by
+-- limit
+
+select * from exam  
+where hakgi = 1
+order by id
+limit 3,4;
+
+-- 이름에 '진'이 들어간 사람들 중 키가 큰 2,3 번째를 출력하세요
+select * from per2
+where pname like '%진%'
+order by height desc
+limit 1,2;
