@@ -102,14 +102,3 @@ on
 per2.pid = exam.pid) t1
 on professor.pid = pfid) t2
 group by name;
-
-
-
-
-
-
-
-
-
-
-
