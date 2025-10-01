@@ -23,7 +23,7 @@ select instr('창원 Onop onoP','qwer'); -- 없으면 0
 select position('on' in '창원 Onop onoP');
 
 -- 변환
-select ascii('A'), char(65);
+select ascii('A'), char(65),  convert(char(65) using utf8);
 
 select upper('AbcD eFg'), lower('AbcD eFg');
 
