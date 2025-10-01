@@ -64,3 +64,19 @@ select * from exam where eng > all (select eng from exam where pid = 'aaa');
 
 
 -- 나이가 40세 이상인 학생중 국어점수가 80점 이하인 학생의 수학점수를 3점 추가하세요
+
+-- 나이가 40세 이상인 학생 /  국어점수가 80점 이하인 학생의 수학점수를 3점 추가하세요
+
+update exam set mat = mat +3 where kor <=80;
+
+select pid from per2 where age >= 40;
+-- bbb, eee, fff, ggg
+
+
+update exam set mat = mat +3 where pid in ('bbb','eee', 'fff', 'ggg');
+
+update exam set mat = mat +3 where kor <=80 and pid in ('bbb','eee', 'fff', 'ggg');
+
+update exam set mat = mat +3 
+where kor <=80 and 
+pid in (select pid from per2 where age >= 40);
