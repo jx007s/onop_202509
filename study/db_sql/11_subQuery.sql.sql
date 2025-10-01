@@ -80,3 +80,48 @@ update exam set mat = mat +3 where kor <=80 and pid in ('bbb','eee', 'fff', 'ggg
 update exam set mat = mat +3 
 where kor <=80 and 
 pid in (select pid from per2 where age >= 40);
+
+
+/*
+professor
+pid   name    tel
+---------------------------------------
+pf1	더블도어	1111
+pf2	스네이프	2222
+pf3	맥도날드	3333
+
+
+pid pname age height friend pfid
+---------------------------------------
+aaa	황진이	    36		bbb	   pf1
+bbb	이효리	    45	175	ccc	   pf2
+ccc	장남건	    14	168	bbb	   pf1
+dd	경남진돗개			 bbb	pf3
+eee	코예진	    57	168	eee	   pf1
+fff	예진	   45	174		   pf2
+ggg	진	       62   156	aaa	   pf3
+hhh	진눈개비	27	 181		pf3
+
+exam
+id hakgi name   pid  reg_date  kor eng mat
+---------------------------------------------
+1	1	semi	aaa	2025-05-04	77	79	69
+2	1	semi	bbb	2025-05-04	88	104	94
+3	1	semi	ccc	2025-05-04	57	59	59
+4	1	semi	ddd	2025-05-04		49	71
+5	1	final	aaa	2025-07-11	97	92	90
+6	1	final	bbb	2025-07-11	70	83	25
+7	1	final	ccc	2025-07-11	79	97	11
+8	1	final	ddd	2025-07-11	70	41	21
+9	2	semi	aaa	2025-10-15	74	92	13
+10	2	semi	bbb	2025-10-15	70	64	73
+11	2	semi	ccc	2025-10-15	80	93	79
+12	2	semi	ddd	2025-10-15	80	69	74
+13	2	final	aaa	2025-12-19		82	86
+14	2	final	bbb	2025-12-19		104	64
+15	2	final	ccc	2025-12-19	97	59	29
+16	2	final	fff	2025-12-19	85	99	78
+17	1	final	aaa	2025-07-17	78	92	52
+18	1	final	bbb	2025-07-17	58	67	96
+*/
+
