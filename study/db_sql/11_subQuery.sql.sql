@@ -34,7 +34,10 @@ update per2 set pfid = (select pid from professor where name = '맥도날드') w
 
 
 
--- 검색내용이 다중일 경우 in 사용
+-- 검색내용이 다중일 경우 
+
+
+-- = 대신 in 사용
 -- 스네이프 교수님 학생들의 영어점수를 5점 추가해줘
 
 select pid from professor where name = '스네이프';
