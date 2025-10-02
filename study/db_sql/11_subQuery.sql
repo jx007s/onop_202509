@@ -125,3 +125,26 @@ id hakgi name   pid  reg_date  kor eng mat
 18	1	final	bbb	2025-07-17	58	67	96
 */
 
+
+-- view 생성
+/*
+create view 뷰이름
+AS
+select 구문
+*/
+create view ex_view 
+AS
+select t1.* , tot/3 as average from
+(select *,kor+eng+mat as tot from exam) t1;
+
+
+select * from ex_view;
+
+-- view 삭제
+drop view ex_view;
+
+-- view 수정
+alter view ex_view 
+AS
+select t1.* , tot/3 as qwer from
+(select *,kor+eng+mat as tot from exam) t1;
