@@ -1,5 +1,5 @@
 require('./01_first')
-//console.log(require)
+console.log(require)
 //console.log(require.cache)
 //console.log(require.main)
 console.log(require.main.filename)

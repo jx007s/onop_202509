@@ -19,9 +19,30 @@ if(false){       //동적처리
  console.log(sub33.aa, sub33.bb)     // 동적처리에 따른 결과 확인
 
 
-tt = './sub55.mjs'
-import {cc,dd} from tt
-console.log(cc,dd) 
+let tt = './sub66.mjs'
+// import {cc,dd} from tt     에러발생 await import() 로 처리해야 함
+// console.log(cc,dd) 
+
+
+var sub55 = await import(tt)
+console.log(sub55.cc, sub55.dd)
 
 console.log('dynamic2 끝---')
+
+
+
+/*
+js: 주식
+mjs : 후식
+
+module_아침 --> 아침 식사 메뉴
+module_점심 --> 점심 식사 메뉴
+module_저녁 --> 저녁 식사 메뉴
+
+현재 시간을 이용하여 메뉴 출력
+아침 : 00~10
+점심 : 10~16
+저녁 : 나머지
+
+*/
 
