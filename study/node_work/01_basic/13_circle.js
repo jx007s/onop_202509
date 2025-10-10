@@ -1,0 +1,5 @@
+const s1 = require('./sub1')
+console.log('--------------------------')
+const s2 = require('./sub2')
+s1()
+s2()
