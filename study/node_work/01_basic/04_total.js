@@ -44,7 +44,7 @@ ff9.fn_3()
 
 
 /* 02_module 폴더 구성 후 
-    module - 1
+    module1
     회원 목록 - 5명
     aaa, 정우성
     bbb, 정좌성
@@ -52,7 +52,7 @@ ff9.fn_3()
     ddd, 정중성
     eee, 정북성
 
-    module - 2
+    module2
     현재 회원 지정
 
     index 
