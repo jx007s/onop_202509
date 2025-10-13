@@ -52,3 +52,9 @@ console.log(`resolve('D:\\', 'bb','cc') : ${pp.resolve('D:\\', 'bb', 'cc')}`) //
    // 결과 : ../../../aaa/bbb/ccc/07_path.js
 
 */
+
+const fName2 = __filename
+console.log(`${pp.format(
+                {dir:pp.relative(fName2, 'D:\\public\\aaa\\bbb\\ccc'), 
+                base:pp.basename(fName2)}
+            )}`)
