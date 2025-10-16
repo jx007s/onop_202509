@@ -45,6 +45,29 @@ http.createServer((req, res)=>{
             const data = fs.readFileSync(`.${service}`)
             res.writeHead(200,{'content-type':'image/jpeg'})
             res.end(data)
+        }
+        else if(service.endsWith('.css')){  //css 파일
+
+            const data = fs.readFileSync(`.${service}`)
+            res.writeHead(200,{'content-type':'text/css'})
+            res.end(data)
+
+        }else if(service=='/now'){  // url : now
+
+            function dateToStr(ddd){
+                let res = `${ddd.getFullYear()}-${ddd.getMonth()+1}-${ddd.getDate()}`
+                res+=` (${'일월화수목금토'[ddd.getDay()]}) ${ddd.getHours()}:${ddd.getMinutes()}`
+                return res
+            }
+
+            let data = fs.readFileSync(`./views/now.html`).toString()
+            
+            // 파일로 받은 문자열을 변수로 치환
+            //const data = dateToStr(new Date())
+            data = data.replaceAll("{{msg}}", dateToStr(new Date()) )
+            
+            res.writeHead(200,{'content-type':'text/html; charset=UTF-8'})
+            res.end(data)
 
         }else{
             //파일을 읽어와 데이터 전송
@@ -65,3 +88,15 @@ http.createServer((req, res)=>{
 }).listen(80,()=>{
     console.log("80 서버 실행  , 대기")
 })
+
+/*
+
+    06_server.js 를 이용하여
+    port : 8080 으로 서버를 실행하세요
+
+    메인페이지
+    url : aaa , bbb  두개로 진입
+    aaa : 3 개의 이미지 보이게 할 것
+    bbb : param에서 2개의 수를 받아 연산하여 html 페이지에 출력
+
+*/
