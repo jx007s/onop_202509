@@ -39,10 +39,21 @@ http.createServer((req, res)=>{
         }
 
         console.log('service ', service)
-        //파일을 읽어와 데이터 전송
-        const data = fs.readFileSync(`./views${service}.html`)
-        res.writeHead(200,{'content-type':'text/html; charset=UTF-8'})
-        res.end(data)
+
+        if(service.startsWith('/fff')){  //이미지폴더
+
+            const data = fs.readFileSync(`.${service}`)
+            res.writeHead(200,{'content-type':'image/jpeg'})
+            res.end(data)
+
+        }else{
+            //파일을 읽어와 데이터 전송
+            const data = fs.readFileSync(`./views${service}.html`)
+            res.writeHead(200,{'content-type':'text/html; charset=UTF-8'})
+            res.end(data)
+        }
+        
+        
 
     } catch (error) {
         //에러 발생시 화면 처리
