@@ -61,14 +61,6 @@ function ffCopy(fName){
     }
     let newFName = duplicateReNamePolicy(path.join(dstPath,middleDir), path.basename(fName))
 
-    // fs.cp(fName, newFName , {recursive: true},(err)=>{
-    //     if(err){
-    //         console.log('에러',err)
-    //     }
-    // })
-
-    //async ~await 비동기를 동기식으로 처리
-    // promises 필요 (callback 없이 처리)
     fs.cpSync(fName, newFName , {recursive: true})
 
 }
