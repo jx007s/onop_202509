@@ -97,6 +97,6 @@ http.createServer((req, res)=>{
     메인페이지
     url : aaa , bbb  두개로 진입
     aaa : 3 개의 이미지 보이게 할 것
-    bbb : param에서 2개의 수를 받아 연산하여 html 페이지에 출력
+    bbb : param에서 2개의 수를 받아 더하여 html 페이지에 출력
 
 */
