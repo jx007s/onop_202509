@@ -36,3 +36,16 @@ function myInput(ttt){
     console.log('로그인성공')
     
 })()
+
+/*
+
+   04_login2.js
+
+    id,    pw, 이름
+    aaa, 1111,  장동건
+    bbb, 2222,  장서건
+    ccc, 3333,  장남건
+    
+    로그인 성공시
+    장동건님 안녕하세요 메세지 출력
+*/
