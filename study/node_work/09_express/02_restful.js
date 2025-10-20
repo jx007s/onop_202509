@@ -15,7 +15,7 @@ app.get('/board/:id',(req, res)=>{
 })
 
 app.post('/board',(req, res)=>{
-    console.log(req.body)       // req.body : form-data
+    console.log(req.body)       // req.body : form (x-www-form-urlencoded)
     res.send(`글쓰기 ${req.body.pid} ${req.body.pname} ${req.body.age}`)
 })
 
