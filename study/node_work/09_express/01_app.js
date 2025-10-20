@@ -22,12 +22,24 @@ app.get('/history', (req, res)=>{
     res.sendFile(path.join(__dirname,'views/history.html'))
 })
 
-app.get('/gall', (req, res)=>{
+// 배열로 여러 url route
+app.get(['/notice','/fnq'], (req, res)=>{
+    res.send(`배열 ${req.path} 페이지 입니다.`)
+})
+
+// 정규표현식처리 : / 내용 /  
+// 정규표현식  /qna or /event
+app.get(/\/qna|\/event/, (req, res)=>{
+    res.send(`정규식 ${req.path} 페이지 입니다.`)
+})
+
+// :prod  (동적url)  정규표현식
+app.get('/gall/:prod', (req, res)=>{
     console.log('method',req.method)
     console.log('url',req.url)              //경로 + 쿼리  GET
     console.log('path',req.path)            //경로      /gall?season=spring&nowPage=3
     console.log('query',req.query)          //쿼리      { season: 'spring', nowPage: '3' }
-    console.log('params',req.params)
+    console.log('params',req.params)        // 동적경로 변수  { prod: 'tv' }
     console.log('headers',req.headers)      //header 개체 {host:'192.168.0.78' , referer: 'http://192.168.0.78/'...}
     console.log(`get('referer')`,req.get('referer'))    //header 특정 요소 http://192.168.0.78/
     console.log('ip',req.ip)                // 요청한 클라이언트 ip : ffff:192.168.0.78
