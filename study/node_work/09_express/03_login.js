@@ -10,13 +10,15 @@ let me = null
 app.get('/',(req, res)=>{
     
     if(me){
-        res.send(`${me}님 안녕하세요`)
+        res.send(`${me}님 안녕하세요 <a href='logout'>로그아웃</a>`)
     }else{
         res.sendFile(path.join(__dirname,'views/logMain.html'))
     }
     
 })
 
+
+//로그인 처리
 app.post('/',(req, res)=>{
     
     const {pid, pw} = req.body
@@ -28,6 +30,20 @@ app.post('/',(req, res)=>{
     }
     res.send(`
         <script>alert('${msg}')
+            location.href='/'
+        </script>
+    `)
+})
+
+
+//로그아웃 처리
+app.get('/logout',(req, res)=>{
+
+    let msg = me
+    me = null
+
+    res.send(`
+        <script>alert('${msg}님 로그아웃되었습니다')
             location.href='/'
         </script>
     `)
