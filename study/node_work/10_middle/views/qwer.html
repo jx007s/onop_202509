@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>qwer 이지롱</title>
+    <link rel="stylesheet" href="/fff/css/ccc.css">
+</head>
+<body>
+    <h1>qwer 이지롱</h1>
+    <img src="/fff/qqq/family9.JPG" alt="">
+    <img src="../fff/qqq/family11.JPG" alt="">
+    <img src="../../../fff/qqq/family12.JPG" alt="">
+    <!--  
+    주소기준 : 현재 페이지의 URL
+              (현재 파일의 위치가 아님)
+    현재 url : http://192.168.0.78/ddd/eee/rrr/qwer
+
+    이미지 static 설정 : /fff/qqq/family9.JPG
+
+    <img src="/fff/qqq/family9.JPG" alt="">     절대경로 - 가능
+    <img src="../fff/qqq/family11.JPG" alt="">  불가
+    <img src="../../../fff/qqq/family12.JPG" alt="">  가능
+    -->
+    <hr>
+    <img src="/public/small01.jpg" alt="">
+    <img src="/assets/small02.jpg" alt="">
+    <!--
+    /public/small01.jpg - 가능
+    /assets/small02.jpg - 불가
+    -->
+
+     <hr>
+    <img src="/public/small03.jpg" alt="">
+    <img src="/public/small04.jpg" alt="">
+     <!--
+        /public/small03.jpg - 중첩인 경우 선행된 static  설정 파일이 적용
+    -->
+</body>
+</html>
