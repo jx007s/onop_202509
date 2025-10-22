@@ -3,6 +3,7 @@ const path = require('path')
 const app = express()
 const multer = require('multer')
 
+//post처리
 app.use(express.urlencoded({extended:true}))
 
 app.get('/',(req, res)=>{
@@ -138,6 +139,12 @@ app.post('/fields',qwer.fields(arr),(req, res)=>{
     
     console.log(`ff : `,req.files)             //파일필드 - 파일여러개
     res.send('fields 파일 처리')
+})
+
+
+app.get('/download',(req, res)=>{
+    //파일 다운로드 : res.download(파일경로) 
+    res.download(path.join(__dirname,'fff/qqq/octopus.txt'))
 })
 
 
