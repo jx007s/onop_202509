@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mulForm</title>
+</head>
+<body>
+    <h1>mulForm</h1>
+    <h2>single</h2>
+    <form action="/single" method="post" enctype="multipart/form-data">
+        이름 : <input type="text" name="pname">
+        <br/>
+        파일 : <input type="file" name="ff">
+        <br/>
+        <input type="submit" value="등록single">
+    </form>
+
+    <h2>none</h2>
+    <form action="/none" method="post" enctype="multipart/form-data">
+        이름 : <input type="text" name="pname">
+        <br/>
+        파일 : <input type="file" name="ff">
+        <br/>
+        <input type="submit" value="등록none">
+    </form>
+
+    <h2>array</h2>
+    <form action="/array" method="post" enctype="multipart/form-data">
+        이름 : <input type="text" name="pname">
+        <br/>
+        파일 : <input type="file" name="ff" multiple>
+        <br/>
+        <input type="submit" value="등록array">
+    </form>
+
+    <h2>array 갯수제한 3</h2>
+    <form action="/array3" method="post" enctype="multipart/form-data">
+        이름 : <input type="text" name="pname">
+        <br/>
+        파일 : <input type="file" name="ff" multiple>
+        <br/>
+        <input type="submit" value="등록array3">
+    </form>
+
+
+
+    <h2>fields</h2>
+    <form action="/fields" method="post" enctype="multipart/form-data">
+        이름 : <input type="text" name="pname">
+        <br/>
+        파일1 : <input type="file" name="ff1">
+        <br/>
+        파일2 : <input type="file" name="ff2">
+        <br/>
+        파일3 : <input type="file" name="ff3" multiple>
+        <br/>
+        파일4 : <input type="file" name="ff4" multiple>
+        <br/>
+        <input type="submit" value="등록fields">
+    </form>
+
+</body>
+</html>
