@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>routeMain</title>
+</head>
+<body>
+    <h1>routeMain</h1>
+    <a href="/hello">/hello</a>
+    <a href="/history">/history</a>
+    <br/>
+    <a href="/prod">/prod</a>
+    <a href="/prod/tv">/prod/tv</a>
+    <br/>
+    <a href="/gall?pid=qwer">/gall</a>
+    <a href="/gall/summer/zxcv">/gall/summer/zxcv</a>
+    <a href="/gall/summer/asdf">/gall/summer/asdf</a>
+
+    <form action="/gall/fall" method="post" enctype="multipart/form-data">
+        pid : <input type="text" name="pid">
+        <br/>
+        파일 : <input type="file" name="ff">
+        <br/>
+        <input type="submit" value="/gall/fall 등록">
+    </form>
+</body>
+</html>
