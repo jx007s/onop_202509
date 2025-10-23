@@ -34,6 +34,16 @@ const myMM = (aaa, bbb)=>{
         res.send(`가을이야 ${aaa}, ${req.body.pid}`)
     })
 
+    // 그룹화
+    //  /winter  같은 url 에 해당하는 method 묶기
+    router.route('/winter')
+    .get((req,res)=>{
+        res.send(`/gall/winter get 이야`)
+    })
+    .post((req,res)=>{
+        res.send(`/gall/winter post 야`)
+    })
+
     // 생성된 router 리턴
     return router
 

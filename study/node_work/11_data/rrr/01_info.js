@@ -13,5 +13,6 @@ router.get('/hello',(req,res)=>{
     res.send(`안녕 곧 점심이야`)
 })
 
+
 //router 외부 모듈로 설정
 module.exports = router
