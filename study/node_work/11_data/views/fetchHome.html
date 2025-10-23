@@ -4,21 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>fetchHome</title>
-    <style>
-        #cons{
-            width: 800px;
-            border: 1px solid #ccc;
-            margin: 10px;
-            padding: 10px;
-        }
-    </style>
     <script>
         window.onload = function(){
             function consLog(msg){
                 document.querySelector("#cons").innerHTML+=msg+'<br/>'
             }
 
-            document.querySelector("#btn1").onclick=function(){
+            document.querySelector("#getGo").onclick=function(){
                fetch('/test1')      //   http://192.168.0.78/test1
                .then(answer=>{
                     console.log('정상 : ',answer.ok, answer.status)
@@ -34,9 +26,7 @@
                })
             }
 
-
-
-            document.querySelector("#btn2").onclick=function(){
+            document.querySelector("#queryGo").onclick=function(){
                fetch('/test2?pid=aaa&age=23',{
                 method:'GET'
                })     
@@ -45,7 +35,7 @@
                .catch(err=>console.log('에러 : ',err.message))
             }
 
-            document.querySelector("#btn3").onclick=function(){
+            document.querySelector("#jsonGo").onclick=function(){
                 // json 키배열, 인덱스 배열 형태로 처리 
                 /*
                 const params= {
@@ -101,7 +91,6 @@
                .catch(err=>console.log('에러 : ',err.message))
             }
 
-
             document.querySelector("#frmGo").onclick=function(){
 
                 // frm  요소 선택
@@ -127,13 +116,14 @@
                .catch(err=>console.log('에러 : ',err.message))
             }
 
-
-            // 'Content-Type' : 송신, 'Accept': 수신 
+            // 'Content-Type' : 송신 - 필수(FormData 제외)
+            // 'Accept': 수신 - 생략가능
             document.querySelector("#receiveJsonGo").onclick=function(){
                fetch('/test5',{
                 method:'GET',
                 headers:{
                     'Accept':'application/json'  //데이터 수신타입 설정 - json
+                                                // answer.json() 처리 하기 때문에 생략해도 무방
                 },
                })     
                .then(answer=> answer.json())  //json 형태로 받기 - object
@@ -143,19 +133,25 @@
                 })
                .catch(err=>console.log('에러 : ',err.message))
             }
-               
-
         }
     </script>
+    <style>
+        #cons{
+            width: 800px;
+            border: 1px solid #ccc;
+            margin: 10px;
+            padding: 10px;
+        }
+    </style>
 </head>
 <body>
     <h1>fetchHome</h1>
     id <input type="text" id="pid"><br/>
     나이 <input type="text" id="age"><br/>
     결혼 <input type="text" id="marriage"><br/>
-    <input type="button" value="btn1" id="btn1">
-    <input type="button" value="btn2" id="btn2">
-    <input type="button" value="btn3" id="btn3">
+    <input type="button" value="getGo" id="getGo">
+    <input type="button" value="queryGo" id="queryGo">
+    <input type="button" value="jsonGo" id="jsonGo">
     <input type="button" value="postGo" id="postGo">
 
     <form method="post" name="frm">
