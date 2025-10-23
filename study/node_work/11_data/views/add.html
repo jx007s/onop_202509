@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>더하기</title>
+    <script>
+        window.onload=()=>{
+            let no1 = document.querySelector("#no1")
+            let no2 = document.querySelector("#no2")
+            let answer = document.querySelector("#answer")
+
+            document.querySelector("#postGo").onclick=function(){
+
+               fetch(`/calc`,{
+                method:'POST',
+                headers:{
+                    'Content-Type':'application/json',
+                    'Accept':'application/json'
+                },
+                body:JSON.stringify({
+                        no1 : no1.value,
+                        no2 : no2.value
+                    })
+               })     
+               .then(answer=> answer.json())
+               .then(data=>answer.value = data.ret)
+               .catch(err=>console.log('에러 : ',err.message))
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>더하기</h1>
+    <input type="text" id="no1"> + 
+    <input type="text" id="no2"> = <input type="text" id="answer" readonly>
+    <input type="button" value="postGo" id="postGo"> 
+</body>
+</html>
