@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01_basic</title>
+</head>
+<body>
+    <h1>01_basic</h1>
+    {#  주석 구간 #}
+    {% set aa = 10 %}  {#  변수선언 #}
+    aa : {{aa}} <br/>  {#  표현식 #}
+
+    {% set bb = 20 %}
+    {% set aa = aa + bb%}
+    aa : {{aa}} <br/> 
+    {% set cc = 123 %}
+    {% set dd = 456 %}
+    cc + dd : {{cc+dd}}<br/> 
+
+    {% set aa = 3 %}
+    {% if aa >= 10 %}
+        aa 는 10 이상 입니다. <br/>
+    {% elif aa >= 5 %}
+        aa 는 5~10 입니다. <br/>
+    {% else %}
+        aa 는 5 미만 입니다. <br/>
+    {% endif %}
+
+    {% set arr = ['정우성','한가인','장동건'] %}
+    <ul>
+        {% for ee in arr %}
+            <li>{{loop.index}} - {{ee}}</li> {# loop.index : 인덱스 번호 : 1번부터 시작 #}
+        {% endfor %}
+    </ul>
+</body>
+</html>
