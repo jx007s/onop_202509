@@ -72,6 +72,79 @@
                .then(data=>consLog(data))
                .catch(err=>console.log('에러 : ',err.message))
             }
+
+
+            document.querySelector("#postGo").onclick=function(){
+
+                // json 키배열, 인덱스 배열 형태로 처리 
+                const params= {
+                    pid : document.querySelector("#pid").value,
+                    age : document.querySelector("#age").value,
+                    marriage : document.querySelector("#marriage").value
+                }
+
+                let ttt = JSON.stringify(params) // json -> 문자열
+                                    //  `{"pid":"ccc","age":"26","marriage":"false"}`
+                //console.log('ttt',ttt)
+                consLog(params)     //object
+                consLog(ttt)        // String
+
+               fetch(`/test3`,{
+                method:'POST',
+                headers:{
+                    'Content-Type':'application/json'  //post 데이터 전송타입 설정 - json
+                },
+                body:ttt       //POST 에서 ttt 전송(json 형태의 문자열전송)
+               })     
+               .then(answer=> answer.text())
+               .then(data=>consLog(data))
+               .catch(err=>console.log('에러 : ',err.message))
+            }
+
+
+            document.querySelector("#frmGo").onclick=function(){
+
+                // frm  요소 선택
+               const frm = document.frm
+
+               //FormData 객체 생성 --> frm 요소를 이용하여 FormData 객체 생성
+               const data = new FormData(frm)
+
+                console.log(data)     //object
+                consLog(data)        // object
+                //내용확인
+                for(const [kk,vv] of data.entries()){
+                    consLog(`${kk} , ${vv}`)
+                }
+
+                fetch(`/test4`,{
+                method:'POST',
+                // header 불필요 FormData 가 자동 생성
+                body:data
+               })     
+               .then(answer=> answer.text())
+               .then(data=>consLog(data))
+               .catch(err=>console.log('에러 : ',err.message))
+            }
+
+
+            // 'Content-Type' : 송신, 'Accept': 수신 
+            document.querySelector("#receiveJsonGo").onclick=function(){
+               fetch('/test5',{
+                method:'GET',
+                headers:{
+                    'Accept':'application/json'  //데이터 수신타입 설정 - json
+                },
+               })     
+               .then(answer=> answer.json())  //json 형태로 받기 - object
+               .then(data=>{
+                    consLog(data)       //object
+                    console.log(data)
+                })
+               .catch(err=>console.log('에러 : ',err.message))
+            }
+               
+
         }
     </script>
 </head>
@@ -83,6 +156,15 @@
     <input type="button" value="btn1" id="btn1">
     <input type="button" value="btn2" id="btn2">
     <input type="button" value="btn3" id="btn3">
+    <input type="button" value="postGo" id="postGo">
+
+    <form method="post" name="frm">
+        id <input type="text" name="pid"><br/>
+        이름 <input type="text" name="pname"><br/>
+        전화 <input type="text" name="tel"><br/>
+    </form>
+    <input type="button" value="frmGo" id="frmGo">
+    <input type="button" value="json수신" id="receiveJsonGo">
     <div id="cons"></div>
 </body>
 </html>
