@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03_include</title>
+</head>
+<body>
+    <h1>03_include</h1>
+    이름 : {{pname}} <br/>
+   
+    
+    {# include 는 현재 view 페이지 기준 주소 사용 #}
+    {% include 'header.html' %}
+    {# 상대주소를 이용한 폴더 내부 파일 접근 가능 #}
+    {# 상대주소를 이용한 폴더 내부 파일 접근 가능
+        nunjucks.configure('views',{...})   nunjucks 설정에 명시한 'views' 폴더 안에 있어야함
+    #}
+    {% include 'uuu/subbb.html' %}
+</body>
+</html>

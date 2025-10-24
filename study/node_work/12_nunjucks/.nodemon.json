@@ -1,0 +1,6 @@
+{
+  "watch": ["home.js", "views"],
+  "ext": "js,njk,json,html",
+  "ignore": ["node_modules"],
+  "exec": "node home.js"
+}
