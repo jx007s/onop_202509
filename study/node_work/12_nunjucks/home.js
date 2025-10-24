@@ -37,3 +37,5 @@ app.get('/03_include',(req,res)=>{
 app.listen(80,()=>{
     console.log("nunjucks 서버 시작")
 })
+
+// 자동 실행 명령어 : nodemon --config .nodemon.json
