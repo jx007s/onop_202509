@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+</head>
+<body>
+    
+    <table border="">
+        <tr align="center" height="150px">
+            <td width="600px" colspan="2"><h1>{{title}}</h1></td>
+        </tr>
+        <tr  height="300px">
+            <td width="100px">{{aside | safe}}</td>
+            <td width="500px">{{main}}</td>
+        </tr>
+        <tr align="center" height="100px">
+            <td colspan="2">
+
+                {% include 'test/myFooter.html' %}
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

@@ -1,6 +1,6 @@
 {
-  "watch": ["home.js", "views"],
+  "watch": ["home.js","test.js", "views"],
   "ext": "js,njk,json,html",
   "ignore": ["node_modules"],
-  "exec": "node home.js"
+  "exec": "node test.js"
 }
