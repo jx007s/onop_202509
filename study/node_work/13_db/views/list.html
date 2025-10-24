@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>리스트입니다.</title>
+</head>
+<body>
+    <h1>리스트입니다</h1>
+    <table border="">
+        <tr>
+            <td>번호</td>
+            <td>학기</td>
+            <td>종류</td>
+            <td>학생</td>
+            <td>국어</td>
+            <td>영어</td>
+            <td>수학</td>
+        </tr>
+        {% for md in mainData %}
+        <tr>
+            <td>{{loop.index}}</td>
+            <td>{{md.hakgi}}</td>
+            <td>{{md.name}}</td>
+            <td>{{md.pid}}</td>
+            <td>{{md.kor}}</td>
+            <td>{{md.eng}}</td>
+            <td>{{md.mat}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
