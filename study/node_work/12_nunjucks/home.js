@@ -33,6 +33,10 @@ app.get('/03_include',(req,res)=>{
     res.render("03_include.html", ddd) //  data 를 같이 전송 - 변수로 사용됨
 })
 
+app.get('/04_block',(req,res)=>{
+    res.render("04_block.html", ddd) //  data 를 같이 전송 - 변수로 사용됨
+})
+
 
 app.listen(80,()=>{
     console.log("nunjucks 서버 시작")

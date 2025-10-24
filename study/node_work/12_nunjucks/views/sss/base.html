@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title or "기본 사이트제목"}}</title>
+</head>
+<body>
+    <H1>기본 layout 을 제공합니다</H1>
+    이름 : {{pname}}<br/>
+    <h2>b1 시작 -----------</h2>
+    {# 상속받는 페이지의 b1 block 을 가져와 결합 #}
+    {% block b1 %}
+    b1 block 결합이 없을때 나타나는 내용
+    {% endblock %}
+    <h2>b1 끝 -----------</h2>
+    블라블라블라
+    <h2>b2 시작 -----------</h2>
+    {# 상속받는 페이지의 b2 block 을 가져와 결합 #}
+    {% block b2 %}
+    b2 block 결합이 없을때 나타나는 내용
+    {% endblock %}
+    <h2>b2 끝 -----------</h2>
+
+    <h2>b3 시작 -----------</h2>
+    {# 상속받는 페이지의 b3 block 을 가져와 결합 #}
+    {% block b3 %}
+    b3 block 결합이 없을때 나타나는 내용
+    {% endblock %}
+    <h2>b3 끝 -----------</h2>
+
+    <h2>b4 시작 -----------</h2>
+    
+    {% block b4 %}
+    b4 block 결합이 없을때 나타나는 내용
+    {% include '../qqq/asd.html' %}
+    {% endblock %}
+    <h2>b4 끝 -----------</h2>
+
+    {% include '../qqq/qwe.html' %}
+</body>
+</html>
