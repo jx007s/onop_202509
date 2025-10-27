@@ -2,6 +2,9 @@ const express = require('express')
 const router = express.Router()
 const conn = require('../examDB')
 const upload = require('../upload')
+const fs = require('fs')
+const path = require('path')
+
 
 function dateToStr(dbDate){
     let ddd = new Date(dbDate)
@@ -68,10 +71,61 @@ router.get('/detail/:id',(req,res)=>{
     })     
 })
 
-//글쓰기폼
+//삭제폼
 router.get('/deleteForm/:id',(req,res)=>{
        
     res.render('deleteForm.html',{id:req.params.id})     
+})
+
+//삭제처리결과
+router.delete('/deleteReg',upload.none(), (req,res)=>{
+
+    let {id , pw} = req.body
+    console.log('삭제 처리전', id, pw)    
+   
+    //id 관련 파일 정보 획득
+    conn.query('select * from exam where id = ?',[id],(err1,ret1)=>{
+        if(err1){
+            console.log('삭제 전 조회 sql 실패 : ', err1.message)
+            res.json({chk:false})
+        }else{
+            let ff = ret1[0].ff
+            console.log(`ff : `, ff)
+
+            // id, pw 이용하여 삭제 시도
+            conn.query('delete from exam where id = ? and pw = ?',[id, pw],(err2,ret2)=>{
+
+                if(err2){
+                    console.log('삭제 sql 실패 : ', err2.message)
+                    res.json({chk:false})
+                }else{
+                    // ret2.affectedRows : 삭제된 행 갯수 (id,pw 일치하면 1개삭제 아니면 0개)
+                    if(ret2.affectedRows > 0){
+
+                        //파일삭제 - 파일이 존재한다면
+                        if(ff!=null && ff.trim()!=''){
+                            console.log('파일삭제 시도', ff)
+                            const delPath = path.join(__dirname,'../fff',ff)
+                            //파일삭제
+                            fs.unlinkSync(delPath)
+                        }
+            
+                        res.json({chk:true})
+                    }else{
+                        res.json({chk:false})
+                    }
+                
+                }
+            })  
+
+        }
+    })
+
+        
+    
+    
+       
+    
 })
 
 

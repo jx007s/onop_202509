@@ -4,10 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>삭제</title>
+    <script>
+        window.onload=function(){
+
+            document.querySelector("#frm").addEventListener('submit',(e)=>{
+                e.preventDefault()  //기본 명령 제거 (submit 제거 -  form action 안함) 
+                
+                const frmData = new FormData(document.frm)
+                
+
+                fetch('/deleteReg',{
+                    method:'DELETE',
+                    body: frmData
+                })
+                .then(response=> response.json())
+                .then(data=>{
+                    if(data.chk){   //암호가 일치되어 삭제
+                        alert('삭제되었습니다.')
+                        location.href = '/'
+                    }else{
+                        alert('삭제 실패')
+                    }
+                })
+                .catch(err=>console.log('에러 : ',err.message))
+            })
+        }
+    </script>
 </head>
 <body>
     <h1>삭제</h1>
-    <form action="">
+    <form action="" name="frm" id="frm">
+        <input type="hidden" name="id" value="{{id}}">
         <table border="">
             <tr>
                 <td>암호</td>
@@ -15,7 +42,7 @@
             </tr>
             <tr>
                 <td colspan="2" align="center">
-                    <input type="submit" name="삭제">
+                    <input type="submit" value="삭제">
                     <a href='/detail/{{id}}'>뒤로</a>
                 </td>
             </tr>

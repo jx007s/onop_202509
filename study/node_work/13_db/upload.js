@@ -12,8 +12,12 @@ const qwer = multer({
             cb(null, upDir)  //cb(err 혹은 null, 저장폴더)
         },
         filename:(req,file, cb)=>{          //저장될때 파일
-            const ext = path.extname(file.originalname) //확장자명
-            cb(null, path.basename(file.originalname,ext)+Date.now()+ext)
+
+            //한글깨짐 처리
+            const oriName = Buffer.from(file.originalname, 'latin1').toString('utf8')
+
+            const ext = path.extname(oriName) //확장자명
+            cb(null, path.basename(oriName,ext)+Date.now()+ext)
         }
     }),
 
