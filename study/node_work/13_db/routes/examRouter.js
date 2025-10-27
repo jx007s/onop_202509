@@ -91,7 +91,7 @@ router.post('/',upload.single('ff'),(req,res)=>{
             //  autjo increament로 추가된 id :  ret.insertId
             console.log('글쓰기 성공 : ', ret.insertId)
             res.render('alert.html', 
-                {title:'등록성공', msg:'등록되었습니다.',dst:`/detail/${ret.insertId}`})
+                {title:'등록성공', msg:'등록되었습니다.',dst:`/detail/${ret.insertId}/1`})
         }
     })     
 })
