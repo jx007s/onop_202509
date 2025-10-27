@@ -34,7 +34,7 @@ CREATE TABLE `exam` (
   `ff` varchar(255) DEFAULT NULL,
   `pw` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -43,7 +43,7 @@ CREATE TABLE `exam` (
 
 LOCK TABLES `exam` WRITE;
 /*!40000 ALTER TABLE `exam` DISABLE KEYS */;
-INSERT INTO `exam` VALUES (1,1,'semi','aaa','2025-05-04',77,79,69,NULL,'1111'),(2,1,'semi','bbb','2025-05-04',88,104,94,NULL,'1111'),(3,1,'semi','ccc','2025-05-04',57,59,59,'aaa.jpg','1111'),(4,1,'semi','ddd','2025-05-04',NULL,49,71,NULL,'1111'),(5,1,'final','aaa','2025-07-11',97,92,90,NULL,'1111'),(6,1,'final','bbb','2025-07-11',70,83,25,NULL,'1111'),(7,1,'final','ccc','2025-07-11',79,97,11,NULL,'1111'),(8,1,'final','ddd','2025-07-11',70,41,21,NULL,'1111'),(9,2,'semi','aaa','2025-10-15',74,92,13,NULL,'1111'),(10,2,'semi','bbb','2025-10-15',70,64,73,NULL,'1111'),(11,2,'semi','ccc','2025-10-15',80,93,79,NULL,'1111'),(12,2,'semi','ddd','2025-10-15',80,69,74,NULL,'1111'),(13,2,'final','aaa','2025-12-19',NULL,82,86,NULL,'1111'),(14,2,'final','bbb','2025-12-19',NULL,104,64,NULL,'1111'),(15,2,'final','ccc','2025-12-19',97,59,29,NULL,'1111'),(16,2,'final','fff','2025-12-19',85,99,78,NULL,'1111'),(17,1,'final','aaa','2025-07-17',78,92,52,NULL,'1111'),(18,1,'final','bbb','2025-07-17',58,67,96,NULL,'1111'),(19,2,'semi','ccc','2025-10-24',33,56,78,'20240212_1410041761294010235.jpg','1111'),(20,2,'semi','ccc','2025-10-24',33,56,78,'ANPA65681761294108109.JPG','1111'),(21,2,'semi','ccc','2025-10-24',33,56,78,'ANPA65681761295176677.JPG','1111'),(22,1,'semi','ddd','2025-10-24',78,56,92,'ê·¸ë¤31761295489668.jpg','1111'),(23,1,'final','ddd','2025-10-27',67,78,89,'TAVH74671761525544430.JPG','1111');
+INSERT INTO `exam` VALUES (1,1,'semi','aaa','2025-05-04',77,79,69,NULL,'1111'),(3,1,'semi','ccc','2025-05-04',57,59,59,'aaa.jpg','1111'),(5,1,'final','aaa','2025-07-11',97,92,90,NULL,'1111'),(7,1,'final','ccc','2025-07-11',79,97,11,NULL,'1111'),(8,1,'final','ddd','2025-07-11',70,41,21,NULL,'1111'),(9,2,'semi','aaa','2025-10-15',74,92,13,NULL,'1111'),(10,2,'semi','bbb','2025-10-15',70,64,73,NULL,'1111'),(11,2,'semi','ccc','2025-10-15',80,93,79,NULL,'1111'),(13,2,'final','aaa','2025-12-19',NULL,82,86,NULL,'1111'),(14,2,'final','bbb','2025-12-19',NULL,104,64,NULL,'1111'),(15,2,'final','ccc','2025-12-19',97,59,29,NULL,'1111'),(17,1,'final','aaa','2025-07-17',78,92,52,NULL,'1111'),(18,1,'final','bbb','2025-07-17',58,67,96,NULL,'1111'),(19,2,'semi','ccc','2025-10-24',33,56,78,'20240212_1410041761294010235.jpg','1111'),(20,2,'semi','ccc','2025-10-24',33,56,78,'ANPA65681761294108109.JPG','1111'),(21,2,'semi','ccc','2025-10-24',33,56,78,'ANPA65681761295176677.JPG','1111'),(22,1,'final','eee','2025-10-24',12,34,56,'ê·¸ë¤31761295489668.jpg','1111'),(26,1,'semi','aaa',NULL,11,28,53,NULL,'1111'),(27,1,'semi','bbb',NULL,31,29,32,NULL,'1111'),(28,1,'final','bbb',NULL,41,24,3,NULL,'1111'),(29,2,'semi','aaa',NULL,51,23,3,NULL,'1111'),(30,2,'final','aaa',NULL,61,26,3,NULL,'1111'),(31,2,'semi','bbb',NULL,71,23,3,NULL,'1111'),(32,2,'final','bbb',NULL,81,27,3,NULL,'1111'),(33,1,'semi','ccc',NULL,91,24,3,NULL,'1111'),(34,1,'final','ddd',NULL,11,24,3,NULL,'1111'),(35,1,'semi','eee',NULL,12,26,3,NULL,'1111'),(36,1,'final','fff',NULL,13,82,3,NULL,'1111'),(37,2,'semi','ccc',NULL,14,62,3,NULL,'1111'),(38,2,'final','ddd',NULL,15,32,3,NULL,'1111'),(39,2,'semi','eee',NULL,16,52,3,NULL,'1111'),(40,2,'final','fff',NULL,17,27,3,NULL,'1111');
 /*!40000 ALTER TABLE `exam` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -56,4 +56,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-10-27 10:47:41
+-- Dump completed on 2025-10-27 16:57:35
