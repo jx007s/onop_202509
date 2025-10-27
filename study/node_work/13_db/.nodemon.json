@@ -1,5 +1,5 @@
 {
-  "watch": ["app.js","examDB.js", "views", "routes"],
+  "watch": ["app.js","examDB.js", "upload.js", "views", "routes"],
   "ext": "js,njk,json,html",
   "ignore": ["node_modules"],
   "exec": "node app.js"

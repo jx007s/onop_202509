@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>수정폼입니다</title>
+    <script>
+        window.onload=function(){
+
+            document.querySelector("#frm").addEventListener('submit',(e)=>{
+                e.preventDefault()  //기본 명령 제거 (submit 제거 -  form action 안함) 
+                
+                const frmData = new FormData(document.frm)
+                
+
+                fetch('/modifyReg',{
+                    method:'PUT',
+                    body: frmData
+                })
+                .then(response=> response.json())
+                .then(data=>{
+                    if(data.chk){   //암호가 일치되어 삭제
+                        alert('수정되었습니다.')
+                        location.href = '/detail/{{md.id}}'
+                    }else{
+                        alert('수정 실패')
+                    }
+                })
+                .catch(err=>console.log('에러 : ',err.message))
+            })
+        }
+    </script>
+</head>
+<body>
+    <h1>수정폼입니다</h1>
+    <form  action="" name="frm" id="frm">
+        <input type="hidden" name="id" value="{{md.id}}">
+        <table border="">
+            <tr>
+                <td>학기</td>
+                <td>
+                    <input type="radio" name="hakgi" value="1" {% if md.hakgi == 1 %} checked {% endif %}>1학기
+                    <input type="radio" name="hakgi" value="2" {% if md.hakgi == 2 %} checked {% endif %}>2학기    
+                </td>
+            </tr>
+            <tr>
+                <td>종류</td>
+                <td>
+                    <input type="radio" name="name" value="semi" {% if md.name == 'semi' %} checked {% endif %}>중간
+                    <input type="radio" name="name" value="final" {% if md.name == 'final' %} checked {% endif %}>기말
+                </td>
+            </tr>
+            <tr>
+                <td>학생</td>
+                <td><input type="text" name="pid" value="{{md.pid}}"></td>
+            </tr>
+            <tr>
+                <td>국어</td>
+                <td><input type="text" name="kor" value="{{md.kor}}"></td>
+            </tr>
+            <tr>
+                <td>영어</td>
+                <td><input type="text" name="eng" value="{{md.eng}}"></td>
+            </tr>
+            <tr>
+                <td>수학</td>
+                <td><input type="text" name="mat" value="{{md.mat}}"></td>
+            </tr>
+            <tr>
+                <td>암호</td>
+                <td><input type="password" name="pw"></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="submit" value="수정">
+                    <a href="/detail/{{md.id}}/{{nowpage}}">뒤로</a>
+                </td>
+            </tr>
+        </table>
+
+    </form>
+</body>
+</html>

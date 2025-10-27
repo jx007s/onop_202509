@@ -13,8 +13,9 @@ nunjucks.configure('views',{
     express: app
 })
 
-//정적파일
+//정적파일(파일저장)
 app.use('/fff', express.static(path.join(__dirname, 'fff')))
+//정적파일
 app.use('/assets', express.static(path.join(__dirname, 'assets')))
 
 //route
