@@ -22,12 +22,18 @@
             <td>{{loop.index}}</td>
             <td>{{md.hakgi}}</td>
             <td>{{md.name}}</td>
-            <td><a href="/{{md.id}}">{{md.pid}}</a></td>
+            <td><a href="/detail/{{md.id}}">{{md.pid}}</a></td>
             <td>{{md.kor}}</td>
             <td>{{md.eng}}</td>
             <td>{{md.mat}}</td>
         </tr>
         {% endfor %}
+
+        <tr>
+            <td colspan="7" align="right">
+                <a href="/insertForm">글쓰기</a>
+            </td>
+         </tr>
     </table>
 </body>
 </html>

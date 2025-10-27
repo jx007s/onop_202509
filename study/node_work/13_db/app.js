@@ -4,6 +4,8 @@ const path = require('path')
 const examRouter = require('./routes/examRouter')
 const app = express()
 
+app.use(express.urlencoded({extended:true}))
+app.use(express.json())
 
 // template
 nunjucks.configure('views',{
@@ -13,6 +15,7 @@ nunjucks.configure('views',{
 
 //정적파일
 app.use('/fff', express.static(path.join(__dirname, 'fff')))
+app.use('/assets', express.static(path.join(__dirname, 'assets')))
 
 //route
 app.use('/', examRouter)

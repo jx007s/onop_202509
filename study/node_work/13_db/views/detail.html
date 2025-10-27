@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>상세보기입니다.</title>
+    <link rel="stylesheet" href="/assets/exam.css">
 </head>
 <body>
     <h1>상세보기입니다</h1>
@@ -24,9 +25,21 @@
             <td>영어</td><td>{{md.eng}}</td>
         </tr><tr>
             <td>수학</td><td>{{md.mat}}</td>
-         </tr><tr>
-            <td>수학</td><td>{{md.mat}}</td>
+         </tr>
+        {% if md.ff %}
+         <tr>
+            <td>파일</td><td>
+                <img src="/fff/{{md.ff}}" alt=""></td>
         </tr>
+        {% endif %}
+
+        <tr>
+            <td colspan="2" align="right">
+                <a href="/">목록으로</a>
+                <a href="/deleteForm/{{md.id}}">삭제</a>
+                <a href="/modifyForm/{{md.id}}">수정</a>
+            </td>
+         </tr>
     </table>
 </body>
 </html>
