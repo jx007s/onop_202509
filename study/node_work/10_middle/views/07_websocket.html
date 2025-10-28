@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07_websocket</title>
+</head>
+<body>
+    <h1>07_websocket</h1>
+    <script>
+        // 1. 웹소켓 서버에 연결시도
+        const socket = new WebSocket('ws://localhost:80')
+        //2. 웹소켓 서버에 연결 성공
+        socket.onopen = ()=>{
+            console.log('웹소켓 서버 연결')
+
+            //3.1 클라이언트 ->서버 송신
+            socket.send('강사가 보내지롱요')
+        }
+
+        //3.2 서버 -> 클라이언트 수신
+        socket.onmessage=(e)=>{
+            console.log('서버로부터 수신 :', e.data)
+        }
+
+        window.onload=()=>{
+            let mmm = document.querySelector("#mmm")
+            let cons = document.querySelector("#cons")
+            document.querySelector("#sendBtn").onclick=(e)=>{
+                //alert('눌렀냐')
+
+                
+                socket.send(`강사 : ${mmm.value}`)
+
+                cons.innerHTML += mmm.value+"<br/>"
+                mmm.value = ''
+                
+            }
+
+            document.querySelector("#closeBtn").onclick=(e)=>{
+                //서버와 연결되어있을때만 종료 시도
+               if(socket.readyState=== WebSocket.OPEN){
+                    // 4. 연결 종료
+                    socket.close(1000, '강사가 종료함')  //접속 종료 요청
+                    cons.innerHTML += "접속 종료<br/>"                
+               }
+                
+            }
+        }
+    </script>
+
+    <div id="cons"></div>
+    <input type="text" id="mmm">
+    <input type="button" id="sendBtn" value="보내기">
+    <input type="button" id="closeBtn" value="연결종료">
+</body>
+</html>
