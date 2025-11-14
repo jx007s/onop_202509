@@ -4,15 +4,19 @@ import './index.css';
 import App from './App';
 import App2 from './App2';
 import Exam from './Exam';
+import MyClass from './basic/MyClass'
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+  <>
+   {/* <React.StrictMode> 개발자 모드이어서 2번씩 처리함 */}
     {/* <App />
-    <App2 /> */}
-    <Exam/>
-  </React.StrictMode>
+    <App2 /> 
+    <Exam/>*/}
+    <MyClass/>
+    {/* </React.StrictMode> */}
+  </>
 );
 
 // If you want to start measuring performance in your app, pass a function
