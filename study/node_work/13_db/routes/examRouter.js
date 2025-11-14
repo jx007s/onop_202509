@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const conn = require('../examDB')
+const conn = require('../dbPool')   //pool 로 결합
 const upload = require('../upload')
 const fs = require('fs')
 const path = require('path')
