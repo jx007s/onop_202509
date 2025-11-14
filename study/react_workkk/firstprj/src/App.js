@@ -29,3 +29,22 @@ class App extends Component{
 
 
 export default App
+
+
+/*
+    react_workkk 폴더 안에 secprj  리액트프로젝트를 생성하세요
+
+    포트번호는 8888로 지정
+
+    출력내용
+
+    이름 : 정우성
+    나이 : 43
+    결혼 : true
+
+    정우성, 43,  true 는 변수로 처리 하세요
+
+
+*/
+
+
