@@ -27,7 +27,7 @@ function qwer(){
             {fn()}
 
             {
-                (function fn(){
+                (function(){
                     if(jum >=80) {
                         return <div>익명 우수</div>
                     }else if(jum >=60) {
