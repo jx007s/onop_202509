@@ -1,3 +1,5 @@
+import './exam.css'
+
 function zxcv(){
 /*
 Exam.js 를 생성하고
@@ -7,7 +9,7 @@ Exam.js 를 생성하고
     let pname = '한가인'
     let kor = 78, eng = 82, mat = 64
     let tot = kor + eng + mat
-    let avg = tot / 3
+    let avg = Math.round( tot / 3)
     function grade(){
         let ret
         if(avg>=90){
@@ -23,29 +25,40 @@ Exam.js 를 생성하고
         }
         return ret
     }
+
+    let sectionSt = {
+        textAlign:'center',
+        width : '200px',
+        height:'50px',
+        border:'1px solid #ccc',
+        lineHeight:'50px',
+    }
+  
+
+
     return (
         <>
             <h2>시험</h2>
-            <section>
-                <div>이름</div><div>{pname}</div>
+            <section style={sectionSt}>
+                <div>이름</div><div className="vvSt">{pname}</div>
             </section>
-            <section>
-                <div>국어</div><div>{kor}</div>
+            <section style={sectionSt}>
+                <div>국어</div><div className="vvSt">{kor}</div>
             </section>
-            <section>
-                <div>영어</div><div>{eng}</div>
+            <section style={sectionSt}>
+                <div>영어</div><div className="vvSt">{eng}</div>
             </section>
-            <section>
-                <div>수학</div><div>{mat}</div>
+            <section style={sectionSt}>
+                <div>수학</div><div className="vvSt">{mat}</div>
             </section>
-            <section>
-                <div>총점</div><div>{tot}</div>
+            <section style={sectionSt}>
+                <div>총점</div><div className="vvSt">{tot}</div>
             </section>
-            <section>
-                <div>평균</div><div>{avg}</div>
+            <section style={sectionSt}>
+                <div>평균</div><div className="vvSt">{avg}</div>
             </section>
-            <section>
-                <div>등급</div><div>{grade()}</div>
+            <section style={sectionSt}>
+                <div>등급</div><div className="vvSt">{grade()}</div>
             </section>
         </>
     )

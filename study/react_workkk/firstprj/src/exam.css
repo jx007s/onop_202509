@@ -1,0 +1,11 @@
+.vvSt{
+    
+    color: #00f;
+}
+section > div{
+    float:left;
+}
+
+section > div:nth-of-type(1){
+    width : 100px;
+}
