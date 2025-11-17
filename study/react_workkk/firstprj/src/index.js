@@ -8,7 +8,7 @@ import MyClass from './basic/MyClass'
 import St from './basic/Stud'
 import RRR from './basic/Rec'
 import CCC from './basic/Constructor'
-
+import CCSS from './basic/ConstStud'
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -20,8 +20,9 @@ root.render(
     <Exam/>
     <MyClass/>
     <St/>
-    <RRR/>*/}
-    <CCC/>
+    <RRR/>
+    <CCC/>*/}
+    <CCSS/>
     {/* </React.StrictMode> */}
   </>
 );
