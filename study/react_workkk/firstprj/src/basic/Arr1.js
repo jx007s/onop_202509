@@ -117,7 +117,7 @@ function ertyui(){
 export default ertyui
 /*
 MapRec.js 파일을 생성하고
-5개의 직사각형 객체를 클래스, 생성자를 이용하여 배열형태로 출력하세요
+5개의 직사각형을 클래스, 생성자를 이용하여 배열형태로 출력하세요
 map 이용할 것
 
 

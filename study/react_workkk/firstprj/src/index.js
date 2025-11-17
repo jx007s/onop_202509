@@ -10,6 +10,7 @@ import RRR from './basic/Rec'
 import CCC from './basic/Constructor'
 import CCSS from './basic/ConstStud'
 import Arr1 from './basic/Arr1'
+import MapRec from './basic/MapRec'
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -23,8 +24,9 @@ root.render(
     <St/>
     <RRR/>
     <CCC/>
-    <CCSS/>*/}
-    <Arr1/>
+    <CCSS/>
+    <Arr1/>*/}
+    <MapRec/>
     {/* </React.StrictMode> */}
   </>
 );
