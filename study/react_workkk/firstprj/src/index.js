@@ -6,6 +6,9 @@ import App2 from './App2';
 import Exam from './Exam';
 import MyClass from './basic/MyClass'
 import St from './basic/Stud'
+import RRR from './basic/Rec'
+import CCC from './basic/Constructor'
+
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -14,9 +17,11 @@ root.render(
    {/* <React.StrictMode> 개발자 모드이어서 2번씩 처리함 */}
     {/* <App />
     <App2 /> 
-    <Exam/>*/}
+    <Exam/>
     <MyClass/>
     <St/>
+    <RRR/>*/}
+    <CCC/>
     {/* </React.StrictMode> */}
   </>
 );
