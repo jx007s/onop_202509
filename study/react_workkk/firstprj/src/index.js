@@ -9,6 +9,7 @@ import St from './basic/Stud'
 import RRR from './basic/Rec'
 import CCC from './basic/Constructor'
 import CCSS from './basic/ConstStud'
+import Arr1 from './basic/Arr1'
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -21,8 +22,9 @@ root.render(
     <MyClass/>
     <St/>
     <RRR/>
-    <CCC/>*/}
-    <CCSS/>
+    <CCC/>
+    <CCSS/>*/}
+    <Arr1/>
     {/* </React.StrictMode> */}
   </>
 );
