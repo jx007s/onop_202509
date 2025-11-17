@@ -33,8 +33,8 @@ class Stud{
         }
     }
 
-    ppp(){
-        return <div  style={studSt[this.grade]}>
+    ppp(kk){
+        return <div key={kk}  style={studSt[this.grade]}>
                     <div>이름 : {this.name}</div>
                     <div>점수 : {this.jum}</div>
                     <div>총점 : {this.tot}</div>
@@ -54,13 +54,22 @@ function aazzssxx(){
         new Stud('정북성',87,89,82)
     ]
 
+    // let ppArr = [ 
+    //     arr[0].ppp(0),
+    //     arr[1].ppp(1),
+    //     arr[2].ppp(2),
+    //     arr[3].ppp(3),
+    //     arr[4].ppp(4)]
+
+    let ppArr = []
+
+    for (const i in arr) {
+        ppArr.push(arr[i].ppp(i))
+    }
+
     return <>
         <h1>생성자 학생입니다.</h1>
-        {arr[0].ppp()}
-        {arr[1].ppp()}
-        {arr[2].ppp()}
-        {arr[3].ppp()}
-        {arr[4].ppp()}
+       {ppArr} {/* 배열은 바로출력가능 */}
     </>
 }
 
