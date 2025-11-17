@@ -63,7 +63,20 @@ let arr7 = Object.entries(data7).map(([kk,vv] ,             i)=>{
 })
 
 console.log(arr7)
+console.log('filter-------------------')
+let data8 = [56,78,23,17,92,81,35] //짝수로만 구성
+let even1 = []
+for (const ee of data8) {
+    if(ee%2==0){
+        even1.push(ee)
+    }
+}
+console.log('even1',even1) //[56, 78, 92]
 
+//  결과 true 인 원소만 필터링
+let even2 = data8.filter((vv, kk)=>vv%2==0)
+
+console.log('even2',even2)  //[56, 78, 92]
 
 function ertyui(){
 
@@ -90,7 +103,22 @@ function ertyui(){
                 <div key={'mm'+kk} >{vv+' render'}</div>  //각 원소를 변환하여 arr6의 원소로 push
             ))} 직접 map 사용 불가 */}
             {arr7}
+
+            <hr/>
+            {data8.filter((vv, kk)=>vv%2==0).map((vv, kk)=>(
+                //      filter               map
+                //data8   -->  [56, 78, 92]  -->  [<div>56</div> <div>78</div>  <div>92</div>]
+                //필터링한 결과 배열을 이용하여 jsx 배열구성
+                <div key={'ff'+kk} >{vv+' filter'}</div>  
+            ))}
         </>
 }
 
 export default ertyui
+/*
+MapRec.js 파일을 생성하고
+5개의 직사각형 객체를 클래스, 생성자를 이용하여 배열형태로 출력하세요
+map 이용할 것
+
+
+*/
