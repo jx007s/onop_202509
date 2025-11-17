@@ -1,0 +1,30 @@
+img{
+    width: 600px;
+    height: 200px;
+    display: block;
+}
+
+section{
+    width: 600px;
+    height: 200px;
+    padding: 20px;
+    margin: 0 auto;
+    text-align: center;
+}
+section > .title{
+    width: 600px;
+    height: 90px;
+}
+.title > div, .dates>div{
+     float: left;
+     width: 75px;
+     height: 75px;
+     margin: 3px;
+     border: 1px solid #ccc;
+     line-height: 75px;
+}
+
+section > .dates{
+    width: 600px;
+    height: 200px;
+}

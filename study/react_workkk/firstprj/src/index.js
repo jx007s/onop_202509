@@ -1,16 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import App2 from './App2';
-import Exam from './Exam';
-import MyClass from './basic/MyClass'
-import St from './basic/Stud'
-import RRR from './basic/Rec'
-import CCC from './basic/Constructor'
-import CCSS from './basic/ConstStud'
-import Arr1 from './basic/Arr1'
-import MapRec from './basic/MapRec'
+// import './index.css';
+// import App from './App';
+// import App2 from './App2';
+// import Exam from './Exam';
+// import MyClass from './basic/MyClass'
+// import St from './basic/Stud'
+// import RRR from './basic/Rec'
+// import CCC from './basic/Constructor'
+// import CCSS from './basic/ConstStud'
+// import Arr1 from './basic/Arr1'
+// import MapRec from './basic/MapRec'
+import NovDiary from './basic/NovDiary'
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -25,8 +26,9 @@ root.render(
     <RRR/>
     <CCC/>
     <CCSS/>
-    <Arr1/>*/}
-    <MapRec/>
+    <Arr1/>
+    <MapRec/>*/}
+    <NovDiary/>
     {/* </React.StrictMode> */}
   </>
 );
