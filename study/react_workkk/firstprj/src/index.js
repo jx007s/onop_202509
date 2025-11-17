@@ -5,6 +5,7 @@ import App from './App';
 import App2 from './App2';
 import Exam from './Exam';
 import MyClass from './basic/MyClass'
+import St from './basic/Stud'
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -15,6 +16,7 @@ root.render(
     <App2 /> 
     <Exam/>*/}
     <MyClass/>
+    <St/>
     {/* </React.StrictMode> */}
   </>
 );
