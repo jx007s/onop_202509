@@ -14,7 +14,8 @@ import ReactDOM from 'react-dom/client';
 //import NovDiary from './basic/NovDiary'
 //import Extends from './basic/Extends'
 //import ExStud from './basic/ExtendsStud'
-import ExShape from './basic/ExtendsShape'
+//import ExShape from './basic/ExtendsShape'
+import Dyn from './basic/Dynamic'
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -33,8 +34,9 @@ root.render(
     <MapRec/>
     <NovDiary/>
     <Extends/>
-    <ExStud/>*/}
-    <ExShape/>
+    <ExStud/>
+    <ExShape/>*/}
+    <Dyn/>
     {/* </React.StrictMode> */}
   </>
 );
