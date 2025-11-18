@@ -1,5 +1,12 @@
+class Grand{
+    gg = '할아버지gg'
+    fn_g(){
+        return <div>할아버지 fn_g() {this.gg}</div>
+    }
+}
 
-class Par{
+
+class Par extends Grand{
     aa = '부모aa'
     bb = '부모bb'
 
@@ -16,6 +23,10 @@ class Par{
             부모 fn_tot 끝
         </div>
     }
+
+     fn_g(){  //부모클래스에서 overriding
+        return <div>부모 fn_g()  {this.gg} {this.aa} {this.bb}</div>
+    }
 }
 
 class Child extends Par{
@@ -27,6 +38,23 @@ class Child extends Par{
     }
     fn_3(){
         return <div>자식fn_3() {this.aa} {this.bb} {this.cc}</div>
+    }
+
+    fn_4(){
+        return <div>
+            자식 fn_4 시작 -----
+            {this.fn_1()}
+            {super.fn_1()}
+            this: {this.aa}<br/>
+            super: {super.aa}<br/>   
+            {/* super : 부모 멤버메소드 접근 가능
+                        부모 멤버변수 접근 불가
+            */}
+            {this.fn_g()}
+            {super.fn_g()}
+            {/* {super.super.fn_g()} 부모클래스에 재정의한 메소드 이전의  super 메소드 접근 불가*/}
+            자식 fn_4 끝 -------
+        </div>
     }
 }
 
@@ -42,6 +70,12 @@ function wefwefwe(){
         <hr/>
         자식 :  {cc.aa}, {cc.bb}, {cc.cc}
         {cc.fn_1()} {cc.fn_2()} {cc.fn_3()} {cc.fn_tot()}
+        <hr/>
+        {cc.gg}
+        {cc.fn_g()}
+        {cc.fn_4()}
+        {/* {cc.super.fn_1()}  super, this 클래스 정의부에서만 사용가능 */}
+        
     </>
 }
 
