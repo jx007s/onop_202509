@@ -1,0 +1,21 @@
+.stBox{
+    width: 200px;
+    height: 230px;
+    float: left;
+    padding: 10px;
+    margin: 5px;
+    background-color: #ff0;
+}
+
+.stBox > div{
+    width: 70px;
+    height: 3rem;
+    line-height: 3rem;
+    float: left;
+}
+
+.stBox > .stTitle, .stBox > .stData{
+    border: 1px solid #ccc;
+    margin: 3px;
+    padding: 2px;
+}
