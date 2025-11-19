@@ -12,10 +12,10 @@ root.render(
   <>
 
    {/* <Comp1/> 
-   <Prop2/>
+   <SC/>
    <Prop1/>*/}
-   
-  <SC/>
+   <Prop2/>
+
   </>
 );
 
