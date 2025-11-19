@@ -6,6 +6,7 @@ for (let i = 0; i <5; i++) {
     arr.push(<Erty/>)
 }
 
+
 function wefweff(){
 
     return <>

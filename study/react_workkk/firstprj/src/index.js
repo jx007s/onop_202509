@@ -1,13 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import Comp1 from './comp/comp1'
+//import Comp1 from './comp/comp1'
+import SC from './basic/StaticClass'
+import Prop1 from './comp/prop1'
+import Prop2 from './comp/prop2'
 
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <>
-   <Comp1/>
+
+   {/* <Comp1/> 
+   <Prop2/>
+   <Prop1/>*/}
+   
+  <SC/>
   </>
 );
 

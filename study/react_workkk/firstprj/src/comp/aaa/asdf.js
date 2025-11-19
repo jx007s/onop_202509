@@ -6,6 +6,9 @@ let aa = 0
 console.log(`asdf 이지롱 ${aa}`)   //import 시 실행 
                                // <Erty/>  여러번 실행해도 1번만실행
 
+
+// 클래스 기반 컴포넌트 정의시 Component 클래스 상속 필수
+// render() 메소드 재정의하여 컴포넌트 요소 설정
 class BBB extends Component{
 
     bb = 0
@@ -17,6 +20,7 @@ class BBB extends Component{
         console.log(`BBB 생성자 ${aa}, ${this.bb}`)
     }
 
+    //render() 메소드 재정의 하여  컴포넌트 리턴
     render(){   //<Erty/> 실행됨
         let cc = 0
         aa++
