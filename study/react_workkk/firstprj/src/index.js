@@ -6,9 +6,9 @@ import ReactDOM from 'react-dom/client';
 // import Prop2 from './comp/prop2'
 // import Prop3 from './comp/prop3'
 // import Prop4 from './comp/prop4'
-import Prop5 from './comp/prop5'
-import UpdateGo from './comp/updateGo'
-
+//import Prop5 from './comp/prop5'
+//import UpdateGo from './comp/updateGo'
+import UpdateClassGo from './comp/updateClassGo'
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -21,9 +21,10 @@ root.render(
    <Prop2/>
    <Prop3/>
    <Prop4/>
-   <Prop5/>*/}
-   <UpdateGo pname='흥부' age={34} marriage={true}/>
-
+   <Prop5/>
+   <UpdateGo pname='흥부' age={34} marriage={true}/>*/}
+   <UpdateClassGo/>
+  
   </>
 );
 
