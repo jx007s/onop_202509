@@ -1,0 +1,22 @@
+.vv{
+
+    width: 210px;
+    height: 200px;
+    background-color: #ff0;
+}
+.hh{
+    width: 420px;
+    height: 100px;
+    background-color: #aff;
+}
+
+.box > div{
+    text-align: center;
+    line-height: 3rem;
+    float: left;
+    width: 200px;
+    height: 3rem;
+    border: 1px solid #ccc;
+    padding: 2px;
+    margin: 2px;
+}

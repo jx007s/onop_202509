@@ -20,7 +20,7 @@ class AAA extends Component{
     //fn_1(){}  100% this 가 아니어서 발생되는 component 문제
     fn_1=()=>{
         this.setState({
-            aa: this.state.aa,
+            aa: this.state.aa+1,
             arr : [...this.state.arr, 99]
         })
 
