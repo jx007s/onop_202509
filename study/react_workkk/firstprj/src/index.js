@@ -8,8 +8,9 @@ import ReactDOM from 'react-dom/client';
 // import Prop4 from './comp/prop4'
 //import Prop5 from './comp/prop5'
 //import UpdateGo from './comp/updateGo'
-import UpdateClassGo from './comp/updateClassGo'
-import UpdateStud from './comp/updateStud'
+//import UpdateClassGo from './comp/updateClassGo'
+//import UpdateStud from './comp/updateStud'
+import EventGo from './event/eventGo'
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -24,9 +25,11 @@ root.render(
    <Prop4/>
    <Prop5/>
    <UpdateGo pname='흥부' age={34} marriage={true}/>
-   <UpdateClassGo/>*/}
+   <UpdateClassGo/>
    <UpdateStud/>
-  
+   */}
+   
+  <EventGo/>
   </>
 );
 

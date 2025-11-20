@@ -6,6 +6,17 @@ let data = {
     jum:[78,79,76]
 }
 
+let kkArr = {
+    '세로':{
+        box:'box hh',
+        disTitle: '가로'
+    },
+    '가로':{
+        box:'box vv',
+        disTitle: '세로'
+    }
+}
+
 
 class UpdateStud extends Component{
 
