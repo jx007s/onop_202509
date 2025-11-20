@@ -11,6 +11,7 @@ import ReactDOM from 'react-dom/client';
 //import UpdateClassGo from './comp/updateClassGo'
 //import UpdateStud from './comp/updateStud'
 import EventGo from './event/eventGo'
+import EventState from './event/eventState'
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -27,9 +28,12 @@ root.render(
    <UpdateGo pname='흥부' age={34} marriage={true}/>
    <UpdateClassGo/>
    <UpdateStud/>
-   */}
+   <EventGo/>
+   <EventState/>
    
-  <EventGo/>
+   */}
+  
+  
   </>
 );
 
