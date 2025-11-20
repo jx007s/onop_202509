@@ -1,0 +1,9 @@
+.big{
+    width: 800px;
+    height: 200px;
+}
+.big > div{
+    width: 200px;
+    height: 200px;
+    float: left;
+}
