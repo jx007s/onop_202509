@@ -7,9 +7,9 @@ class LifeCycle extends Component{
         console.log('1. 생성자==========')
 
         this.state = {
-            vv : 0,
-            cnt : 0,
-            hasError: false
+            vv : 0,            //props-> state 
+            cnt : 0,           //update 연습
+            hasError: false,   //에러가 있는지
         }
     }
 
@@ -79,7 +79,15 @@ class LifeCycle extends Component{
         console.log('8. componentWillUnmount==========')
         window.removeEventListener('resize',this.fn_1)
     }
-    
+
+
+    componentDidCatch(err, info){
+        // 자식 component의 화면 렌더 에러시 진입
+        console.log('9. componentDidCatch==========')
+        console.log('err:',err)
+        console.log('info:',info)
+        this.setState({hasError:true})
+    }
 
     render(){
         console.log('4. render==========')
@@ -89,6 +97,34 @@ class LifeCycle extends Component{
             <div>state.vv : {this.state.vv}</div>
             <div>state.cnt : {this.state.cnt}</div>
             <button onClick={()=>{this.setState({cnt:this.state.cnt+1})}}>+</button>
+            {this.state.hasError && <div style={{color:'#f00'}}>자식 에러발생!</div>}
+            {<SubComp/>}
+        </>
+    }
+}
+
+
+class SubComp extends Component{
+
+    state ={
+        chk : false
+    }
+
+    //에러발생시키는 핸들러
+    errGo=()=>{
+        this.setState({
+             chk : true
+        })
+    }
+
+    render(){
+        if(this.state.chk){
+            const rr = null
+            return <div>{rr.title}</div>
+        }
+        return <>
+            <h2>SubComp 입니다.</h2>
+            <button onClick={this.errGo}>에러발생</button>    
         </>
     }
 }
