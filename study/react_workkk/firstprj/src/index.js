@@ -12,7 +12,9 @@ import ReactDOM from 'react-dom/client';
 //import UpdateStud from './comp/updateStud'
 // import EventGo from './event/eventGo'
 // import EventState from './event/eventState'
-import EventBalloon from './event/eventBalloon'
+//import EventBalloon from './event/eventBalloon'
+// import ClassRef from './event/classRef'
+import ClassBalloon from './event/classBalloon'
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -30,11 +32,14 @@ root.render(
    <UpdateClassGo/>
    <UpdateStud/>
    <EventGo/>
-  <EventState/>
-   
+   <EventState/>
+   <EventBalloon/>
+   <ClassRef/>
    */}
    
-   <EventBalloon/>
+   
+   
+   <ClassBalloon/>
   </>
 );
 

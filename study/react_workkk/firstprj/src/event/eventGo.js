@@ -47,6 +47,7 @@ function Wefwef(){
     //  div -> boxRef
     const boxRef = useRef(null)  // <div>와 같은 객체 참조용 : JSX 문법으로 생성한 객체에 연결한다
 
+    // 함수형 컴포넌트에서만 useEffect 사용가능
     // widow/document 이벤트는 useEffect 에서 등록
     useEffect(()=>{
         window.addEventListener('resize', reszieee) //창크기변경
