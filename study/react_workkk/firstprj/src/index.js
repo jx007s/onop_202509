@@ -15,8 +15,10 @@ import ReactDOM from 'react-dom/client';
 //import EventBalloon from './event/eventBalloon'
 // import ClassRef from './event/classRef'
 //import ClassBalloon from './event/classBalloon'
-import LifePar from './event/lifePar'
+//import LifePar from './event/lifePar'
+import LifeShoes from './event/lifeShoes';
 import reportWebVitals from './reportWebVitals';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -37,8 +39,10 @@ root.render(
    <EventBalloon/>
    <ClassRef/>
    <ClassBalloon/>
-   */}
    <LifePar/>
+   */}
+   
+   <LifeShoes/>
   </>
 );
 
