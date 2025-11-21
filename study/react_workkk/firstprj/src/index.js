@@ -14,7 +14,8 @@ import ReactDOM from 'react-dom/client';
 // import EventState from './event/eventState'
 //import EventBalloon from './event/eventBalloon'
 // import ClassRef from './event/classRef'
-import ClassBalloon from './event/classBalloon'
+//import ClassBalloon from './event/classBalloon'
+import LifeCycle from './event/lifeCycle'
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -35,11 +36,11 @@ root.render(
    <EventState/>
    <EventBalloon/>
    <ClassRef/>
+   <ClassBalloon/>
    */}
    
    
-   
-   <ClassBalloon/>
+   <LifeCycle pVV={123}/>
   </>
 );
 
