@@ -6,17 +6,19 @@ import ReactDOM from 'react-dom/client';
 // import Prop2 from './comp/prop2'
 // import Prop3 from './comp/prop3'
 // import Prop4 from './comp/prop4'
-//import Prop5 from './comp/prop5'
-//import UpdateGo from './comp/updateGo'
-//import UpdateClassGo from './comp/updateClassGo'
-//import UpdateStud from './comp/updateStud'
+// import Prop5 from './comp/prop5'
+// import UpdateGo from './comp/updateGo'
+// import UpdateClassGo from './comp/updateClassGo'
+// import UpdateStud from './comp/updateStud'
 // import EventGo from './event/eventGo'
 // import EventState from './event/eventState'
-//import EventBalloon from './event/eventBalloon'
+// import EventBalloon from './event/eventBalloon'
 // import ClassRef from './event/classRef'
-//import ClassBalloon from './event/classBalloon'
-//import LifePar from './event/lifePar'
-import LifeShoes from './event/lifeShoes';
+// import ClassBalloon from './event/classBalloon'
+// import LifePar from './event/lifePar'
+// import LifeShoes from './event/lifeShoes';
+ import UseEffectGo from './hook/UseEffectGo';
+
 import reportWebVitals from './reportWebVitals';
 
 
@@ -40,9 +42,13 @@ root.render(
    <ClassRef/>
    <ClassBalloon/>
    <LifePar/>
-   */}
-   
    <LifeShoes/>
+    */}
+   <UseEffectGo/>
+  
+   
+  
+   
   </>
 );
 
