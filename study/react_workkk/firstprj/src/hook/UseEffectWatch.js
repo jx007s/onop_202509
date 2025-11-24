@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './UseEffectWatch.css'
 
 
-function UseEffectCleanup(props) {
+function UseEffectWatch(props) {
 
     const [sec, setSec] = useState(0)
     const [mm, setMM] = useState(0)
@@ -12,18 +12,17 @@ function UseEffectCleanup(props) {
     const [mn ,setMN] = useState({transform : `rotate(0deg)`})
     const [hn ,setHN] = useState({transform : `rotate(0deg)`})
     const [nowStr, setNowStr] = useState('')
+    const [tz, setTZ] = useState('Asia/Seoul')
+    
+    let tzArr = [ 'Asia/Seoul', 'America/New_York','Europe/London','Europe/Moscow','America/Los_Angeles']
 
     useEffect(()=>{
         console.log('UseEffectCleanup:useEffect 실행')
 
         // 마운트 마다 setInterval 생성 실행
         const timer = setInterval(()=>{
-            let tz = 'America/New_York'
-            tz = 'Europe/London'
-            tz = 'Europe/Moscow'
-            tz = 'Asia/Seoul'
-            tz = 'America/Los_Angeles'
-            
+           
+
             const locTime = new Date()
             const localStr = locTime.toLocaleString("en-US",{timeZone:tz})
 
@@ -46,11 +45,15 @@ function UseEffectCleanup(props) {
             console.log('cleanup 실행')
             clearInterval(timer)
         }
-    },[])
+    },[tz])
 
     return (
         <div>
             <h1>시계 입니다</h1>
+            <h2>timeZone : {tz}</h2>
+            {tzArr.map((vv,kk)=>
+                <button key={kk} onClick={(e)=>{setTZ(e.target.innerText)}}>{vv}</button>
+            )}
             <div>
                 <div className="date">{nowStr}</div>
                 <div className="time">{hh}:{mm}:{sec}</div>
@@ -66,4 +69,4 @@ function UseEffectCleanup(props) {
     );
 }
 
-export default UseEffectCleanup;
+export default UseEffectWatch;

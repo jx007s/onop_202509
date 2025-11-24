@@ -17,7 +17,8 @@ import ReactDOM from 'react-dom/client';
 // import ClassBalloon from './event/classBalloon'
 // import LifePar from './event/lifePar'
 // import LifeShoes from './event/lifeShoes';
- import UseEffectGo from './hook/UseEffectGo';
+// import UseEffectGo from './hook/UseEffectGo';
+import ContextGo from './hook/ContextGo';
 
 import reportWebVitals from './reportWebVitals';
 
@@ -26,26 +27,27 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <>
 
-   {/* <Comp1/> 
-   <SC/>
-   <Prop1/>
-   <Prop2/>
-   <Prop3/>
-   <Prop4/>
-   <Prop5/>
-   <UpdateGo pname='흥부' age={34} marriage={true}/>
-   <UpdateClassGo/>
-   <UpdateStud/>
-   <EventGo/>
-   <EventState/>
-   <EventBalloon/>
-   <ClassRef/>
-   <ClassBalloon/>
-   <LifePar/>
-   <LifeShoes/>
-    */}
-   <UseEffectGo/>
-  
+  {/* <Comp1/> 
+  <SC/>
+  <Prop1/>
+  <Prop2/>
+  <Prop3/>
+  <Prop4/>
+  <Prop5/>
+  <UpdateGo pname='흥부' age={34} marriage={true}/>
+  <UpdateClassGo/>
+  <UpdateStud/>
+  <EventGo/>
+  <EventState/>
+  <EventBalloon/>
+  <ClassRef/>
+  <ClassBalloon/>
+  <LifePar/>
+  <LifeShoes/>
+  <UseEffectGo/>
+  */}
+   
+  <ContextGo/>
    
   
    
