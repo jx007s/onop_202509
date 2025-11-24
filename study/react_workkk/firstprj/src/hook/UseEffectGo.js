@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import UseEffectCleanup from './UseEffectCleanup';
+import UseEffectWatch from './UseEffectWatch';
 function UseEffectGo(props) {
 
     const [pname, setPname] = useState('차은우')
     const [age, setAge] = useState(26)
     const [marriage, setMarriage] = useState(false)
-    const [show, setShow] = useState(true)
+    const [show, setShow] = useState(false)
+    const [watch, setWatch] = useState(true)
 
     useEffect(()=>{
         //componentDidMount + componentDidUpdate
@@ -33,6 +35,8 @@ function UseEffectGo(props) {
             <div>marriage : {marriage+''}<button onClick={()=>setMarriage(!marriage)}>변경</button></div>
             <button onClick={()=>setShow(!show)}>{show ? '제거':'보이기'}</button>
             {show && <UseEffectCleanup/>}
+            <button onClick={()=>setWatch(!watch)}>{watch ? '시계제거':'시계보이기'}</button>
+            {watch && <UseEffectWatch/>}
         </div>
     );
 }
