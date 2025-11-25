@@ -19,7 +19,11 @@ import ReactDOM from 'react-dom/client';
 // import LifeShoes from './event/lifeShoes';
 // import UseEffectGo from './hook/UseEffectGo';
 // import ContextGo from './hook/ContextGo';
-import ContextTemp from './hook/ContextTemp';
+// import ContextTemp from './hook/ContextTemp';
+// import UseReducerGo from './hook/UseReducerGo';
+// import UseReducer2 from './hook/UseReducer2';
+// import UseReducer3 from './hook/UseReducer3';
+import UseReduTemp from './hook/UseReduTemp';
 
 import reportWebVitals from './reportWebVitals';
 
@@ -47,10 +51,13 @@ root.render(
   <LifeShoes/>
   <UseEffectGo/>
   <ContextGo/>
+  <ContextTemp/> 
+  <UseReducerGo/>
+  <UseReducer2/>
+  <UseReducer3/>
   */}
    
-  
-  <ContextTemp/> 
+  <UseReduTemp/>
   </>
 );
 
