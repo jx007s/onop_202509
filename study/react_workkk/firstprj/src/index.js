@@ -18,7 +18,8 @@ import ReactDOM from 'react-dom/client';
 // import LifePar from './event/lifePar'
 // import LifeShoes from './event/lifeShoes';
 // import UseEffectGo from './hook/UseEffectGo';
-import ContextGo from './hook/ContextGo';
+// import ContextGo from './hook/ContextGo';
+import ContextTemp from './hook/ContextTemp';
 
 import reportWebVitals from './reportWebVitals';
 
@@ -45,12 +46,11 @@ root.render(
   <LifePar/>
   <LifeShoes/>
   <UseEffectGo/>
+  <ContextGo/>
   */}
    
-  <ContextGo/>
-   
   
-   
+  <ContextTemp/> 
   </>
 );
 
