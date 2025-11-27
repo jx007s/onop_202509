@@ -2,6 +2,17 @@ const express = require('express')
 const path = require('path')
 const app = express()
 const multer = require('multer')
+const cors = require('cors')
+
+//cors  적용
+app.use(
+    cors({
+        origin:"http://192.168.0.78:7777",   //클라이언트 주소를 ip로 직접작성해야 프론트앤드서버를 정확히 인지함
+                                             // 타 컴퓨터에서 접근시 에러 발생 제한
+                                             //http://192.168.0.78:7777 로 하지 말것
+        credentials:true
+    })
+)
 
 // FormData 처리
 const qwer = multer()
@@ -16,7 +27,7 @@ app.get('/',(req,res)=>{
 })
 
 app.get('/test1',(req,res)=>{
-    res.send('fetch서버응답 test1')
+    res.send('강사 서버응답 test1')
 })
 
 app.get('/test2',(req,res)=>{
@@ -58,7 +69,7 @@ app.get('/test5',(req,res)=>{
 })
 
 
-app.listen(80,()=>{
+app.listen(5000,()=>{
     console.log("fetch 서버 시작")
 })
 

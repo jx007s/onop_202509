@@ -1,5 +1,6 @@
-import {BrowserRouter,Routes, Route, Outlet, Link} from 'react-router-dom'
+import {BrowserRouter,Routes, Route, Outlet, Link, useNavigate} from 'react-router-dom'
 import './App.css';
+import { useEffect } from 'react';
 
 function HeaderGo(){
   return <header> 헤더여
@@ -67,10 +68,27 @@ function One(){
 function FooterGo(){
   return <footer> 이광재 만세</footer>
 }
+
+// npx create-react-app 프로젝트명(영문소문자숫자)
+function Home(){
+
+  // redirect 하기 위한 함수
+  const navigate = useNavigate()
+
+  // 컴포넌트 마운트 이후 navigate 실행
+  // 무한반복 방지
+  useEffect(()=>{
+
+    navigate("info/hello")   // redirect
+  },[navigate])
+
+  return null
+}
 function App() {
   return <BrowserRouter>
     <HeaderGo/>
     <Routes>
+      <Route path='/' element={<Home/>}/>
       <Route path='/info' element={<Info/>}>
           <Route path='hello' element={<Hello/>}/>
           <Route path='history' element={<History/>}/>

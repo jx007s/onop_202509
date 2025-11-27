@@ -1,4 +1,4 @@
-import {BrowserRouter, Link, Outlet, Route, Routes, useLocation, useParams} from 'react-router-dom'
+import {BrowserRouter, Link, Outlet, Route, Routes, useLocation, useParams, useSearchParams} from 'react-router-dom'
 import Location from './components/Location';
 import SubRoute from './components/SubRoute';
 import { useEffect } from 'react';
@@ -14,15 +14,43 @@ function Home(){
 function History(){
   console.log("History 진입")
   const location = useLocation()
-  const sp = new URLSearchParams(location.search)
+  
+
+  // useSearchParams() 를 이용하여 파라미터 접근
+  // sp : 파라미터를 키배열형태로 가져옴 , get(파라미터이름) 함수로 파라미터 값 리턴
+  // setSP : 파라미터값을 변경하는 함수 useEffect() 에서 실행해야 함
+  const [sp, setSP] = useSearchParams()
+  const age = sp.get("age");
+  const pid = sp.get("pid");
+
+  // setSP 적용 전 값 출력
+  useEffect(() => {
+    console.log("▶ setSP 적용 전:");
+    console.log("age:", sp.get("age"));
+    console.log("pid:", sp.get("pid"));
+
+    // setSP 실행 (URL 변경)
+    setSP({ age: 123, pid: "bbb" });
+
+  }, []); // 컴포넌트 최초 1회
+
+  // setSP 적용 후 값 출력
+  useEffect(() => {
+    console.log("▶ setSP 적용 후:");
+    console.log("age:", sp.get("age"));
+    console.log("pid:", sp.get("pid"));
+  }, [sp]); // sp가 바뀌면 실행됨
 
   //JSON으로 변환
-  const data = Object.fromEntries(sp.entries())
+  const urlSP = new URLSearchParams(location.search)
+  const data = Object.fromEntries(urlSP.entries())
   console.log('data : ', data)
 
   return <div>
       <h2>난 연혁이야</h2>
       <div>쿼리 : {location.search}</div>
+      <div>age : {age}</div>
+      <div>pid : {pid}</div>
       <div>pathname : {location.pathname}</div>
       <div>hash : {location.hash}</div>
       <div>state : {location.state+''}</div>
