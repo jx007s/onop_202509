@@ -37,9 +37,9 @@ app.get('/bkMem',(req,res)=>{
     
 })
 
-app.get('/bkMem/:id',(req,res)=>{
-    console.log('상세',req.params.id)
-    res.json(data[req.params.id])
+app.get('/bkMem/:no',(req,res)=>{
+    console.log('상세',req.params.no)
+    res.json(data[req.params.no])
 })
 
 // post(json) 수신 : 
