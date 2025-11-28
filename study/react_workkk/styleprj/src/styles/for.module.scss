@@ -1,0 +1,46 @@
+.aaa{
+    background-color: #ff0;
+    margin: 5px;
+
+    // 반복문 : 1-> 3  반복변수 : $i
+    //       through : 포함
+    @for $i from 1 through 3{
+
+        &:nth-of-type(#{$i}){
+            width: 40px * $i;
+        }
+    }
+}
+
+
+.bbb{
+    background-color: #fa0;
+    margin: 5px;
+
+    // 반복문 : 1-> 2  반복변수 : $i
+    //       to : 미포함
+    @for $i from 1 to 3{
+
+        &:nth-of-type(#{$i}){
+            width: 40px * $i;
+        }
+    }
+}
+
+$arr1: #f00, #fa0, #ff0, #0f0;
+//         1       2       3       4
+
+$no : 1;
+.ccc{
+    width: 100px;
+    height: 20px;
+    margin: 5px;
+
+    @each $e in $arr1{
+         &:nth-of-type(#{$no}){
+            background-color: $e;
+        }
+
+        $no : $no +1;
+    }
+}

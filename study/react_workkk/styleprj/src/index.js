@@ -1,18 +1,27 @@
 import ReactDOM from 'react-dom/client';
 
 //import VarGo from './components/VarGo';
-import NestingGo from './components/NestingGo';
+//import NestingGo from './components/NestingGo';
+//import CalcGo from './components/CalcGo';
+//import ImGo from './components/ImGo';
+import ForGo from './components/ForGo';
 
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <div>
+    <>
 
-      {/* <VarGo/> */}
+      {/* 
+      <VarGo/> 
       <NestingGo/>
-
-    </div>
+      <CalcGo/>
+      <ImGo/>
+      */}
+      
+      <ForGo/>
+      
+    </>
 );
 
 // If you want to start measuring performance in your app, pass a function

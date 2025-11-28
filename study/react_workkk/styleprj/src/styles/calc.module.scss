@@ -1,0 +1,84 @@
+$ww:90px;
+
+div{
+    width: 100px;
+    height: 30px;
+    border: 1px solid #ccc;
+    margin: 10px;
+}
+
+.aaa{ // +,-,*,/ %
+    width: $ww + 100px;
+    height: $ww - 30px;
+  
+}
+
+.bbb{  //비교연산자, 조건문
+
+    @if($ww >= 90){
+        background-color: #f00;
+    }@else if($ww >= 80){
+        background-color: #fa0;
+    }@else if($ww >= 60){
+        background-color: #ff0;
+    }@else{
+        background-color: #0f0;
+    }
+}
+
+$ch1 : false;
+$ch2 : false;
+
+.ccc{  //논리연산자, 조건문
+    
+
+    @if($ch1 and $ch2){
+        background-color: #ff0;
+    }@else{
+        background-color: #0f0;
+    }
+
+    @if($ch1 or $ch2){
+        font-size: 2rem;
+    }@else{
+        font-size: 1rem;
+    }
+
+    @if(not $ch1){
+        font-style: italic;
+    }@else{
+        font-style: normal;
+    }
+}
+
+$ppp:'box';
+.#{$ppp}_1{ // #{}  변수를 문자열로 치환
+    color: #f00;
+}
+.#{$ppp}_2{ // #{}  변수를 문자열로 치환
+    color: #fa0;
+}
+
+//인덱스 배열 : , 로 구분
+$arr1: #f00, #fa0, #ff0, #0f0;
+//         1       2       3       4
+
+.ddd{
+    //background-color: $arr1[1];
+    // 인덱스배열 원소 호출 : nth(배열변수, 인덱스)
+    background-color: nth($arr1, 1);  // #f00
+}
+.eee{
+    background-color: nth($arr1, 3);  // #ff0
+}
+
+// 연관배열
+$arr2 : ("qq":#f00,"ee":#ff0,"rr":#0ff);
+
+.fff{
+    //   연관배열 원소호출 :  map-get(배열변수 , 키)
+    background-color: map-get($arr2 , "ee");  // #ff0
+}
+.ggg{
+    background-color: map-get($arr2 , "rr");  // #0ff
+}

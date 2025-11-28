@@ -6,3 +6,47 @@ section{
         border: 2px solid #f00;
     }
 }
+
+.aaa{
+    width: 60vw;
+    height: 100px;
+    background-color: #faf;
+    margin: 20px;
+    span{  //.aaa 안에 span
+        color: #0f0;
+    }
+    .bbb{  //.aaa 안에 .bbb
+        border-radius: 10px;
+        width: 200px;
+        height: 30px;
+        border: 1px solid #ccc;
+    }
+    &.ccc{    ///   aaa ccc  : aaa 이면서 ccc 인것
+        font-style: italic;
+    }
+}
+
+.ccc{
+    font-size: 2rem;
+}
+
+.ddd{
+    width: 60vw;
+    height: 100px;
+    background-color: #0ff;
+    margin: 20px;
+    &:hover{
+        color: #f00;
+        font-size: 2rem;
+    }
+
+    @at-root .eee{  // .ddd .eee 가 아닌 상위레벨로 빠져나감 : .eee 
+        color:#0f0;
+    }
+    .fff{
+        color:#fa0;
+    }
+    @at-root #{&}ggg{   // 상위레벨에서 글자를더하기하여 클래스명 지정 :   .dddggg  
+        color:#a0a;
+    }
+}
