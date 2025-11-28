@@ -44,3 +44,42 @@ $no : 1;
         $no : $no +1;
     }
 }
+
+// 연관배열
+$arr2 : ("qq":#f00,"ee":#ff0,"rr":#0ff);
+
+@each $k, $e in $arr2{
+    .#{$k}{
+        width: 100px;
+        height: 20px;
+        margin: 5px;
+        background-color: $e;
+    }
+}
+
+$zz:(tt, 2rem);
+$xx:(yy, 3rem);
+$cc:(uu, 1.5rem);
+
+@each $k, $e in $zz,$xx,$cc{
+    .#{$k}{
+        width: 100px;
+        height: 50px;
+        margin: 5px;
+        border: 1px solid #ccc;
+        font-size: $e;
+    }
+}
+
+
+$no : 10;
+
+@while $no < 100{
+    .ddd_#{$no}{
+        width: 100px+$no;
+        height: 50px;
+        margin: 5px;
+        border: 1px solid #ccc;
+    }
+    $no : $no + 20
+}

@@ -5,6 +5,7 @@ import ReactDOM from 'react-dom/client';
 //import CalcGo from './components/CalcGo';
 //import ImGo from './components/ImGo';
 import ForGo from './components/ForGo';
+import MixinGo from './components/MixinGo';
 
 import reportWebVitals from './reportWebVitals';
 
@@ -17,10 +18,11 @@ root.render(
       <NestingGo/>
       <CalcGo/>
       <ImGo/>
+      <ForGo/>
       */}
       
-      <ForGo/>
       
+      <MixinGo/>
     </>
 );
 
