@@ -1,0 +1,15 @@
+$gg : 150px;
+.box1{
+    width: $gg;
+    height: $gg;
+    background-color: #ffa ;
+    border-radius: 30px;
+}
+
+.box2{
+    width: $gg;
+    //height: $ww;    //다른 파일의 전역변수 접근불가
+    height: $gg;
+    background-color: #fa0 ;
+    border-radius: 20px;
+}
