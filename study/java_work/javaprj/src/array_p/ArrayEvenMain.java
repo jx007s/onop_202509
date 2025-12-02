@@ -39,8 +39,8 @@ public class ArrayEvenMain {
 		
 		
 		/*
-		 * ArrayCombineSortMain
-		 * 
+		ArrayCombineSortMain
+
 		두개의 숫자 조합을 합쳐 오름차순으로 정렬하세요
 		
 		 34,7,100,9,67,10,86
