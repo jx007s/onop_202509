@@ -25,6 +25,8 @@ public class WhileMain {
 		}
 		
 		System.out.println("종료 : "+tot);
+		
+		sc.close();
 
 	}
 
