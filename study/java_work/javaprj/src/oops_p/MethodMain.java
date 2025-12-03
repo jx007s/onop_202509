@@ -26,7 +26,9 @@ class MeAAA{
 		return res;
 	}
 	
-	ClaStud makeSt2(String name, int...jum) {
+	
+	//overloading
+	ClaStud makeSt(String name, int...jum) {
 		System.out.println("학생생성2");
 		ClaStud res = new ClaStud();
 		res.init(name, jum);
@@ -46,16 +48,16 @@ public class MethodMain {
 		System.out.println("r2 : "+r2);
 		ClaStud r3 = ma.makeSt();
 		r3.ppp();
-		ClaStud r4 = ma.makeSt2("차오즈",78,89,92,88);
+		ClaStud r4 = ma.makeSt("차오즈",78,89,92,88);
 		r4.ppp();
 		System.out.println("------------------------");
 		ClaStud [] stArr = {
-				ma.makeSt2("손오공",  97,69,31),
-				ma.makeSt2("베지터",  97,99,91),
-				ma.makeSt2("크리링",  97,79,51,34),
-				ma.makeSt2("피콜로",  37,59,71,92),
-				ma.makeSt2("천진반",  67,69,61),
-				ma.makeSt2("무천도사", 87,89,81)	
+				ma.makeSt("손오공",  97,69,31),
+				ma.makeSt("베지터",  97,99,91),
+				ma.makeSt("크리링",  97,79,51,34),
+				ma.makeSt("피콜로",  37,59,71,92),
+				ma.makeSt("천진반",  67,69,61),
+				ma.makeSt("무천도사", 87,89,81)	
 		};
 		for (ClaStud st : stArr) {
 			st.ppp();
