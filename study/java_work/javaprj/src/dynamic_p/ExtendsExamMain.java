@@ -100,7 +100,7 @@ public class ExtendsExamMain {
 
 
 /*
-OverCarMain
+
  도형 클래스를 구현하세요
   부모 : 도형 -- 이름, 넓이, 둘레
    
