@@ -116,6 +116,11 @@ final class FSAFF{
 /* 상수화 클래스 상속 불가
 class FSAFFChild extends FSAFF{
 	
+}
+
+// 일반 클래스  static화 불가
+static class FSASS{
+	
 }*/
 
 
