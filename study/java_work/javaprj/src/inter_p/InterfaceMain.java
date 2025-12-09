@@ -21,15 +21,23 @@ interface InB{
 	void meth_4();
 }
 
+// 인터페이스 다중 상속 가능
+interface InToT extends InA, InB{
+	
+}
+
 
 // 인터페이스 구현 클래스
 // 다중구현 가능
 // class 클래스명 implements 인터페이스1, 인터페이스2,...
 //class InASDF extends InA{
-class InASDF implements InA, InB{
+//class InASDF implements InA, InB{
+class InASDF implements InToT{
+	
+	String a = "InASDF.a이지롱";
 	
 	public void meth_2() {
-		System.out.println("InASDF 재정의 meth_2()");
+		System.out.println("InASDF 재정의 meth_2() : "+a+","+b+","+c);
 	}
 	public void meth_3() {
 		System.out.println("InASDF 재정의 meth_3()");
@@ -61,7 +69,7 @@ public class InterfaceMain {
 		System.out.println("asdf : "+asdf);
 		//System.out.println("asdf : "+asdf.a+","+asdf.b);
 		//   a 는 InA, InB 에서 중첩
-		System.out.println("asdf : "+asdf.b+","+asdf.c);
+		System.out.println("asdf : "+asdf.a+","+asdf.b+","+asdf.c);
 		//asdf.a = 1000;
 		asdf.meth_2();
 		asdf.meth_3();
