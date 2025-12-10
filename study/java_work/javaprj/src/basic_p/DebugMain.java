@@ -50,6 +50,14 @@ public class DebugMain {
 		
 		System.out.println("메인 3 -------");
 		
+		int tot = 0;
+		for (int i = 0; i < 4; i++) {
+			System.out.println("for 시작");
+			int j = 77;
+			tot += i;
+			System.out.println(i+","+j+","+tot);
+		}
+		
 		a = 30;
 		b = 3000;
 		
