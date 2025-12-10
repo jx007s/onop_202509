@@ -64,6 +64,7 @@ public class ExcepMain {
 }
 
 /*
+ Excep369Main
  //if문 3항연산자, switch 등 조건항을 사용하지 않고 3,6,9게임을 완성하세요  
   //일의 자리만
 
