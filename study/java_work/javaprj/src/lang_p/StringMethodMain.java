@@ -1,5 +1,7 @@
 package lang_p;
 
+import java.util.Arrays;
+
 public class StringMethodMain {
 
 	public static void main(String[] args) {
@@ -95,6 +97,9 @@ public class StringMethodMain {
 		System.out.println(d);
 		System.out.println(a.toLowerCase());
 		System.out.println(a.toUpperCase());
+		
+		char [] arr5 = a.toCharArray();
+		System.out.println(Arrays.toString(arr5)  );
 		
 		a = "레고";
 		System.out.println(a.repeat(5));
