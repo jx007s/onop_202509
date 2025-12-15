@@ -106,6 +106,7 @@ public class StringMethodMain {
 		System.out.println(d+","+d.length());
 		
 		 /*
+		StringJuminMain
 		950320-1234567
 		주민번호를 이용하여
 		성별, 국적(내국인/외국인), 생년월일, 한국나이, 만나이를
