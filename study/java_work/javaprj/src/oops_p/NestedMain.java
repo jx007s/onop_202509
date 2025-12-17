@@ -106,7 +106,8 @@ class NNOuter{
 	
 	//멤버변수 = 멤버이너인스턴스(클래스)생성
 	InnMM mm1 = new InnMM("서태웅",17);
-	
+	//스태틱멤버변수로 일반 이너클래스 사용 불가 - 스태틱이너클래스만 가능
+	//static InnMM mm2 = new InnMM("채치수",21);
 	
 }
 
