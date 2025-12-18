@@ -52,8 +52,13 @@ public class LocalDateTimeMain {
 		System.out.println(nn.getMonthValue()); // 1~12
 		Month mm = nn.getMonth();  // Month : enum
 		System.out.println(mm);
-		DayOfWeek dd = nn.getDayOfWeek();  //요일
+		DayOfWeek dd = nn.getDayOfWeek();  //요일 enum
 		System.out.println(dd);
+		System.out.println("DayOfWeek 값----------------------");
+		for (DayOfWeek dw : DayOfWeek.values()) {
+			System.out.println(dw+"   \t"+dw.ordinal()+"\t"+dw.getValue());
+		}
+		System.out.println("DayOfWeek ----------------------");
 		System.out.println(nn.getDayOfYear());
 		
 		System.out.println(nn.getHour());
