@@ -93,6 +93,7 @@ public class EnumChinaMain {
 
 
 /*
+EnumSawonMain
 직급별 상여율
 사장(100), 부장(170), 과장(150), 대리(200), 사원(120)
 
