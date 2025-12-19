@@ -26,15 +26,27 @@ public class RegexJoinMain {
 			String [] title = "아이디,비번,비번확인,이메일,이름,주민번호,사진,우편번호".split(",");
 			String [] data = new String[title.length];
 			
-			String [][] ppArr = {
-					{"[a-zA-Z0-9]{4,}"},
-					{"[a-zA-Z!@#$%&]{5,}",".*[A-Z].*",".*[a-z].*",".*[!@#$%&].*"},
-					{},
-					{"[a-zA-Z0-9]{3,}@[a-zA-Z.]{3,}"},
-					{"[가-힣]{2,5}"},
-					{"\\d{6}-\\d{7}"},
-					{"[a-zA-Z0-9]{3,}[.](jpg|jpeg|bmp|png|gif)"},
-					{"[가-힣ㄱ-ㅎ0-9]+"}
+//			String [][] ppArr = {
+//					{"[a-zA-Z0-9]{4,}"},
+//					{"[a-zA-Z!@#$%&]{5,}",".*[A-Z].*",".*[a-z].*",".*[!@#$%&].*"},
+//					{},
+//					{"[a-zA-Z0-9]{3,}@[a-zA-Z.]{3,}"},
+//					{"[가-힣]{2,5}"},
+//					{"\\d{6}-\\d{7}"},
+//					{"[a-zA-Z0-9]{3,}[.](jpg|jpeg|bmp|png|gif)"},
+//					{"[가-힣ㄱ-ㅎ0-9]+"}
+//			};
+			
+			String [] ppArr = {
+					"[a-zA-Z0-9]{4,}",
+					//"[a-zA-Z!@#$%&]{5,}",".*[A-Z].*",".*[a-z].*",".*[!@#$%&].*",
+					"^(?=.*[A-Z])(?=.*[a-z])(?=.*[!@#$%&])[a-zA-Z!@#$%&]{5,}$",  //and 연산사용
+					null,
+					"[a-zA-Z0-9]{3,}@[a-zA-Z.]{3,}",
+					"[가-힣]{2,5}",
+					"\\d{6}-\\d{7}",
+					"[a-zA-Z0-9]{3,}[.](jpg|jpeg|bmp|png|gif)",
+					"[가-힣ㄱ-ㅎ0-9]+"
 			};
 			
 			String [] guArr =  {
@@ -60,11 +72,16 @@ public class RegexJoinMain {
 				if(i==6) {
 					schTTT = schTTT.toLowerCase();
 				}
-				for (String pp : ppArr[i]) {
-					if(!Pattern.matches(pp,schTTT)) {
-						throw new Exception(title[i]+"에러");
-					}
+//				for (String pp : ppArr[i]) {
+//					if(!Pattern.matches(pp,schTTT)) {
+//						throw new Exception(title[i]+"에러");
+//					}
+//				}
+				
+				if(!Pattern.matches(ppArr[i],schTTT)) {
+					throw new Exception(title[i]+"에러");
 				}
+				
 				if (i==7) {
 				
 					guSchGo(data[i]);
@@ -108,7 +125,7 @@ public class RegexJoinMain {
 			}
 
 			void inputAll() throws Exception {
-				for (int i = 0; i < ppArr.length; i++) {
+				for (int i = 1; i < ppArr.length; i++) {
 					 
 					if(i==2) {
 						pwEqChk();
