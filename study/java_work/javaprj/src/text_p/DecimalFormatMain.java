@@ -37,6 +37,11 @@ public class DecimalFormatMain {
 				System.out.println("\t"+dd+" : "+df.format(dd));
 			}
 		}
+		
+		DecimalFormat df = new DecimalFormat("▲0;▼");
+		for (int i : new int[] {67,78,89,98,76,54,78,77,90,56}) {
+			System.out.println(i+" : "+df.format(i-70).charAt(0));
+		}
 
 	}
 
