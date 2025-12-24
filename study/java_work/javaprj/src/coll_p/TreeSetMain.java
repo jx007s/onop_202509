@@ -9,7 +9,7 @@ import java.util.TreeSet;
 public class TreeSetMain {
 
 	public static void main(String[] args) {
-		int [] ori = {33,66,44,77,11,33,44,66,77,22,11,44};
+		int [] ori = {33,66,44,77,11,33,55,88,99,44,66,77,22,11,44};
 		ArrayList arr = new ArrayList();				//중복 O, 입력순서
 		HashSet hs = new HashSet();					//중복 X, 순서 X
 		LinkedHashSet lhs = new LinkedHashSet();		//중복 X, 입력순서
@@ -60,12 +60,28 @@ public class TreeSetMain {
 												// 자신 포함 X
 		TreeSet tsH2 = (TreeSet)ts.headSet(44, true); 	// 자신 포함
 		System.out.println("headSet(44, true) "+tsH2);
+		tsH2 = (TreeSet)ts.headSet(44, false); 	// 자신 포함 X
+		System.out.println("headSet(44, false) "+tsH2);
 		
 		TreeSet tsT1 = (TreeSet)ts.tailSet(33);
 		System.out.println("tailSet(33) "+tsT1);	// 검색객체 뒷 요소 SortedSet 리턴
 												// 자신 포함 O
 		TreeSet tsT2 = (TreeSet)ts.tailSet(33, true); 	// 자신 포함
 		System.out.println("tailSet(33, true) "+tsT2);
+		
+		tsT2 = (TreeSet)ts.tailSet(33, false); 	// 자신 포함 X
+		System.out.println("tailSet(33, false) "+tsT2);
+		
+		tsT2 = (TreeSet)ts.subSet(44, 77); 	// 44->66
+		System.out.println("subSet(44, 77) "+tsT2);
+		tsT2 = (TreeSet)ts.subSet(44, false, 77, false);//55->66 	
+		System.out.println("44, false, 77, false "+tsT2);
+		tsT2 = (TreeSet)ts.subSet(44, true,77, false);//44->66
+		System.out.println("44, true, 77, false "+tsT2);
+		tsT2 = (TreeSet)ts.subSet(44, false, 77, true);//55->77 	
+		System.out.println("44, false, 66, true "+tsT2);
+		tsT2 = (TreeSet)ts.subSet(44, true, 77, true);//44->77
+		System.out.println("44, true, 66, true "+tsT2);
 		
 		TreeSet tsDESC = (TreeSet)ts.descendingSet();  //역정렬 NavigableSet 리턴
 		System.out.println("descendingSet() "+tsDESC);
