@@ -5,7 +5,7 @@ import java.util.Map;
 import java.util.TreeMap;
 import java.util.TreeSet;
 
-class TreeStud implements Comparable{
+class TreeStud implements Comparable<TreeStud>{
 	final int ban;
 	final String kind, name;
 	final int jum;
@@ -23,8 +23,8 @@ class TreeStud implements Comparable{
 	}
 
 	@Override
-	public int compareTo(Object o) {
-		TreeStud you = (TreeStud)o;
+	public int compareTo(TreeStud you) {
+		//TreeStud you = (TreeStud)o;
 		int res = you.jum - jum;
 		
 		if(res==0) {
@@ -34,16 +34,18 @@ class TreeStud implements Comparable{
 	}
 }
 
-class MyMapCom implements Comparator{
+class MyMapCom implements Comparator<String>{
 
 	@Override
-	public int compare(Object o1, Object o2) {
-		String me = (String)o1;
-		String you = (String)o2;
+	public int compare(String me, String you) {
+//		String me = (String)o1;
+//		String you = (String)o2;
 		return you.compareTo(me);
 	}
 	
 }
+
+
 
 
 public class TreeMapStudMain {
@@ -71,28 +73,29 @@ public class TreeMapStudMain {
 		
 		MyMapCom mmc = new MyMapCom();
 		
-		TreeMap res = new TreeMap(new Comparator() {
-
-			@Override
-			public int compare(Object o1, Object o2) {
-				int me = (int)o1;
-				int you = (int)o2;
-				return you-me;
-			}
+		
+		
+		TreeMap<Integer, TreeMap<String, TreeSet<TreeStud>>> res = new TreeMap(
+				new Comparator<Integer>(){
+					@Override
+					public int compare(Integer me, Integer you) {
+						
+						return you-me;
+					}
 		});
 		
 		for (TreeStud st : ori) {
-			TreeMap ban;
+			TreeMap<String, TreeSet<TreeStud>> ban;
 			if(res.containsKey(st.ban)) {
-				ban = (TreeMap)res.get(st.ban);
+				ban = res.get(st.ban);
 			}else {
 				ban = new TreeMap(mmc);
 			}
 			res.put(st.ban, ban);
 			
-			TreeSet kind;
+			TreeSet<TreeStud> kind;
 			if(ban.containsKey(st.kind)) {
-				kind = (TreeSet)ban.get(st.kind);
+				kind = ban.get(st.kind);
 			}else {
 				kind = new TreeSet();
 			}
@@ -101,16 +104,16 @@ public class TreeMapStudMain {
 			kind.add(st);
 		}
 		
-		//System.out.println(res);
-		for (Object obj1 : res.entrySet()) {
-			Map.Entry banSet = (Map.Entry)obj1;
+		
+		for (Map.Entry<Integer, TreeMap<String, TreeSet<TreeStud>>> banSet  : res.entrySet()) {
+			
 			System.out.println("["+banSet.getKey()+"]");
 			
-			for (Object obj2 : ((TreeMap)banSet.getValue()).entrySet()) {
-				Map.Entry kindSet = (Map.Entry)obj2;
+			for (Map.Entry<String, TreeSet<TreeStud>> kindSet : banSet.getValue().entrySet()) {
+			
 				System.out.println(kindSet.getKey()+">>>");
 				
-				for (Object st : (TreeSet)kindSet.getValue()) {
+				for (TreeStud st : kindSet.getValue()) {
 					System.out.println(st);
 				}
 			}

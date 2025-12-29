@@ -7,7 +7,7 @@ import java.util.TreeMap;
 import java.util.TreeSet;
 
 
-class TreeMapShape implements Comparable{
+class TreeMapShape implements Comparable<TreeMapShape>{
 	final String name;
 	final int area, border;
 	final int [] line;
@@ -39,8 +39,8 @@ class TreeMapShape implements Comparable{
 	}
 
 	@Override
-	public int compareTo(Object o) {
-		TreeMapShape you = (TreeMapShape)o;
+	public int compareTo(TreeMapShape you ) {
+		
 		int res = area-you.area;
 		if(res==0) {
 			res = you.border - border;
@@ -88,11 +88,11 @@ public class TreeMapShapeMain {
 			new TreeMapShape(5)
 		};
 		
-		TreeMap res = new TreeMap(new TreeMapShCom());
+		TreeMap<String, TreeSet> res = new TreeMap(new TreeMapShCom());
 		for (TreeMapShape sh : ori) {
 			TreeSet shapes;
 			if(res.containsKey(sh.name)) {
-				shapes = (TreeSet)res.get(sh.name);
+				shapes = res.get(sh.name);
 			}else {
 				shapes = new TreeSet();
 			}
@@ -100,11 +100,11 @@ public class TreeMapShapeMain {
 			shapes.add(sh);
 		}
 		
-		for (Object obj : res.entrySet()) {
-			Map.Entry me = (Map.Entry)obj;
+		for (Map.Entry<String, TreeSet> me : res.entrySet()) {
+			
 			System.out.println(me.getKey()+"  >>> ");
 			
-			for (Object vv : (TreeSet)me.getValue()) {
+			for (Object vv : me.getValue()) {
 				System.out.println(vv);
 			}
 		}
