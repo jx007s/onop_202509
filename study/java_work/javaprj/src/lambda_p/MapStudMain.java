@@ -2,7 +2,7 @@ package lambda_p;
 
 import java.util.Arrays;
 
-class MapStud{
+class MapStud implements Comparable<MapStud>{
 	String name;
 	int avg;
 	int tot = 0;
@@ -22,6 +22,12 @@ class MapStud{
 	public String toString() {
 		return name + "\t" + tot + "\t" + avg;
 	}
+
+	@Override
+	public int compareTo(MapStud o) {
+		// TODO Auto-generated method stub
+		return o.avg - avg;
+	}
 	
 	 
 }
@@ -39,6 +45,7 @@ public class MapStudMain {
 				"갓짝퉁,47,78,85"
 		).stream()
 		.map(ss-> new MapStud(ss))
+		.sorted()
 		.filter(ss->ss.avg>=70)
 		.forEach(System.out::println);
 
