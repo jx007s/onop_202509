@@ -35,12 +35,21 @@ public class ReduceMain {
 		// 초기값 : 연산 전에 주는 값  ==> 2468 +  arr의 원소들
 		rr = Arrays.stream(arr).reduce(2468,(a,b)->a+b);
 		System.out.println("reduce 초기값 "+rr);
+		
+		
+		arr = new int[]{13,66,45,2,78,9,12,19,88,34};
+		rr = Arrays.stream(arr).reduce(0,(a,b)-> {
+				int res = b%2==0? a+b : a;
+				System.out.println(b+":"+res);
+				return res;
+			});
+		System.out.println("짝수들의 합 "+rr);
 	}
 
 }
 
 /*
-   66,45,2,78,9,12,19,88,34
+   13, 66,45,2,78,9,12,19,88,34
    
    reduce를 이용한 짝수들의 합을 구하세요
    단 filter 사용금지
