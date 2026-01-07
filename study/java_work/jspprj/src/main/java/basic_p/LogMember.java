@@ -23,5 +23,11 @@ public class LogMember {
 
 		return pid.equals(req.getParameter("pid")) && pw.equals(req.getParameter("pw"));
 	}
+
+	@Override
+	public String toString() {
+		return "LogMember [pid=" + pid + ", pname=" + pname + ", pw=" + pw + "]";
+	}
+	
 	
 }
