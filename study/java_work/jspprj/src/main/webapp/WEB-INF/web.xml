@@ -11,4 +11,17 @@
 		<welcome-file>default.jsp</welcome-file>
 		<welcome-file>default.xhtml</welcome-file>
 	</welcome-file-list>
+	
+	<!-- <error-page>
+		<error-code>500</error-code>
+		<location>/excep/bbb.jsp</location>
+	</error-page>
+	<error-page>
+		<error-code>404</error-code>
+		<location>/excep/ccc.jsp</location>
+	</error-page>
+	<error-page>
+		<exception-type>java.lang.ArithmeticException</exception-type>
+		<location>/excep/ddd.jsp</location>
+	</error-page> -->
 </web-app>
