@@ -124,7 +124,7 @@ file/joinForm.jsp  --> JoinReg ---------> file/joinReg.jsp
 
 사진은 이미지(gif,png,jpeg,jpg,bmp) 만 가능
 
-모든 입력내용은 필수
+
 
 
 
