@@ -1,5 +1,6 @@
 package exam_p;
 
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -32,7 +33,10 @@ public class ExamController extends HttpServlet {
 		Object res = new ExamDAO().list();
 		System.out.println(res);
 		
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		request.setAttribute("mainData", res);
+		
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/views/list.jsp");
+		dispatcher.forward(request, response);
 	}
 
 	/**
