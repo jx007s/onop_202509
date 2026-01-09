@@ -1,0 +1,67 @@
+View     ------      Controller  ---------------------------------------------- model
+
+
+
+       url : http://localhost:8080:mvc/board/BoardList   1
+
+               (... /BoardDetail?id=12  ... /BoardWriteForm   ... /BoardWriteReg 
+
+                ... /BoardModify?id=12  ....... )
+
+                             |
+
+                             V
+
+
+
+           server : http://localhost
+
+                             |
+
+                             V
+
+           tomcat  : http://localhost:8080
+
+ 
+
+                             |
+
+
+
+                             V  
+
+           project  : http://localhost:8080/mvc/프로젝트 로 진입해라!!!      2
+
+                              |
+
+                              V
+
+                          web.xml    3   (규칙 ::>  /board/* 인 경우 f_controller로 진입)
+
+                              |
+
+                              V
+boardList.jsp 10 <------  f_controller  4, 9  (Servlet)
+boardDetail.jsp 
+boardWrite.jsp                ↑              
+boardModify.jsp               |
+boardDelete.jsp 
+                              |    action.java (Interface)  5
+
+                              |               ActionForward  excute()  추상메소드
+
+                              |                (결과 클래스) 
+
+                              V
+
+                            (Service)
+
+               BoardList .execute()   (Interface 구현 클래스)  6, 8 <------------------>  db.java  (DAO) 7
+
+                                                                                                (db에서 받아오는 클래스)
+
+                                                                                                   Object  write()
+
+
+
+                               (Service) BoardDetail, BoardWrite, BoardModify,BoardDelete.....
