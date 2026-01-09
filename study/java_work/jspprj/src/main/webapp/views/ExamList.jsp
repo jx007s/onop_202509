@@ -27,7 +27,7 @@
 	<% for(ExamDTO dto : mainData) {%>
 	<tr>
 		<td><%=dto.getHakgi() %></td>
-		<td><%=dto.getName() %></td>
+		<td><a href="ExamDetail?id=<%=dto.getId() %>"><%=dto.getName() %></a></td>
 		<td><%=dto.getPid() %></td>
 		<td><%=dto.getRegDate() %></td>
 		<td><%=dto.getKor() %></td>
@@ -35,6 +35,12 @@
 		<td><%=dto.getMat() %></td>
 	</tr>
 	<% } %>
+	
+	<tr>
+		<td colspan="7" align="right">
+			<a href="ExamInsertForm">쓰기</a>
+		</td>	
+	</tr>
 </table>
 
 </body>

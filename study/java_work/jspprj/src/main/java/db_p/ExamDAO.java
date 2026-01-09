@@ -82,6 +82,153 @@ public class ExamDAO {
 		return res;
 	}
 	
+	
+	
+	
+	public ExamDTO detail(int id){
+		ExamDTO dto = null;
+		
+		String sql = "select * from exam where id = ?";
+		
+		try {
+			//3. 쿼리문 실행하기 위한 객체 
+			ptmt = con.prepareStatement(sql);
+			ptmt.setInt(1, id);
+			
+			//4. 쿼리문 실행
+			rs = ptmt.executeQuery();
+			
+			//5. 실행 결과 데이터화
+			if(rs.next()) {
+				
+				dto = new ExamDTO();
+				
+				//멤버변수에 대입
+				dto.setId(rs.getInt("id"));
+				dto.setHakgi(rs.getInt("hakgi"));
+				dto.setKor(rs.getInt("kor"));
+				dto.setEng(rs.getInt("eng"));
+				dto.setMat(rs.getInt("mat"));
+				dto.setName(rs.getString("name"));
+				dto.setPid(rs.getString("pid"));
+				dto.setFf(rs.getString("ff"));
+				dto.setPw(rs.getString("pw"));
+				dto.setRegDate(rs.getTimestamp("reg_date"));
+				
+				
+			}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			
+			//DB 연결 닫기
+			close();
+		}
+		
+		
+		return dto;
+	}
+	
+	
+	
+	public void insert(ExamDTO dto){
+
+		
+		String sql = "insert into exam "
+				+ "(hakgi, name,  pid, kor, eng, mat, pw, ff, reg_date) "
+				+ "values "
+				+ "(?, ?, ?, ?, ?, ?, ?, ?, now())";
+		
+		try {
+			//3. 쿼리문 실행하기 위한 객체 
+			ptmt = con.prepareStatement(sql);
+			ptmt.setInt(1, dto.getHakgi());
+			ptmt.setString(2, dto.getName());
+			ptmt.setString(3, dto.getPid());
+			ptmt.setInt(4, dto.getKor());
+			ptmt.setInt(5, dto.getEng());
+			ptmt.setInt(6, dto.getMat());
+			ptmt.setString(7, dto.getPw());
+			ptmt.setString(8, dto.getFf());
+			
+			
+			//4. 쿼리문 실행
+			ptmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			
+			//DB 연결 닫기
+			close();
+		}
+	}
+	
+	
+	
+	public void delete(ExamDTO dto){
+
+		
+		String sql = "delete from exam where id = ?";
+		
+		try {
+			//3. 쿼리문 실행하기 위한 객체 
+			ptmt = con.prepareStatement(sql);
+			ptmt.setInt(1, dto.getId());
+			
+			//4. 쿼리문 실행
+			ptmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			
+			//DB 연결 닫기
+			close();
+		}
+	}
+	
+	
+	
+	public void modify(ExamDTO dto){
+
+		
+		String sql = "update exam set "
+				+ "hakgi = ? , name = ? ,  pid = ? , kor = ? , eng = ? , mat = ?, pw = ? "
+				+ "where id = ? ";
+		
+		try {
+			//3. 쿼리문 실행하기 위한 객체 
+			ptmt = con.prepareStatement(sql);
+			ptmt.setInt(1, dto.getHakgi());
+			ptmt.setString(2, dto.getName());
+			ptmt.setString(3, dto.getPid());
+			ptmt.setInt(4, dto.getKor());
+			ptmt.setInt(5, dto.getEng());
+			ptmt.setInt(6, dto.getMat());
+			ptmt.setString(7, dto.getPw());
+			ptmt.setInt(8, dto.getId());
+			
+			
+			//4. 쿼리문 실행
+			ptmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			
+			//DB 연결 닫기
+			close();
+		}
+	}
+	
+	
+	
 	public void close() {
 		//6. 쿼리 실행 객체 종료
 		if(rs!=null) { try {rs.close();} catch (SQLException e) { }}

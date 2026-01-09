@@ -2,6 +2,7 @@ package exam_p;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.MultipartConfig;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -14,6 +15,7 @@ import di_p.ExamList;
 /**
  * Servlet implementation class ExamController
  */
+@MultipartConfig
 @WebServlet("/exam/*")
 public class ExamController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -37,7 +39,7 @@ public class ExamController extends HttpServlet {
 		String service = request.getRequestURI().substring(
 				(request.getContextPath()+"/exam/").length());
 		
-		System.out.println(service);
+		//System.out.println(service);
 		
 		String mainUrl = "/views/"+service+".jsp";
 		
