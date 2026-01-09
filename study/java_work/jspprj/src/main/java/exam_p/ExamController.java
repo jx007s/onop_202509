@@ -9,6 +9,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 import db_p.ExamDAO;
+import di_p.ExamList;
 
 /**
  * Servlet implementation class ExamController
@@ -30,12 +31,28 @@ public class ExamController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		Object res = new ExamDAO().list();
-		System.out.println(res);
 		
-		request.setAttribute("mainData", res);
+		//System.out.println(request.getRequestURI());
+		//System.out.println(request.getContextPath()+"/exam/");
+		String service = request.getRequestURI().substring(
+				(request.getContextPath()+"/exam/").length());
 		
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/views/list.jsp");
+		System.out.println(service);
+		
+		String mainUrl = "/views/"+service+".jsp";
+		
+		Action action;
+		try {
+			action = (Action)Class.forName("di_p."+service).newInstance();
+			action.execute(request, response);
+		
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		RequestDispatcher dispatcher = request.getRequestDispatcher(mainUrl);
 		dispatcher.forward(request, response);
 	}
 
