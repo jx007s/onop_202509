@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:p="http://www.springframework.org/schema/p"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+https://www.springframework.org/schema/beans/spring-beans.xsd"
+>
+
+	<!-- 인스턴스 생성 후 ==> c2 로 bean 설정 
+		property 설정시 setter 필수
+	-->
+	<bean name="c2" class="di_p.Camera">
+		<property name="name" value="니콘300"/>
+		<property name="pixel">
+			<value>5000</value>
+		</property>
+	</bean>
+
+	<bean name="c3" class="di_p.Camera" p:name="삼성200" p:pixel="2400" />
+	
+	<bean name="b2" class="di_p.Battery" p:name="에너자이져" p:remoeable="true" />
+
+	<bean name="ph2" class="di_p.HandPhone" p:name="은하수" p:price="88" 
+		p:bc-ref="c3" p:bat-ref="b2">
+		<property name="fc">
+			<ref bean="c2"/>
+		</property>
+	</bean>
+</beans>
