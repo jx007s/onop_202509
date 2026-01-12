@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:p="http://www.springframework.org/schema/p"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+https://www.springframework.org/schema/beans/spring-beans.xsd"
+>
+	<bean name="fc" class="di_p.Camera" p:name="수중카메라" p:pixel="3000"/>
+	
+	
+	<!-- autowire="byType"  같은 type 의 빈을 멤버변수로 자동 결합 
+		같은 type의 bean 이 2개 이상 존재할 경우 결합 에러발생
+		명시적으로 멤버지정시 위의 에러를 해결할 수 있음
+	-->
+	<bean name="hp2" class="di_p.HandPhone" p:name="갤2" p:price="20" autowire="byType"
+		p:fc-ref="fc" p:bc-ref="bbq"	/>
+		
+	<!-- autowire="byName"  같은 이름의 빈을 멤버변수로 자동 결합-->		
+	<bean name="hp3" class="di_p.HandPhone" p:name="갤3" p:price="30" autowire="byName"/>
+</beans>

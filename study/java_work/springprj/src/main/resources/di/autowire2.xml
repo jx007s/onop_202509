@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:p="http://www.springframework.org/schema/p"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+https://www.springframework.org/schema/beans/spring-beans.xsd"
+>
+	
+	<bean name="bbq" class="di_p.Camera" p:name="수상카메라" p:pixel="4000"/>
+	
+	<bean name="bb1" class="di_p.Battery" p:name="세방전지" p:remoeable="true"/>
+	<!-- <bean name="bb2" class="di_p.Battery" p:name="백셀" p:remoeable="false"/> -->
+	
+	<bean name="hp1" class="di_p.HandPhone" p:name="갤1" p:price="10" p:fc-ref="fc"/>
+	
+	
+	
+</beans>
