@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:p="http://www.springframework.org/schema/p"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+https://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+		
+	<bean name="st1" class="di_p.Student" p:name="현빈" p:jum="78,72,79"/>	
+	<bean name="st2" class="di_p.Student" p:name="원빈" p:jum="62,67,79"/>	
+	<bean name="st3" class="di_p.Student" p:name="투빈" p:jum="98,96,92"/>	
+	<bean name="st4" class="di_p.Student" p:name="텅빈" p:jum="56,58,57"/>	
+	<bean name="st5" class="di_p.Student" p:name="터빈" p:jum="87,89,82"/>	
+	
+	
+	<!-- setStuds(List<Student> studs) 에 위의 bean 들이 자동으로 list 형태로 결합 -->		
+	<bean name="studData" class="di_p.StudentData" autowire="byType"/>	 
+		
+
+</beans>
