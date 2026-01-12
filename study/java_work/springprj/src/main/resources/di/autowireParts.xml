@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:p="http://www.springframework.org/schema/p"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+https://www.springframework.org/schema/beans/spring-beans.xsd"
+>
+	
+	<bean class="di_p.Bonche" p:name="LG게이밍"/>
+	
+	<bean class="di_p.KeyBoard" p:name="앱코1" p:type="2벌식"/>
+	
+	<bean class="di_p.Monitor" p:name="udea" p:size="20"/>
+	
+	<bean class="di_p.Mouse" p:name="로지텍" p:remove="true"/>
+	
+	
+</beans>

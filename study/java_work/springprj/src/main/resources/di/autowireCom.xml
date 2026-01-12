@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:p="http://www.springframework.org/schema/p"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+https://www.springframework.org/schema/beans/spring-beans.xsd"
+>
+	
+	<bean name="dd" class="di_p.DeskTop" p:name="LG데탑" autowire="byType"/>
+	<bean name="nn" class="di_p.NoteBook" p:name="LG그램" autowire="byType"/>	
+	
+</beans>

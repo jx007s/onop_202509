@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:p="http://www.springframework.org/schema/p"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+https://www.springframework.org/schema/beans/spring-beans.xsd"
+>
+	<bean name="arr1" class="java.util.ArrayList">
+		<constructor-arg>
+			<list>
+				<value>11</value>
+				<value>22</value>
+				<value>33</value>
+				<value>44</value>
+				<value>11</value>
+				<value>55</value>
+				<value>66</value>
+				<value>11</value>
+				<value>77</value>
+			</list>
+		</constructor-arg>
+	</bean>
+	
+	<bean name="ss1" class="java.util.LinkedHashSet">
+		<constructor-arg>
+			<set>
+				<value>강백호</value>
+				<value>송태섭</value>
+				<value>강백호</value>
+				<value>서태웅</value>
+				<value>정대만</value>
+				<value>강백호</value>
+				<value>채치수</value>
+			</set>
+		</constructor-arg>
+	</bean>
+	
+	<bean name="mm1" class="java.util.LinkedHashMap">
+		<constructor-arg>
+			<map>
+				<entry>
+					<key>
+						<value>사자</value>
+					</key>
+					<value>포유류</value>
+				</entry>
+				<entry>
+					<key>
+						<value>오타니</value>
+					</key>
+					<value>이도류</value>
+				</entry>
+				<entry>
+					<key>
+						<value>사자</value>
+					</key>
+					<value>팔자</value>
+				</entry>
+				<entry>
+					<key>
+						<value>조로</value>
+					</key>
+					<value>이도류</value>
+				</entry>
+				<entry>
+					<key>
+						<value>상어</value>
+					</key>
+					<value>어류</value>
+				</entry>
+			</map>
+		</constructor-arg>
+	</bean>
+	
+</beans>
