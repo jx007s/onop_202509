@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:p="http://www.springframework.org/schema/p"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+https://www.springframework.org/schema/beans/spring-beans.xsd"
+>
+	<bean name="ad11" class="di_p.ArrayData">
+		<property name="pp1">
+			<array>
+				<value>12</value>
+				<value>34</value>
+				<value>56</value>
+				<value>78</value>
+			</array>
+		</property>
+	</bean>
+	
+	<!-- 배열 원소를 "999,888,777" ,로 나누어 입력 -->
+	<bean name="ad12" class="di_p.ArrayData"
+		p:pp1="999,888,777" />
+	 
+	 <bean name="ad21" class="di_p.ArrayData">
+		<property name="pp2">
+			<list>
+				<value>손오공</value>
+				<value>베지터</value>
+				<value>천진반</value>
+				<value>크리링</value>
+			</list>
+		</property>
+	</bean>
+	
+	
+	<bean name="ad22" class="di_p.ArrayData"
+		p:pp2="999,888,777" />
+		
+		
+	<bean name="ad31" class="di_p.ArrayData">
+		<property name="pp3">
+			<set>
+				<value>손오공</value>
+				<value>베지터</value>
+				<value>천진반</value>
+				<value>크리링</value>
+			</set>
+		</property>
+	</bean>
+	
+	
+	<bean name="ad32" class="di_p.ArrayData"
+		p:pp3="999,888,777" />
+		
+	<bean name="ad41" class="di_p.ArrayData">
+		<property name="pp4">
+			<map>
+				<entry>
+					<key>
+						<value>사자</value>
+					</key>
+					<value>포유류</value>
+				</entry>
+				<entry>
+					<key>
+						<value>오타니</value>
+					</key>
+					<value>이도류</value>
+				</entry>
+				<entry>
+					<key>
+						<value>사자</value>
+					</key>
+					<value>팔자</value>
+				</entry>
+				<entry>
+					<key>
+						<value>조로</value>
+					</key>
+					<value>이도류</value>
+				</entry>
+				<entry>
+					<key>
+						<value>상어</value>
+					</key>
+					<value>어류</value>
+				</entry>
+			</map>
+		</property>
+	</bean>
+	
+	
+	<!-- 
+	String 을 문자열로 치환불가
+	<bean name="ad42" class="di_p.ArrayData"
+		p:pp4="사자=팔자,오타니=이도류,조로=이도류" /> -->
+		
+	<bean name="cc1" class="di_p.Camera" p:name="DSLR" p:pixel="10000"/>	
+	<bean name="cc2" class="di_p.Camera" p:name="미러리스" p:pixel="5000"/>	
+	<bean name="cc3" class="di_p.Camera" p:name="똑딱이" p:pixel="2000"/>	
+		
+	
+	<bean name="ad51" class="di_p.ArrayData">
+		<property name="pp5">
+			<array>
+				<ref bean="cc1"/>
+				<ref bean="cc2"/>
+				<ref bean="cc3"/>
+			</array>
+		</property>
+	</bean>
+	
+<!-- bean 참조는 문자열로 대치하여 처리 불가 
+	<bean name="ad52" class="di_p.ArrayData"
+		p:pp5-ref="cc1,cc2,cc3" /> -->
+		
+	<bean name="ad61" class="di_p.ArrayData">
+		<property name="pp6">
+			<list>
+				<ref bean="cc1"/>
+				<ref bean="cc2"/>
+				<ref bean="cc3"/>
+			</list>
+		</property>
+	</bean>	 
+		
+<!-- bean 참조는 문자열로 대치하여 처리 불가 	
+	<bean name="ad62" class="di_p.ArrayData"
+		p:pp6-ref="cc1,cc2,cc3" />-->
+</beans>
