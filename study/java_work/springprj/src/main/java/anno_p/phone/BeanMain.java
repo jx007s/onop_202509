@@ -1,19 +1,22 @@
-package anno_p.comp;
+package anno_p.phone;
+
+import java.util.Arrays;
 
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-public class ComCarMain {
+public class BeanMain {
 
 	public static void main(String[] args) {
 		AbstractApplicationContext context = 
 				new ClassPathXmlApplicationContext(
-						"anno/comCar.xml");
+						"anno/bean.xml");
 		
+		System.out.println(Arrays.toString(context.getBeanDefinitionNames()));
 		
-		System.out.println(context.getBean("F1"));
-		System.out.println(context.getBean("limousine"));
-		System.out.println(context.getBean("truck"));
+		System.out.println(context.getBean("cam1"));
+		System.out.println(context.getBean("cam2"));
+		System.out.println(context.getBean("dr1"));
 		context.close();
 
 	}
@@ -21,8 +24,8 @@ public class ComCarMain {
 }
 
 /*
-anno_p.cars 패키지
-ComCarMain
+anno_p.phone 패키지
+BeanCarMain
 자동차를 출력하세요
 
 자동차 종류 - 클래스
@@ -30,5 +33,6 @@ ComCarMain
  리무진 ---- 바퀴, 방음벽, 짐칸
  트럭 ---- 바퀴, 짐칸
  * */
+
 
 

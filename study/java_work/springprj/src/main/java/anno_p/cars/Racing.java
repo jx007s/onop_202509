@@ -3,10 +3,12 @@ package anno_p.cars;
 import org.springframework.stereotype.Component;
 
 import jakarta.annotation.Resource;
+import lombok.Data;
+import lombok.ToString;
 
 
-
-
+@Data
+//@ToString
 @Component("F1")
 public class Racing {
 	
@@ -15,13 +17,6 @@ public class Racing {
 	
 	@Resource
 	Booster bst;
-
-	@Override
-	public String toString() {
-		return "F1 [wh=" + korWH + ", bst=" + bst + "]";
-	}
-	
-	
 }
 
 @Component
@@ -31,11 +26,15 @@ class Limousine{
 	
 	@Resource
 	Partition pt;
+	
+	@Resource
+	Trunk trunk;
 
 	@Override
 	public String toString() {
-		return "리무진 [wh=" + kh + ", pt=" + pt + "]";
+		return "리무진 [kh=" + kh + ", pt=" + pt + ", trunk=" + trunk + "]";
 	}
+
 	
 	
 }
@@ -111,6 +110,17 @@ class Trunk{
 	@Override
 	public String toString() {
 		return "Trunk [size=" + size + "]";
+	}
+	
+}
+
+@Component("tr")
+class Boot extends Trunk{
+	int size = 2000;
+
+	@Override
+	public String toString() {
+		return "Boot [size=" + size + "]";
 	}
 	
 }
