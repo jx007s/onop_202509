@@ -21,6 +21,9 @@ repositories {
 dependencies {
 	// Source: https://mvnrepository.com/artifact/org.projectlombok/lombok
 	implementation 'org.projectlombok:lombok:1.18.42'
+	
+	// Source: https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-aop
+	implementation 'org.springframework.boot:spring-boot-starter-aop:3.5.8'
 
 	implementation 'org.springframework.boot:spring-boot-starter'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
