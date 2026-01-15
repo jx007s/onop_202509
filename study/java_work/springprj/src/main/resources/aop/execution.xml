@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:p="http://www.springframework.org/schema/p"
+xmlns:context="http://www.springframework.org/schema/context"
+xmlns:aop="http://www.springframework.org/schema/aop"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+https://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/context
+https://www.springframework.org/schema/context/spring-context.xsd
+http://www.springframework.org/schema/aop
+https://www.springframework.org/schema/aop/spring-aop.xsd">
+	
+	<context:component-scan base-package="aop_p"/>	
+	<context:annotation-config/>
+	
+	
+	<aop:config>
+		<aop:aspect ref="executionAdvice">
+			<aop:before method="total" pointcut="execution(* *..*(..))"/>
+			<aop:before method="dog" pointcut="execution(* *..dog*(..))"/>
+			<aop:before method="topMan" pointcut="execution(* *..TopMan*.*(..))"/>
+			<aop:before method="movie" pointcut="execution(* aop_p.movie.*.*(..))"/>
+			<aop:before method="movieSub" pointcut="execution(* aop_p.movie..*.*(..))"/>
+			
+			<aop:before method="arg0" pointcut="execution(* *..*())"/>
+			<aop:before method="arg1" pointcut="execution(* *..*(**))"/>
+			<aop:before method="arg2" pointcut="execution(* *..*(**,**))"/>
+			<aop:before method="argInt" pointcut="execution(* *..*(int))"/>
+			<aop:before method="argIntInt" pointcut="execution(* *..*(int,int))"/>
+			
+			<aop:before method="retStr" pointcut="execution(String *..*(..))"/>
+			<aop:before method="retVoid" pointcut="execution(void *..*(..))"/>
+			<aop:before method="retBool" pointcut="execution(boolean *..*(..))"/>
+		</aop:aspect>
+	</aop:config>
+</beans>

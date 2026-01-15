@@ -22,4 +22,10 @@ public class JoSuk {
 		System.out.println("dog3 실행 : "+aa+","+bb);
 		return "애봉이";
 	}
+	
+	public String father(int aa, String bb) {
+		
+		System.out.println("father 실행 : "+aa+","+bb);
+		return "조철왕";
+	}
 }
