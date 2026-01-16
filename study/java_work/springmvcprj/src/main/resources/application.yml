@@ -1,0 +1,9 @@
+server : 
+    port : 80
+
+
+spring :
+    mvc :
+        view :
+            prefix : /views/
+            suffix : .jsp
