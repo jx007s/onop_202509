@@ -27,7 +27,10 @@ import ReactDOM from 'react-dom/client';
 // import UseMemoGo from './hook/UseMemoGo';
 // import UseCallBackGo from './hook/UseCallBackGo';
 // import FetchGo from './comp/FetchGo';
-import FetchRestFul from './comp/FetchRestFul';
+// import FetchRestFul from './comp/FetchRestFul';
+import SpringRestFul from "./comp/SpringRestFul";
+
+
 import reportWebVitals from './reportWebVitals';
 
 
@@ -62,10 +65,12 @@ root.render(
   <UseMemoGo/>
   <UseCallBackGo/>
   <FetchGo/> 
+
+  <FetchRestFul/>
   */}
   
-  <FetchRestFul/>
   
+  <SpringRestFul/>
   </>
 );
 
