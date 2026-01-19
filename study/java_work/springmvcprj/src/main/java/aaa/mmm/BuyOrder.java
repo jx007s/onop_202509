@@ -12,6 +12,12 @@ public class BuyOrder {
 	int tot;
 	
 	public void calc() {
+		
+		prods = prods.stream()
+					.filter(pp->  pp.pname!=null && !pp.pname.trim().equals(""))
+					.toList();
+		
+		
 		tot = 0;
 		prods.stream().forEach(pp->{
 			pp.tot=pp.price*pp.cnt;

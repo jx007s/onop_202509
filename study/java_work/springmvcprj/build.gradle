@@ -27,6 +27,9 @@ repositories {
 
 dependencies {
 
+	// Source: https://mvnrepository.com/artifact/com.google.code.gson/gson
+	implementation 'com.google.code.gson:gson:2.13.2'
+
 	// Source: https://mvnrepository.com/artifact/org.apache.tomcat.embed/tomcat-embed-jasper
 	implementation 'org.apache.tomcat.embed:tomcat-embed-jasper:11.0.15'
 
