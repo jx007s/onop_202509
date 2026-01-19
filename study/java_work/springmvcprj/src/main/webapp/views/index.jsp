@@ -37,5 +37,8 @@
 <a href="/rest/map">map</a>
 <a href="/rest/obj1">obj1</a>
 <a href="/rest/obj2">obj2</a>
+
+<h2>file</h2>
+<a href="/file">form</a>
 </body>
 </html>

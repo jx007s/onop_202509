@@ -7,3 +7,4 @@ spring :
         view :
             prefix : /views/
             suffix : .jsp
+        
