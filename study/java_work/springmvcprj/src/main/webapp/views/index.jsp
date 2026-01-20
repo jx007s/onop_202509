@@ -47,5 +47,20 @@
 <a href="/coo/modify">쿠키수정</a>
 <a href="/coo/delete">쿠키삭제</a>
 <a href="/coo/logMain">로그인</a>
+
+<h2>session</h2>
+<a href="/session/make">세션생성</a>
+<a href="/session/view">세션보기</a>
+<a href="/session/modify">세션수정</a>
+<a href="/session/delete">세션삭제</a>
+<a href="/session/logMain">로그인</a>
+
+<h2>model</h2>
+<a href="/mmm/hello">hello1</a>
+<a href="/mmm/hello?zipcode=111&addr1=서울&addr2=남산">hello2</a>
+<a href="/mmm/hello?zipcode=222&addr1=서울&addr2=코엑스">hello3</a>
+<a href="/mmm/history">history1</a>
+<a href="/mmm/history?zipcode=111&addr1=창원&addr2=sk테크노파크">history2</a>
+<a href="/mmm/history?zipcode=222&addr1=창원&addr2=성산아트홀">history3</a>
 </body>
 </html>
