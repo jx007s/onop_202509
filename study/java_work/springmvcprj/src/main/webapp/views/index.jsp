@@ -40,5 +40,11 @@
 
 <h2>file</h2>
 <a href="/file">form</a>
+
+<h2>cookie</h2>
+<a href="/coo/make">쿠키생성</a>
+<a href="/coo/view">쿠키보기</a>
+<a href="/coo/modify">쿠키수정</a>
+<a href="/coo/delete">쿠키삭제</a>
 </body>
 </html>
