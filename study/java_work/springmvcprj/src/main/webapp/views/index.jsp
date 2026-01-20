@@ -46,5 +46,6 @@
 <a href="/coo/view">쿠키보기</a>
 <a href="/coo/modify">쿠키수정</a>
 <a href="/coo/delete">쿠키삭제</a>
+<a href="/coo/logMain">로그인</a>
 </body>
 </html>
