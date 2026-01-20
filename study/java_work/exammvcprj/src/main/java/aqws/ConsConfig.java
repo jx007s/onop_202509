@@ -11,7 +11,7 @@ public class ConsConfig implements WebMvcConfigurer {
 	public void addCorsMappings(CorsRegistry registry) {
 		registry.addMapping("/**")
 		.allowedOrigins("http://192.168.0.78:8909")
-		.allowedMethods("GET")
+		.allowedMethods("GET","POST")
 		.allowCredentials(true);
 	}
 }
