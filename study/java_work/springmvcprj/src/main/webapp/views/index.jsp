@@ -89,5 +89,10 @@
 <a href="/pc/mlist">mlist</a>
 <a href="/pc/mdetail">mdetail</a>
 <a href="/pc/minsert">minsert</a>
+<a href="/pe/peList">학생목록</a>
+<a href="/pe/peDetail/aaa">학생상세</a>
+<a href="/pe/peInsert?id=ddd&kor=78&eng=65&mat=82">학생추가</a>
+
+<h2><a href="/val">validate</a></h2>
 </body>
 </html>

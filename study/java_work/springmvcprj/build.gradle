@@ -27,6 +27,9 @@ repositories {
 
 dependencies {
 
+	// Source: https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-validation
+	implementation 'org.springframework.boot:spring-boot-starter-validation:4.0.1'
+
 	// Source: https://mvnrepository.com/artifact/com.google.code.gson/gson
 	implementation 'com.google.code.gson:gson:2.13.2'
 
