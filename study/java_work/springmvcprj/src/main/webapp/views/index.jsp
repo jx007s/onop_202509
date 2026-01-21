@@ -62,5 +62,6 @@
 <a href="/mmm/history">history1</a>
 <a href="/mmm/history?zipcode=111&addr1=창원&addr2=sk테크노파크">history2</a>
 <a href="/mmm/history?zipcode=222&addr1=창원&addr2=성산아트홀">history3</a>
+<a href="/company">회사</a>
 </body>
 </html>
