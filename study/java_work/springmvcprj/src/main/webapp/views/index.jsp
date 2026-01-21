@@ -63,5 +63,31 @@
 <a href="/mmm/history?zipcode=111&addr1=창원&addr2=sk테크노파크">history2</a>
 <a href="/mmm/history?zipcode=222&addr1=창원&addr2=성산아트홀">history3</a>
 <a href="/company">회사</a>
+
+<h2>path</h2>
+<a href="/path/info/aaa/detail">info/aaa/detail</a>
+<a href="/path/info/aaa/insert">info/aaa/insert</a>
+<a href="/path/gall/aaa/detail">gall/aaa/detail</a>
+<a href="/path/gall/aaa/list">gall/aaa/list</a>
+<a href="/path/product/aaa/modify">product/aaa/modify</a>
+<br/>
+<a href="/path/info/bbb">info/bbb</a>
+<a href="/path/gall/bbb">gall/bbb</a>
+<a href="/path/info/27">info/27</a>
+<a href="/path/gall/15">gall/15</a>
+<br/>
+<a href="/path/info/ddd/detail">info/ddd/detail</a>
+<a href="/path/info/ddd/insert">info/ddd/insert</a>
+<a href="/path/gall/ddd/detail">gall/ddd/detail</a>
+<a href="/path/gall/ddd/list">gall/ddd/list</a>
+<a href="/path/product/ddd/modify">product/ddd/modify</a>
+<br/>
+<a href="/path/info/ddd/detail?pNo=10">info/ddd/detail?pNo</a>
+<a href="/path/info/eee/detail/20">info/eee/detail/20</a>
+<a href="/path/info/eee/detail/20?pNo=30">info/eee/detail/20?pNo</a>
+<h2>pc</h2>
+<a href="/pc/mlist">mlist</a>
+<a href="/pc/mdetail">mdetail</a>
+<a href="/pc/minsert">minsert</a>
 </body>
 </html>
