@@ -25,6 +25,26 @@ public class ValidatorController {
 		
 		new PersonValidator().validate(pp, res);
 		
+		if(res.hasErrors()) {  //에러가 존재하면
+							// validate(pp, res) 에서 errors.rejectValue 가 실행됐다면
+			
+			return "val/form";		// form으로  view 페이지 변경
+		}
+		
+		
+		
 		return "val/complete";
 	}
 }
+
+/*
+회원가입 유효성 검사 하세요
+id, 이름, 나이, 생일, 이메일, 전화번호
+ * 
+ * */
+
+
+
+
+
+

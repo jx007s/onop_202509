@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="spFrm" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,11 +13,17 @@
 <table>
 	<tr>
 		<td>id</td>
-		<td><input type="text" name="pid" /></td>
+		<td><input type="text" name="pid" />
+			<br/>
+			<spFrm:errors path="person.pid"/>
+		</td>
 	</tr>
 	<tr>
 		<td>pw</td>
-		<td><input type="text" name="pw" /></td>
+		<td><input type="text" name="pw" />
+		<br/>
+			<spFrm:errors path="person.pw"/>
+		</td>
 	</tr>
 	<tr>
 		<td></td>
