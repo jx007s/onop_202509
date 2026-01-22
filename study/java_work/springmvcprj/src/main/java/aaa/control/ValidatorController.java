@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import aaa.di.JoinValidator;
 import aaa.di.PersonValidator;
 import aaa.mmm.Person;
 
@@ -34,6 +35,31 @@ public class ValidatorController {
 		
 		
 		return "val/complete";
+	}
+	
+	
+	
+	@GetMapping("join")
+	String joinForm() {
+		return "val/joinform";
+	}
+	
+	
+	@PostMapping("join")
+	String joincomplete(Person pp, BindingResult res) {
+		
+		
+		new JoinValidator().validate(pp, res);
+		
+		if(res.hasErrors()) {  //에러가 존재하면
+							// validate(pp, res) 에서 errors.rejectValue 가 실행됐다면
+			
+			return "val/joinform";		// form으로  view 페이지 변경
+		}
+		
+		
+		
+		return "val/joincomplete";
 	}
 }
 

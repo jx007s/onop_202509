@@ -1,5 +1,7 @@
 package aaa.mmm;
 
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.Objects;
 
 import lombok.Data;
@@ -9,14 +11,22 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Person {
 
-	String pid,pw,pname;
+	String pid,pw,pname, email, tel, ageStr, birthStr;
 	int age;
 	boolean marriage;
+	Date birth;
+	
+	LocalDate reg_date;
+	
 	public Person(String pid, String pname, String pw) {
 
 		this.pid = pid;
 		this.pw = pw;
 		this.pname = pname;
+	}
+	
+	public void setAgeGo() {
+		age = Integer.parseInt(ageStr);
 	}
 	
 	@Override

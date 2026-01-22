@@ -93,6 +93,13 @@
 <a href="/pe/peDetail/aaa">학생상세</a>
 <a href="/pe/peInsert?id=ddd&kor=78&eng=65&mat=82">학생추가</a>
 
-<h2><a href="/val">validate</a></h2>
+<h3><a href="/val">validate</a></h3>
+<h3><a href="/val/join">join</a></h3>
+<h3><a href="/initGo?birth=1999-03-20">initGo</a></h3>
+<h3><a href="/initGo2?reg_date=2011-08-15">initGo2</a></h3>
+<h2>intercepter</h2>
+<a href="/inter/event/abc">abc</a>
+<a href="/inter/event/efg">efg</a>
+<a href="/inter/event/hij">hij</a>
 </body>
 </html>
