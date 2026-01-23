@@ -30,7 +30,7 @@ public class InterceptorController {
 }
 
 /*
-  /path 이후의 경로는 로그인 : aaa 만 접근가능
+  /path 이후의 경로는 로그인 : aaa 만 접근가능 --> 
   /path/info/ddd/insert  제외
  * 
  * 

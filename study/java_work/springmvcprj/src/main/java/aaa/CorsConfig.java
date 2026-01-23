@@ -5,13 +5,18 @@ import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
+import aaa.di.AAAInterCeptor;
 import aaa.di.EventINterCeptor;
 import jakarta.annotation.Resource;
 
 @Configuration
 public class CorsConfig implements WebMvcConfigurer{
+	
 	@Resource
 	EventINterCeptor eventIc;
+	
+	@Resource
+	AAAInterCeptor aaa;
 	
 	@Override
 	public void addCorsMappings(CorsRegistry registry) {
@@ -30,5 +35,9 @@ public class CorsConfig implements WebMvcConfigurer{
 		 registry.addInterceptor(eventIc)
 		 .addPathPatterns("/inter/event/**")
 		 .excludePathPatterns("/inter/event/efg");
+		 
+		 registry.addInterceptor(aaa)
+		 .addPathPatterns("/path/**")
+		 .excludePathPatterns("/path/info/ddd/insert");
 	}
 }
