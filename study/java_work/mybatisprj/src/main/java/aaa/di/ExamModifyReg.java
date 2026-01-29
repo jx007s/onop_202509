@@ -9,7 +9,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 @Service
-public class ExamList implements ExamAction{
+public class ExamModifyReg implements ExamAction{
 	
 	@Resource
 	ExamMapper mapper;
@@ -20,8 +20,15 @@ public class ExamList implements ExamAction{
 			PageInfo pInfo,
 			HttpServletRequest request,
 			HttpServletResponse response) {
-		// TODO Auto-generated method stub
-		return mapper.list();
+		
+		
+		System.out.println("ExamModifyReg : "+dto);
+		
+		mapper.modify(dto);
+		
+		return dto.getId();
 	}
+	
+	
 
 }

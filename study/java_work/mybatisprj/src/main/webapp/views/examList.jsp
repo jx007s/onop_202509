@@ -15,7 +15,33 @@
 	ArrayList<ExamDTO> mainData =(ArrayList<ExamDTO>)request.getAttribute("mainData");
 	//out.println(mainData);
 %>
+<h3>examSch</h3>
+<a href="/exam/examSch?schTitle1=name&schVal1=semi&schTitle2=hakgi&schVal2=1&schTitle3=pid&schVal3=b">검색123</a>
+<a href="/exam/examSch?schTitle1=name&schVal1=semi&schTitle2=hakgi&schVal2=1">검색12</a>
+<a href="/exam/examSch?schTitle1=name&schVal1=semi">검색1</a>
+<a href="/exam/examSch?schTitle2=hakgi&schVal2=1">검색2</a>
+<a href="/exam/examSch">검색없음</a>
+<h3>examChoose</h3>
+<a href="/exam/examChoose?schTitle1=1">1</a>
+<a href="/exam/examChoose?schTitle1=2">2</a>
+<a href="/exam/examChoose?schTitle1=3">3</a>
+<a href="/exam/examChoose">선택없음</a>
 <table border="">
+	<tr>
+		<td colspan="7">
+		
+			<form action="examSch">
+				<select name="schTitle1" >
+					<option value="hakgi">학기</option>
+					<option value="name">시험</option>
+					<option value="pid">학생</option>
+				</select>
+				<input type="text" name="schVal1" />
+				<input type="submit" value="검색" />
+			</form>
+		
+		</td>
+	</tr>
 	<tr>
 		<td>학기</td>
 		<td>시험</td>
@@ -39,7 +65,8 @@
 	
 	<tr>
 		<td colspan="7" align="right">
-			<a href="examInsert">쓰기</a>
+			<a href="/exam/examInsertForm">쓰기</a>
+			<a href="/exam/examInsertList">다중쓰기</a>
 		</td>	
 	</tr>
 </table>

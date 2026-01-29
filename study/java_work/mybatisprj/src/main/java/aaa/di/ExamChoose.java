@@ -9,7 +9,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 @Service
-public class ExamList implements ExamAction{
+public class ExamChoose implements ExamAction{
 	
 	@Resource
 	ExamMapper mapper;
@@ -21,7 +21,7 @@ public class ExamList implements ExamAction{
 			HttpServletRequest request,
 			HttpServletResponse response) {
 		// TODO Auto-generated method stub
-		return mapper.list();
+		return mapper.listChoose(dto);
 	}
 
 }
