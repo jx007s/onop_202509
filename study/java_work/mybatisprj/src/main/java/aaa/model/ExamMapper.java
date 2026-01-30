@@ -7,6 +7,7 @@ import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.SelectKey;
 import org.apache.ibatis.annotations.Update;
 
 @Mapper
@@ -23,6 +24,33 @@ public interface ExamMapper {
 			+ "values "
 			+ "(#{hakgi}, #{name}, #{pid}, #{kor}, #{eng}, #{mat}, #{pw}, #{ff}, now() )")
 	int insert(ExamDTO dto);
+	
+	
+	
+	@SelectKey(
+			keyProperty = "id",
+			resultType = Integer.class,
+			before = true,
+			statement = "select max(id)+1 from exam"
+			)
+	@Insert("insert into exam "
+			+ "(id, hakgi, name,  pid, kor, eng, mat, pw, ff, reg_date) "
+			+ "values "
+			+ "(#{id}, #{hakgi}, #{name}, #{pid}, #{kor}, #{eng}, #{mat}, #{pw}, #{ff}, now() )")
+	int insertKey(ExamDTO dto);
+	
+	
+	@SelectKey(
+			keyProperty = "id",
+			resultType = Integer.class,
+			before = false,
+			statement = "select max(id) from exam"
+			)
+	@Insert("insert into exam "
+			+ "( hakgi, name,  pid, kor, eng, mat, pw, ff, reg_date) "
+			+ "values "
+			+ "( #{hakgi}, #{name}, #{pid}, #{kor}, #{eng}, #{mat}, #{pw}, #{ff}, now() )")
+	int insertKeyAfter(ExamDTO dto);
 	
 	
 	// 리턴이 1개 일때 기본자료형으로 리턴 가능

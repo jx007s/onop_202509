@@ -28,14 +28,19 @@ public class ExamInsertReg implements ExamAction{
 		
 		dto.setFf(fileSave(dto.getUpff(), request));
 		
-		mapper.insert(dto);
+//		mapper.insert(dto);
+//		
+//		// 리턴이 1개 일때 기본자료형으로 리턴 가능
+//		int maxId = mapper.maxId();
+//		
+//		System.out.println("ExamInsertReg : "+maxId);
+//		
+//		return maxId;
 		
-		// 리턴이 1개 일때 기본자료형으로 리턴 가능
-		int maxId = mapper.maxId();
-		
-		System.out.println("ExamInsertReg : "+maxId);
-		
-		return maxId;
+		//mapper.insertKey(dto);
+		mapper.insertKeyAfter(dto);
+		System.out.println("ExamInsertReg : "+dto.getId());
+		return dto.getId();
 	}
 	
 	String fileSave(MultipartFile mf, HttpServletRequest request) {
