@@ -9,7 +9,7 @@
 <body>
 <script type="text/javascript">
 	alert('작성완료')
-	location.href='/exam/examDetail/${mainData}'
+	location.href='/exam/examDetail/1/${mainData}'
 </script>
 </body>
 </html>

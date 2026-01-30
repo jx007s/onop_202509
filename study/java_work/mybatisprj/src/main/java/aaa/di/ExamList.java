@@ -21,7 +21,7 @@ public class ExamList implements ExamAction{
 			HttpServletRequest request,
 			HttpServletResponse response) {
 		// TODO Auto-generated method stub
-		return mapper.list();
+		return mapper.list(pInfo);
 	}
 
 }

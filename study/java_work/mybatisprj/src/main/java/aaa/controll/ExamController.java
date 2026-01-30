@@ -13,7 +13,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 @Controller
-@RequestMapping("/exam/{service}")
+@RequestMapping("/exam/{service}/{pNo}")
 public class ExamController {
 	
 	@Resource
@@ -26,6 +26,7 @@ public class ExamController {
 			HttpServletRequest request,
 			HttpServletResponse response
 			) {
+		
 		Object res = 
 				provider.getContext()
 				.getBean(pInfo.getService(), ExamAction.class)

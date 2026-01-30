@@ -9,7 +9,7 @@
 <body>
 <script type="text/javascript">
 	alert('수정완료')
-	location.href='/exam/examDetail/${mainData}'
+	location.href='/exam/examDetail/${pageInfo.getPNo()}/${mainData}'
 </script>
 </body>
 </html>

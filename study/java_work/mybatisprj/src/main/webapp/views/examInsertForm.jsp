@@ -8,7 +8,7 @@
 </head>
 <body>
 <h1>쓰기</h1>
-<form action="/exam/examInsertReg" method="post" enctype="multipart/form-data">
+<form action="/exam/examInsertReg/${pageInfo.getPNo()}" method="post" enctype="multipart/form-data">
 	<table border="">
 		<tr>
 			<td>학기</td>
@@ -51,7 +51,7 @@
 		<tr>
 			<td colspan="2" align="center">
 				<input type="submit" value="작성" />
-				<a href="/exam/examList">뒤로</a>
+				<a href="/exam/examList/${pageInfo.getPNo()}">뒤로</a>
 			</td>
 		</tr>
 	</table>

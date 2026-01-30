@@ -15,6 +15,7 @@
 	ArrayList<ExamDTO> mainData =(ArrayList<ExamDTO>)request.getAttribute("mainData");
 	//out.println(mainData);
 %>
+
 <h3>examSch</h3>
 <a href="/exam/examSch?schTitle1=name&schVal1=semi&schTitle2=hakgi&schVal2=1&schTitle3=pid&schVal3=b">검색123</a>
 <a href="/exam/examSch?schTitle1=name&schVal1=semi&schTitle2=hakgi&schVal2=1">검색12</a>
@@ -54,7 +55,7 @@
 	<% for(ExamDTO dto : mainData) {%>
 	<tr>
 		<td><%=dto.getHakgi() %></td>
-		<td><a href="/exam/examDetail/<%=dto.getId() %>"><%=dto.getName() %></a></td>
+		<td><a href="/exam/examDetail/${pageInfo.getPNo()}/<%=dto.getId() %>"><%=dto.getName() %></a></td>
 		<td><%=dto.getPid() %></td>
 		<td><%=dto.getRegDate() %></td>
 		<td><%=dto.getKor() %></td>
@@ -65,8 +66,8 @@
 	
 	<tr>
 		<td colspan="7" align="right">
-			<a href="/exam/examInsertForm">쓰기</a>
-			<a href="/exam/examInsertList">다중쓰기</a>
+			<a href="/exam/examInsertForm/${pageInfo.getPNo()}">쓰기</a>
+			<a href="/exam/examInsertList/${pageInfo.getPNo()}">다중쓰기</a>
 		</td>	
 	</tr>
 </table>

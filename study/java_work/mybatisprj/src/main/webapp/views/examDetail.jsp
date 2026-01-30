@@ -32,9 +32,9 @@
 		<td>파일</td><td><%=dto.getFf() %></td>
 	</tr><tr>
 		<td colspan="2" align="right">
-			<a href="/exam/examList">목록으로</a>
-			<a href="/exam/examDelete/<%=dto.getId()%>">삭제</a>
-			<a href="/exam/examModifyForm/<%=dto.getId()%>">수정</a>
+			<a href="/exam/examList/${pageInfo.getPNo()}">목록으로</a>
+			<a href="/exam/examDelete/${pageInfo.getPNo()}/<%=dto.getId()%>">삭제</a>
+			<a href="/exam/examModifyForm/${pageInfo.getPNo()}/<%=dto.getId()%>">수정</a>
 		</td>
 	</tr>
 </table>

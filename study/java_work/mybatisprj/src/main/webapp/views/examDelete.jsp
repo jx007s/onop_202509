@@ -9,7 +9,7 @@
 <body>
 <script type="text/javascript">
 	alert('삭제완료')
-	location.href='/exam/examList'
+	location.href='/exam/examList/${pageInfo.getPNo()}'
 </script>
 </body>
 </html>

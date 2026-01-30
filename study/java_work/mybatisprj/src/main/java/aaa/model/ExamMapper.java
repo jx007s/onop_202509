@@ -10,11 +10,13 @@ import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.SelectKey;
 import org.apache.ibatis.annotations.Update;
 
+import aaa.di.PageInfo;
+
 @Mapper
 public interface ExamMapper {
 
-	@Select("select * from exam")
-	List<ExamDTO> list();
+	@Select("select * from exam order by id desc limit 3 , #{cnt}")
+	List<ExamDTO> list(PageInfo pInfo);
 	
 	@Select("select * from exam where id = #{id}")
 	ExamDTO detail(ExamDTO dto);

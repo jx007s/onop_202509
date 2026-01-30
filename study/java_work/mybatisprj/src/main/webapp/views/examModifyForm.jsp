@@ -12,7 +12,7 @@
 </head>
 <body>
 <h1>수정</h1>
-<form action="/exam/examModifyReg" method="post">
+<form action="/exam/examModifyReg/${pageInfo.getPNo()}" method="post">
 	<table border="">
 		<tr>
 			<td>ID</td>
@@ -64,7 +64,7 @@
 		<tr>
 			<td colspan="2" align="center">
 				<input type="submit" value="수정" />
-				<a href="/exam/examDetail/<%=dto.getId() %>">뒤로</a>
+				<a href="/exam/examDetail/${pageInfo.getPNo()}/<%=dto.getId() %>">뒤로</a>
 			</td>
 		</tr>
 	</table>
