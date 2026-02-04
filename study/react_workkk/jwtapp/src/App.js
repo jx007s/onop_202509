@@ -2,8 +2,8 @@
 
 function App() {
 
-  let bk = 'http://192.168.0.78:8080/QWER/'
-  bk = 'http://192.168.0.78/'
+  let bk = 'http://192.168.0.78:8080/'
+  //bk = 'http://192.168.0.78/'
 
   function loginGo(){
 
