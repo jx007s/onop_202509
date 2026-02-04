@@ -40,7 +40,8 @@ dependencies {
 	compileOnly 'org.projectlombok:lombok'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	annotationProcessor 'org.projectlombok:lombok'
-	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat-runtime'
+	//providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat-runtime'
+	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
 	testImplementation 'org.springframework.boot:spring-boot-starter-webmvc-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
@@ -48,3 +49,9 @@ dependencies {
 tasks.named('test') {
 	useJUnitPlatform()
 }
+
+bootWar {
+        enabled = true
+        archiveFileName = 'ABCD.war' // 원하는 배포 파일 이름으로 변경  안해도 됨
+}
+
